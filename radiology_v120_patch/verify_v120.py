@@ -1,6 +1,6 @@
 from pathlib import Path
 import hashlib,re,sys,wave,xml.etree.ElementTree as ET
-R=Path(sys.argv[1] if len(sys.argv)>1 else 'project');A=R/'app/src/main/assets';H=A/'index.html'
+R=Path(sys.argv[1] if len(sys.argv)>1 else '.');A=R/'app/src/main/assets';H=A/'index.html'
 for n in ['index.html','experience.js','experience.css','professional.js','professional.css']:
  p=A/n
  if not p.exists() or p.stat().st_size<50:raise SystemExit('missing '+str(p))
