@@ -19,9 +19,9 @@ jobs:
           mkdir -p _src project
           gh release download radiology1405-build-input-20260811 \
             --repo "${{ github.repository }}" \
-            --pattern 'radiology1405_android_project.zip' \
+            --pattern 'radiology1405_android_project_v1.0.1.zip' \
             --dir _src
-          unzip -q _src/radiology1405_android_project.zip -d project
+          unzip -q _src/radiology1405_android_project_v1.0.1.zip -d project
 
       - uses: actions/setup-java@v4
         with:
