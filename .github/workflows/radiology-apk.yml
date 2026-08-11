@@ -46,14 +46,51 @@ jobs:
           python3 tests/verify_bank.py
           python3 tests/verify_ui_static.py
           python3 tests/verify_schedule.py
+          test -s app/src/main/assets/radiology1405_bank_v5.db.gz
+          ls -lh app/src/main/assets/radiology1405_bank_v5.db.gz
+
+      - name: Package bank as Android raw resource
+        working-directory: project
+        run: |
+          mkdir -p app/src/main/res/raw
+          cp app/src/main/assets/radiology1405_bank_v5.db.gz app/src/main/res/raw/radiology1405_bank_v5.bin
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          bank = Path('app/src/main/java/com/radiology1405/prep/BankDb.kt')
+          text = bank.read_text(encoding='utf-8')
+          old = 'context.assets.open(ASSET).use { compressed ->'
+          new = 'context.resources.openRawResource(R.raw.radiology1405_bank_v5).use { compressed ->'
+          if old not in text:
+              raise SystemExit('Expected AssetManager bank-open line not found')
+          bank.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          gradle = Path('app/build.gradle.kts')
+          g = gradle.read_text(encoding='utf-8')
+          g, n1 = re.subn(r'versionCode\s*=\s*\d+', 'versionCode = 3', g, count=1)
+          g, n2 = re.subn(r'versionName\s*=\s*"[^"]+"', 'versionName = "1.0.2"', g, count=1)
+          if n1 != 1 or n2 != 1:
+              raise SystemExit('Could not set APK version')
+          gradle.write_text(g, encoding='utf-8')
+          PY
+          grep -n "openRawResource\|versionCode\|versionName" app/src/main/java/com/radiology1405/prep/BankDb.kt app/build.gradle.kts
+          test -s app/src/main/res/raw/radiology1405_bank_v5.bin
 
       - name: Build debug APK
         working-directory: project
         run: gradle --no-daemon :app:assembleDebug
 
-      - name: Verify and name APK
+      - name: Verify bank is physically inside APK
         run: |
-          test -s project/app/build/outputs/apk/debug/app-debug.apk
+          APK=project/app/build/outputs/apk/debug/app-debug.apk
+          test -s "$APK"
+          unzip -l "$APK" | tee /tmp/apk-contents.txt
+          grep -q 'res/raw/radiology1405_bank_v5.bin' /tmp/apk-contents.txt
+          echo 'BANK_RESOURCE_PACKAGED=PASS'
+
+      - name: Name APK
+        run: |
           mkdir -p _out
           cp project/app/build/outputs/apk/debug/app-debug.apk _out/Radiology1405.apk
           sha256sum _out/Radiology1405.apk | tee _out/Radiology1405.apk.sha256
