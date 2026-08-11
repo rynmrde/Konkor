@@ -128,8 +128,8 @@ jobs:
         with:
           name: Radiology1405-v1.2.0
           path: |
-            _out/Radiology1405.apk
-            _out/Radiology1405.apk.sha256
+            project/_out/Radiology1405.apk
+            project/_out/Radiology1405.apk.sha256
           if-no-files-found: error
 
       - name: Publish APK and V1.2 source to GitHub Release
@@ -142,9 +142,9 @@ jobs:
               --title 'Radiology1405 APK · V1.2 Professional' \
               --notes 'V1.2: custom icon system, illustrations, real offline SFX/focus audio, theme previews, splash/launcher polish, ADHD/reduced-motion compatibility. Core quiz engine protected by CI integrity checks.'
           gh release upload "$TAG" \
-            _out/Radiology1405.apk \
-            _out/Radiology1405.apk.sha256 \
-            _out/radiology1405_android_project_v1.2.0.zip \
-            _out/radiology1405_android_project_v1.2.0.zip.sha256 \
+            project/_out/Radiology1405.apk \
+            project/_out/Radiology1405.apk.sha256 \
+            project/_out/radiology1405_android_project_v1.2.0.zip \
+            project/_out/radiology1405_android_project_v1.2.0.zip.sha256 \
             --repo "${{ github.repository }}" \
             --clobber
