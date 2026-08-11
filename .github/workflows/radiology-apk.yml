@@ -71,7 +71,9 @@ jobs:
 
       - name: Apply V1.2 professional media system
         run: |
+          sha256sum project/app/src/main/assets/index.html > /tmp/v120-index-before.sha256
           python3 radiology_v120_patch/patch_v120.py project radiology_v120_patch
+          sha256sum -c /tmp/v120-index-before.sha256
 
       - name: Validate V1.2 professional assets and JS
         working-directory: project
