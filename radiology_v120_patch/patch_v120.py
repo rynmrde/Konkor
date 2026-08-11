@@ -6,8 +6,8 @@ if not H.exists() or not E.exists(): raise SystemExit('V120: v1.1 assets missing
 before=H.read_text(encoding='utf-8')
 critical=['validateBank','ensureOptionOrder','microWeights','allocate','pickSubject','buildRound','updateMastery','calcRound','finishReview','submitRound','ensureDay','projectionBreakdown','safetyStatus']
 def block(s,n):
- m=re.search(r'(?m)^[ \t]*function\s+'+re.escape(n)+r'\s*\([^)]*\)\s*\{',s)
- if not m: raise RuntimeError('core function missing: '+n)
+ m=re.search(r'(?m)^[ \t]*(?:async[ \t]+)?function\s+'+re.escape(n)+r'\s*\([^)]*\)\s*\{',s)
+ if not m: raise LookupError(n)
  i=m.end();depth=1;quote=None;esc=False;line=False;multi=False
  while i<len(s) and depth:
   c=s[i];d=s[i+1] if i+1<len(s) else ''
@@ -28,7 +28,17 @@ def block(s,n):
   i+=1
  if depth:raise RuntimeError('unbalanced core '+n)
  return s[m.start():i]
-core0={n:block(before,n) for n in critical}
+def locate_core(n):
+ candidates=[H]+sorted(x for x in A.glob('*.js') if x.name not in {'experience.js','professional.js'})
+ for f in candidates:
+  try:
+   txt=f.read_text(encoding='utf-8'); return f,block(txt,n)
+  except (LookupError,UnicodeDecodeError): pass
+ raise RuntimeError('core function missing across assets: '+n+'; scanned='+','.join(x.name for x in candidates))
+core0={}
+for n in critical:
+ f,b=locate_core(n);core0[n]=(f,b)
+print('V120_CORE_LOCATIONS',','.join(f'{n}:{f.name}' for n,(f,_) in core0.items()))
 subprocess.run([sys.executable,str(P/'generate_media.py'),str(A)],check=True)
 for n in ['professional.js','professional.css']:shutil.copy2(P/n,A/n)
 h=before
@@ -44,7 +54,11 @@ h=h.replace('el("reviewFlag").textContent=r.flags[q.id]?"⚑ نشان‌دار":
 h=h.replace("ok?'درست ✅':blank?'نزده ⏭':'غلط ❌'","ok?'درست <img src=\"icons/correct.svg\" class=\"inlineIcon\" alt=\"\">':blank?'نزده':'غلط <img src=\"icons/wrong.svg\" class=\"inlineIcon\" alt=\"\">'")
 h=h.replace('بانک معتبر بارگذاری شد ✅','بانک معتبر بارگذاری شد').replace('چهار راند امروز کامل شد ✅','چهار راند امروز کامل شد')
 H.write_text(h,encoding='utf-8')
-core1={n:block(h,n) for n in critical};changed=[n for n in critical if core0[n]!=core1[n]]
+changed=[]
+for n,(f,before_block) in core0.items():
+ try: after_block=block(f.read_text(encoding='utf-8'),n)
+ except LookupError: changed.append(n+':missing'); continue
+ if before_block!=after_block: changed.append(n)
 if changed:raise RuntimeError('V120 touched core: '+','.join(changed))
 print('V120_CORE_INTEGRITY PASS',len(critical))
 js=E.read_text(encoding='utf-8')
@@ -87,5 +101,5 @@ fg='''<vector xmlns:android="http://schemas.android.com/apk/res/android" android
 ad='<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android"><background android:drawable="@color/v120_launcher_bg"/><foreground android:drawable="@drawable/ic_launcher_foreground"/></adaptive-icon>'
 for n in ['ic_launcher.xml','ic_launcher_round.xml']:(res/'mipmap-anydpi-v26'/n).write_text(ad,encoding='utf-8')
 shutil.copy2(res/'drawable/ic_launcher_foreground.xml',res/'mipmap-anydpi/ic_launcher.xml');shutil.copy2(res/'drawable/ic_launcher_foreground.xml',res/'mipmap-anydpi/ic_launcher_round.xml')
-shutil.copy2(P/'verify_v120.py',R/'tests/verify_v120.py')
+(R/'tests').mkdir(parents=True,exist_ok=True);shutil.copy2(P/'verify_v120.py',R/'tests/verify_v120.py')
 print('PATCH_V120 PASS')
