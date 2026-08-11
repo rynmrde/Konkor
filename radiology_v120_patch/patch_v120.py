@@ -6,7 +6,7 @@ if not H.exists() or not E.exists(): raise SystemExit('V120: v1.1 assets missing
 before=H.read_text(encoding='utf-8')
 critical=['validateBank','ensureOptionOrder','microWeights','allocate','pickSubject','buildRound','updateMastery','calcRound','finishReview','submitRound','ensureDay','projectionBreakdown','safetyStatus']
 def block(s,n):
- m=re.search(r'(?m)^function\s+'+re.escape(n)+r'\s*\([^)]*\)\s*\{',s)
+ m=re.search(r'(?m)^[ \t]*function\s+'+re.escape(n)+r'\s*\([^)]*\)\s*\{',s)
  if not m: raise RuntimeError('core function missing: '+n)
  i=m.end();depth=1;quote=None;esc=False;line=False;multi=False
  while i<len(s) and depth:
