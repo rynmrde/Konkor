@@ -123,13 +123,22 @@ jobs:
             -x 'app/build/*' '.gradle/*' 'build/*')
           sha256sum _out/radiology1405_android_project_v1.2.0.zip | tee _out/radiology1405_android_project_v1.2.0.zip.sha256
 
+      - name: Verify prepared distribution files
+        run: |
+          test -s "$GITHUB_WORKSPACE/_out/Radiology1405.apk"
+          test -s "$GITHUB_WORKSPACE/_out/Radiology1405.apk.sha256"
+          test -s "$GITHUB_WORKSPACE/_out/radiology1405_android_project_v1.2.0.zip"
+          test -s "$GITHUB_WORKSPACE/_out/radiology1405_android_project_v1.2.0.zip.sha256"
+          ls -lah "$GITHUB_WORKSPACE/_out"
+
       - name: Upload CI artifact
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: Radiology1405-v1.2.0
           path: |
-            project/_out/Radiology1405.apk
-            project/_out/Radiology1405.apk.sha256
+            _out/Radiology1405.apk
+            _out/Radiology1405.apk.sha256
           if-no-files-found: error
 
       - name: Publish APK and V1.2 source to GitHub Release
@@ -142,9 +151,9 @@ jobs:
               --title 'Radiology1405 APK · V1.2 Professional' \
               --notes 'V1.2: custom icon system, illustrations, real offline SFX/focus audio, theme previews, splash/launcher polish, ADHD/reduced-motion compatibility. Core quiz engine protected by CI integrity checks.'
           gh release upload "$TAG" \
-            project/_out/Radiology1405.apk \
-            project/_out/Radiology1405.apk.sha256 \
-            project/_out/radiology1405_android_project_v1.2.0.zip \
-            project/_out/radiology1405_android_project_v1.2.0.zip.sha256 \
+            "$GITHUB_WORKSPACE/_out/Radiology1405.apk" \
+            "$GITHUB_WORKSPACE/_out/Radiology1405.apk.sha256" \
+            "$GITHUB_WORKSPACE/_out/radiology1405_android_project_v1.2.0.zip" \
+            "$GITHUB_WORKSPACE/_out/radiology1405_android_project_v1.2.0.zip.sha256" \
             --repo "${{ github.repository }}" \
             --clobber
