@@ -69,6 +69,17 @@ jobs:
           PY
           node --check /tmp/radiology-core.js
 
+      - name: Apply V1.2 professional media system
+        run: |
+          python3 radiology_v120_patch/patch_v120.py project radiology_v120_patch
+
+      - name: Validate V1.2 professional assets and JS
+        working-directory: project
+        run: |
+          python3 tests/verify_v120.py
+          node --check app/src/main/assets/experience.js
+          node --check app/src/main/assets/professional.js
+
       - name: Build debug APK
         working-directory: project
         run: gradle --no-daemon :app:assembleDebug
@@ -85,6 +96,20 @@ jobs:
           grep -q 'assets/experience.js' /tmp/apk-contents.txt
           unzip -p "$APK" assets/experience.js | grep -q 'startFocusAudio'
           unzip -p "$APK" assets/experience.css | grep -q 'theme-oled'
+          unzip -p "$APK" assets/experience.js | grep -q 'new Audio'
+          python3 - <<'PY'
+          import zipfile
+          apk='project/app/build/outputs/apk/debug/app-debug.apk'
+          z=zipfile.ZipFile(apk); names=set(z.namelist())
+          icons=['home','dashboard','test','review','wrong','correct','blank','focus','adhd','themes','sound','music','haptics','settings','timer','progress','streak','bookmark','flag','next','previous','start','pause','resume','plan','calendar','mastery','analytics','export','import','close','check']
+          illustrations=['round_complete','focus_complete','streak','empty_state','splash']
+          sfx=['select','submit','correct','wrong','complete','focus_start','focus_end']
+          focus=['ambient','rain','brown','pulse']
+          req={f'assets/icons/{x}.svg' for x in icons}|{f'assets/illustrations/{x}.svg' for x in illustrations}|{f'assets/audio/sfx_{x}.wav' for x in sfx}|{f'assets/audio/focus_{x}.wav' for x in focus}|{'assets/professional.js','assets/professional.css'}
+          miss=sorted(req-names)
+          assert not miss, 'missing packaged V1.2 assets: '+str(miss)
+          print('APK_V120_ASSET_VERIFY=PASS',len(req))
+          PY
           echo 'APK_CONTENT_VERIFY=PASS'
 
       - name: Prepare release files
@@ -92,18 +117,32 @@ jobs:
           mkdir -p _out
           cp project/app/build/outputs/apk/debug/app-debug.apk _out/Radiology1405.apk
           sha256sum _out/Radiology1405.apk | tee _out/Radiology1405.apk.sha256
-          (cd project && zip -qr ../_out/radiology1405_android_project_v1.1.0.zip . \
+          (cd project && zip -qr ../_out/radiology1405_android_project_v1.2.0.zip . \
             -x 'app/build/*' '.gradle/*' 'build/*')
-          sha256sum _out/radiology1405_android_project_v1.1.0.zip | tee _out/radiology1405_android_project_v1.1.0.zip.sha256
+          sha256sum _out/radiology1405_android_project_v1.2.0.zip | tee _out/radiology1405_android_project_v1.2.0.zip.sha256
 
-      - name: Publish APK and V1.1 source to GitHub Release
+      - name: Upload CI artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Radiology1405-v1.2.0
+          path: |
+            _out/Radiology1405.apk
+            _out/Radiology1405.apk.sha256
+          if-no-files-found: error
+
+      - name: Publish APK and V1.2 source to GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release upload radiology1405-apk-20260811 \
+          TAG=radiology1405-apk-v1.2.0-20260812
+          gh release view "$TAG" --repo "${{ github.repository }}" >/dev/null 2>&1 || \
+            gh release create "$TAG" --repo "${{ github.repository }}" --target "${GITHUB_SHA}" \
+              --title 'Radiology1405 APK · V1.2 Professional' \
+              --notes 'V1.2: custom icon system, illustrations, real offline SFX/focus audio, theme previews, splash/launcher polish, ADHD/reduced-motion compatibility. Core quiz engine protected by CI integrity checks.'
+          gh release upload "$TAG" \
             _out/Radiology1405.apk \
             _out/Radiology1405.apk.sha256 \
-            _out/radiology1405_android_project_v1.1.0.zip \
-            _out/radiology1405_android_project_v1.1.0.zip.sha256 \
+            _out/radiology1405_android_project_v1.2.0.zip \
+            _out/radiology1405_android_project_v1.2.0.zip.sha256 \
             --repo "${{ github.repository }}" \
             --clobber
