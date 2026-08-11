@@ -6,13 +6,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 35
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download validated Android project
+      - name: Download verified Android base
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -32,75 +32,78 @@ jobs:
         with:
           gradle-version: '8.13'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      - uses: android-actions/setup-android@v3
 
       - name: Install Android SDK 36
         run: |
           yes | sdkmanager --licenses >/dev/null 2>&1 || true
           sdkmanager "platforms;android-36" "build-tools;35.0.0"
 
-      - name: Verify bank, UI, and schedule
+      - name: Verify original V5 bank before packaging
+        working-directory: project
+        run: python3 tests/verify_bank.py
+
+      - name: Apply V1.1 focus experience
+        run: |
+          python3 radiology_v110_patch/patch_v110.py project radiology_v110_patch
+          mkdir -p project/app/src/main/res/raw
+          cp project/app/src/main/assets/radiology1405_bank_v5.db.gz \
+             project/app/src/main/res/raw/radiology1405_bank_v5.bin
+          rm project/app/src/main/assets/radiology1405_bank_v5.db.gz
+          test -s project/app/src/main/res/raw/radiology1405_bank_v5.bin
+
+      - name: Validate V1.1 UI, schedule and JS
         working-directory: project
         run: |
-          python3 tests/verify_bank.py
           python3 tests/verify_ui_static.py
           python3 tests/verify_schedule.py
-          test -s app/src/main/assets/radiology1405_bank_v5.db.gz
-          ls -lh app/src/main/assets/radiology1405_bank_v5.db.gz
-
-      - name: Package bank as Android raw resource
-        working-directory: project
-        run: |
-          mkdir -p app/src/main/res/raw
-          cp app/src/main/assets/radiology1405_bank_v5.db.gz app/src/main/res/raw/radiology1405_bank_v5.bin
+          python3 tests/verify_experience.py
+          node --check app/src/main/assets/experience.js
           python3 - <<'PY'
           from pathlib import Path
           import re
-
-          bank = Path('app/src/main/java/com/radiology1405/prep/BankDb.kt')
-          text = bank.read_text(encoding='utf-8')
-          old = 'context.assets.open(ASSET).use { compressed ->'
-          new = 'context.resources.openRawResource(R.raw.radiology1405_bank_v5).use { compressed ->'
-          if old not in text:
-              raise SystemExit('Expected AssetManager bank-open line not found')
-          bank.write_text(text.replace(old, new, 1), encoding='utf-8')
-
-          gradle = Path('app/build.gradle.kts')
-          g = gradle.read_text(encoding='utf-8')
-          g, n1 = re.subn(r'versionCode\s*=\s*\d+', 'versionCode = 3', g, count=1)
-          g, n2 = re.subn(r'versionName\s*=\s*"[^"]+"', 'versionName = "1.0.2"', g, count=1)
-          if n1 != 1 or n2 != 1:
-              raise SystemExit('Could not set APK version')
-          gradle.write_text(g, encoding='utf-8')
+          h=Path('app/src/main/assets/index.html').read_text(encoding='utf-8')
+          scripts=[x for x in re.findall(r'<script(?: [^>]*)?>(.*?)</script>',h,re.S) if "'use strict'" in x]
+          assert scripts
+          Path('/tmp/radiology-core.js').write_text(scripts[0],encoding='utf-8')
           PY
-          grep -n "openRawResource\|versionCode\|versionName" app/src/main/java/com/radiology1405/prep/BankDb.kt app/build.gradle.kts
-          test -s app/src/main/res/raw/radiology1405_bank_v5.bin
+          node --check /tmp/radiology-core.js
 
       - name: Build debug APK
         working-directory: project
         run: gradle --no-daemon :app:assembleDebug
 
-      - name: Verify bank is physically inside APK
+      - name: Verify packaged bank and experience layer
         run: |
           APK=project/app/build/outputs/apk/debug/app-debug.apk
           test -s "$APK"
           unzip -l "$APK" | tee /tmp/apk-contents.txt
           grep -q 'res/raw/radiology1405_bank_v5.bin' /tmp/apk-contents.txt
-          echo 'BANK_RESOURCE_PACKAGED=PASS'
+          grep -q 'assets/index.html' /tmp/apk-contents.txt
+          grep -q 'assets/bank_index.json' /tmp/apk-contents.txt
+          grep -q 'assets/experience.css' /tmp/apk-contents.txt
+          grep -q 'assets/experience.js' /tmp/apk-contents.txt
+          unzip -p "$APK" assets/experience.js | grep -q 'startFocusAudio'
+          unzip -p "$APK" assets/experience.css | grep -q 'theme-oled'
+          echo 'APK_CONTENT_VERIFY=PASS'
 
-      - name: Name APK
+      - name: Prepare release files
         run: |
           mkdir -p _out
           cp project/app/build/outputs/apk/debug/app-debug.apk _out/Radiology1405.apk
           sha256sum _out/Radiology1405.apk | tee _out/Radiology1405.apk.sha256
+          (cd project && zip -qr ../_out/radiology1405_android_project_v1.1.0.zip . \
+            -x 'app/build/*' '.gradle/*' 'build/*')
+          sha256sum _out/radiology1405_android_project_v1.1.0.zip | tee _out/radiology1405_android_project_v1.1.0.zip.sha256
 
-      - name: Publish APK to GitHub Release
+      - name: Publish APK and V1.1 source to GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload radiology1405-apk-20260811 \
             _out/Radiology1405.apk \
             _out/Radiology1405.apk.sha256 \
+            _out/radiology1405_android_project_v1.1.0.zip \
+            _out/radiology1405_android_project_v1.1.0.zip.sha256 \
             --repo "${{ github.repository }}" \
             --clobber
