@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
-      contents: read
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -51,11 +51,19 @@ jobs:
         working-directory: project
         run: gradle --no-daemon :app:assembleDebug
 
-      - name: Verify APK exists
-        run: test -s project/app/build/outputs/apk/debug/app-debug.apk
+      - name: Verify and name APK
+        run: |
+          test -s project/app/build/outputs/apk/debug/app-debug.apk
+          mkdir -p _out
+          cp project/app/build/outputs/apk/debug/app-debug.apk _out/Radiology1405.apk
+          sha256sum _out/Radiology1405.apk | tee _out/Radiology1405.apk.sha256
 
-      - uses: actions/upload-artifact@v4
-        with:
-          name: radiology1405-debug-apk
-          path: project/app/build/outputs/apk/debug/app-debug.apk
-          if-no-files-found: error
+      - name: Publish APK to GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload radiology1405-apk-20260811 \
+            _out/Radiology1405.apk \
+            _out/Radiology1405.apk.sha256 \
+            --repo "${{ github.repository }}" \
+            --clobber
