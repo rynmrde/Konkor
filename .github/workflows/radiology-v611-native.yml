@@ -19,7 +19,7 @@ jobs:
       V61_PROJECT_FILE_ID: 14RbsAhiS1Cj3Y_JgPfR0pf1rmeXgxJUc
       V61_PROJECT_SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
       V61_BANK_SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
-      V611_OVERLAY_SHA256: 19b1da18d0c877c6cef56c1e3d3f2afd3197c52fb0905e90c1aed0da43ec6f87
+      V611_OVERLAY_SHA256: e80cdd224388f5fe585710fbfe1be18e01cc620eb00c23ae058abe9da144a508
 
     steps:
       - uses: actions/checkout@v4
