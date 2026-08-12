@@ -44,18 +44,19 @@ jobs:
           sudo apt-get install -y -qq ffmpeg
           python -m pip install --quiet gdown
 
-      - name: Fetch exact frozen V6.1 project
+      - name: Probe GitHub-hosted V5 project baseline
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          mkdir -p _src
-          gdown "$V61_PROJECT_FILE_ID" -O _src/v61-project.zip
-          echo "$V61_PROJECT_SHA256  _src/v61-project.zip" | sha256sum -c -
-          unzip -q _src/v61-project.zip -d _src/unpacked
-          PROJECT="$(find _src/unpacked -type f -name settings.gradle.kts -printf '%h\n' | head -n1)"
-          test -n "$PROJECT"
-          test -f "$PROJECT/app/src/main/assets/radiology1405_bank_v6_1.db.gz"
-          echo "PROJECT=$PROJECT" >> "$GITHUB_ENV"
-          echo "V61_PROJECT_ZIP_SHA_PASS=$V61_PROJECT_SHA256"
+          rm -rf _src && mkdir -p _src/v12
+          gh release download radiology1405-apk-v1.2.0-20260812 -p radiology1405_android_project_v1.2.0.zip -D _src
+          unzip -q _src/radiology1405_android_project_v1.2.0.zip -d _src/v12
+          echo '--- V1.2 candidate bank/data files ---'
+          find _src/v12 -type f -printf '%s %p\n' | sort -nr | head -80
+          echo '--- candidate hashes ---'
+          find _src/v12 -type f \( -name '*.json' -o -name '*.db' -o -name '*.gz' -o -name '*.js' \) -size +500k -print0 | xargs -0 -r sha256sum
+          exit 42
 
       - name: Verify and apply V6.1.1 UX/parity overlay
         run: |
