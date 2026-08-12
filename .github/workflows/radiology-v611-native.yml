@@ -1,4 +1,4 @@
-name: V6.1 Source PDF Probe
+name: V6.1 Direct Asset Probe
 
 on:
   push:
@@ -11,22 +11,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify public source PDFs needed by V6.1 crop regeneration
+      - name: Probe direct V6.1 Drive assets
         run: |
           set -euo pipefail
-          mkdir -p _probe
           python - <<'PY'
-          import urllib.request,hashlib,pathlib
-          files={
-            '1RLMr0QK1qYDfLduSzIwV2U_3UbYUH8Gm':'6b080cda86b850cc61f040475fc4c03e7d62d11519f7f02ce1bf8cc1bc59edf8',
-            '1rJU59jwXiEivi8N9hUdBlXfb3_7GyA7X':'ce7fc7fb03eba06a56f9abce0ffce9a0e88166ba1cd66f9e3d711b367c0a6b85',
+          import urllib.request, pathlib, hashlib, sys
+          ids={
+            'bank_gz':'1r8IvfWT7R_ihzfLC6QyoGQNQiDFrvhZZ',
+            'bank_json':'1D07Qbp2iPOwfmksy09kdyjSc3hWHiq03',
+            'all_outputs':'1nBXmgZAzFLqEYJ9mBvFwBBBlQqrLs33E',
+            'android_project':'14RbsAhiS1Cj3Y_JgPfR0pf1rmeXgxJUc',
           }
-          for fid,expected in files.items():
+          for name,fid in ids.items():
               url=f'https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t'
-              out=pathlib.Path('_probe')/f'{fid}.pdf'
-              urllib.request.urlretrieve(url,out)
-              b=out.read_bytes(); h=hashlib.sha256(b).hexdigest()
-              print(fid,len(b),h,b[:8])
-              assert h==expected,(fid,h,expected,len(b),b[:80])
-          print('SOURCE_PDF_SHA_PASS')
+              out=pathlib.Path(f'_probe_{name}.bin')
+              try:
+                  urllib.request.urlretrieve(url,out)
+                  b=out.read_bytes()
+                  print(name,'SIZE',len(b),'SHA',hashlib.sha256(b).hexdigest(),'HEAD',b[:24])
+              except Exception as e:
+                  print(name,'ERROR',type(e).__name__,str(e))
           PY
