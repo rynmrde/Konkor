@@ -1,0 +1,206 @@
+name: Radiology1405 V6.1.1 UX Final
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'radiology_v611_native_patch/**'
+      - '.github/workflows/radiology-v611-native.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-test-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    env:
+      V61_PROJECT_FILE_ID: 14RbsAhiS1Cj3Y_JgPfR0pf1rmeXgxJUc
+      V61_PROJECT_SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
+      V61_BANK_SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
+      V611_OVERLAY_SHA256: 38a2fe091cf83adb4e1941a7231ba5df0242d6217708719c04253cc39360f51f
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.13'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK and media tooling
+        run: |
+          set -euo pipefail
+          yes | sdkmanager --licenses >/dev/null 2>&1 || true
+          sdkmanager 'platforms;android-36' 'build-tools;35.0.0' 'platform-tools'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python -m pip install --quiet gdown
+
+      - name: Fetch exact frozen V6.1 project
+        run: |
+          set -euo pipefail
+          mkdir -p _src
+          gdown --id "$V61_PROJECT_FILE_ID" -O _src/v61-project.zip
+          echo "$V61_PROJECT_SHA256  _src/v61-project.zip" | sha256sum -c -
+          unzip -q _src/v61-project.zip -d _src/unpacked
+          PROJECT="$(find _src/unpacked -type f -name settings.gradle.kts -printf '%h\n' | head -n1)"
+          test -n "$PROJECT"
+          test -f "$PROJECT/app/src/main/assets/radiology1405_bank_v6_1.db.gz"
+          echo "PROJECT=$PROJECT" >> "$GITHUB_ENV"
+          echo "V61_PROJECT_ZIP_SHA_PASS=$V61_PROJECT_SHA256"
+
+      - name: Verify and apply V6.1.1 UX/parity overlay
+        run: |
+          set -euo pipefail
+          echo "$V611_OVERLAY_SHA256  radiology_v611_native_patch/overlay.tar.xz" | sha256sum -c -
+          tar -xJf radiology_v611_native_patch/overlay.tar.xz -C "$PROJECT"
+          test -f "$PROJECT/app/src/main/java/com/radiology1405/prep/ui/ExperienceController.kt"
+          test -f "$PROJECT/tests/verify_ux_v611.py"
+
+      - name: Generate deterministic offline audio
+        run: |
+          set -euo pipefail
+          cd "$PROJECT"
+          bash tools/generate_audio.sh
+          for f in app/src/main/res/raw/focus_{ambient,rain,brown,pulse}.ogg; do
+            test -s "$f"
+            ffprobe -v error -select_streams a:0 -show_entries stream=codec_name,sample_rate,channels -show_entries format=duration -of default=nw=1 "$f"
+          done
+
+      - name: Frozen bank, parity and UX static gates
+        run: |
+          set -euo pipefail
+          cd "$PROJECT"
+          python tests/validate_v6_1.py
+          python tests/verify_v5_parity.py
+          python tests/verify_ux_v611.py
+          ! grep -R 'fallbackToDestructiveMigration' app/src/main/java
+          ! grep -q 'android.permission.INTERNET' app/src/main/AndroidManifest.xml
+          echo "$V61_BANK_SHA256  app/src/main/assets/radiology1405_bank_v6_1.db.gz" | sha256sum -c -
+
+      - name: JVM tests, lint and debug build
+        run: |
+          set -euo pipefail
+          cd "$PROJECT"
+          gradle --no-daemon :app:testDebugUnitTest :app:lintDebug :app:assembleDebug --stacktrace
+
+      - name: Instrumented migration, settings and real audio tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: |
+            cd "$PROJECT"
+            gradle --no-daemon :app:connectedDebugAndroidTest --stacktrace
+
+      - name: Prepare stable release signing key
+        env:
+          RADIOLOGY_KEYSTORE_B64: ${{ secrets.RADIOLOGY_KEYSTORE_B64 }}
+          RADIOLOGY_STORE_PASSWORD_SECRET: ${{ secrets.RADIOLOGY_STORE_PASSWORD }}
+          RADIOLOGY_KEY_ALIAS_SECRET: ${{ secrets.RADIOLOGY_KEY_ALIAS }}
+          RADIOLOGY_KEY_PASSWORD_SECRET: ${{ secrets.RADIOLOGY_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$RADIOLOGY_KEYSTORE_B64"
+          test -n "$RADIOLOGY_STORE_PASSWORD_SECRET"
+          test -n "$RADIOLOGY_KEY_ALIAS_SECRET"
+          test -n "$RADIOLOGY_KEY_PASSWORD_SECRET"
+          printf '%s' "$RADIOLOGY_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/radiology1405.jks"
+          keytool -list \
+            -keystore "$RUNNER_TEMP/radiology1405.jks" \
+            -storepass "$RADIOLOGY_STORE_PASSWORD_SECRET" \
+            -alias "$RADIOLOGY_KEY_ALIAS_SECRET" >/dev/null
+          {
+            echo "RADIOLOGY_KEYSTORE=$RUNNER_TEMP/radiology1405.jks"
+            echo "RADIOLOGY_STORE_PASSWORD=$RADIOLOGY_STORE_PASSWORD_SECRET"
+            echo "RADIOLOGY_KEY_ALIAS=$RADIOLOGY_KEY_ALIAS_SECRET"
+            echo "RADIOLOGY_KEY_PASSWORD=$RADIOLOGY_KEY_PASSWORD_SECRET"
+          } >> "$GITHUB_ENV"
+
+      - name: Build signed V6.1.1 release
+        run: |
+          set -euo pipefail
+          cd "$PROJECT"
+          gradle --no-daemon :app:assembleRelease --stacktrace
+
+      - name: Inspect signed APK and frozen bank inside APK
+        run: |
+          set -euo pipefail
+          mkdir -p _out/_inspect
+          APK="$PROJECT/app/build/outputs/apk/release/app-release.apk"
+          test -s "$APK"
+          apksigner verify --verbose --print-certs "$APK" | tee _out/_inspect/signature.txt
+          aapt dump badging "$APK" | tee _out/_inspect/badging.txt
+          grep -q "package: name='com.rynmrde.konkor' versionCode='162' versionName='6.1.1'" _out/_inspect/badging.txt
+          ! aapt dump permissions "$APK" | grep -q android.permission.INTERNET
+          unzip -p "$APK" assets/radiology1405_bank_v6_1.db.gz > _out/_inspect/apk-bank.gz
+          echo "$V61_BANK_SHA256  _out/_inspect/apk-bank.gz" | sha256sum -c -
+          unzip -l "$APK" > _out/_inspect/contents.txt
+          for n in ambient rain brown pulse; do grep -q "res/raw/focus_${n}.ogg" _out/_inspect/contents.txt; done
+          cp "$APK" _out/Radiology1405-V6.1.1.apk
+          sha256sum _out/Radiology1405-V6.1.1.apk > _out/Radiology1405-V6.1.1.apk.sha256
+
+      - name: Install and launch the signed release APK on Android 35
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: |
+            set -euo pipefail
+            adb uninstall com.rynmrde.konkor >/dev/null 2>&1 || true
+            adb install _out/Radiology1405-V6.1.1.apk
+            adb shell monkey -p com.rynmrde.konkor -c android.intent.category.LAUNCHER 1
+            sleep 4
+            adb shell pidof com.rynmrde.konkor
+            adb shell dumpsys package com.rynmrde.konkor | grep -q 'versionName=6.1.1'
+
+      - name: Package audited V6.1.1 project source
+        run: |
+          set -euo pipefail
+          cd "$PROJECT"
+          zip -qr "$GITHUB_WORKSPACE/_out/radiology1405_android_project_v6.1.1.zip" . \
+            -x 'app/build/*' 'build/*' '.gradle/*' '*.jks' '*.keystore'
+          cd "$GITHUB_WORKSPACE"
+          sha256sum _out/radiology1405_android_project_v6.1.1.zip > _out/radiology1405_android_project_v6.1.1.zip.sha256
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Radiology1405-V6.1.1-final
+          path: |
+            _out/Radiology1405-V6.1.1.apk
+            _out/Radiology1405-V6.1.1.apk.sha256
+            _out/radiology1405_android_project_v6.1.1.zip
+            _out/radiology1405_android_project_v6.1.1.zip.sha256
+            _out/_inspect/signature.txt
+            _out/_inspect/badging.txt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish V6.1.1 UX Final release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG='radiology1405-apk-v6.1.1-20260812'
+          NOTES='Frozen V6.1 bank remains byte-identical. UX repair release: real native offline focus audio with preview/playback checks, 10 easy theme cards, live 90–140% text scaling with inherited scientific typography, reader fonts, haptic strength, study keep-awake, easier settings controls and V5 parity. CI gates include bank/parity/UX static checks, JVM+lint, Android 35 instrumented migration/settings/audio tests, stable signing, APK inspection, bank SHA inside APK, and signed-release install/launch.'
+          gh release view "$TAG" --repo "${{ github.repository }}" >/dev/null 2>&1 || \
+            gh release create "$TAG" --repo "${{ github.repository }}" --target "$GITHUB_SHA" \
+              --title 'Radiology1405 APK · V6.1.1 UX Final' --notes "$NOTES"
+          gh release upload "$TAG" \
+            _out/Radiology1405-V6.1.1.apk \
+            _out/Radiology1405-V6.1.1.apk.sha256 \
+            _out/radiology1405_android_project_v6.1.1.zip \
+            _out/radiology1405_android_project_v6.1.1.zip.sha256 \
+            --repo "${{ github.repository }}" --clobber
