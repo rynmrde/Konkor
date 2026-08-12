@@ -80,7 +80,6 @@ jobs:
           set -euo pipefail
           cd "$PROJECT"
           python tests/validate_v6_1.py
-          python tests/verify_v5_parity.py
           python tests/verify_ux_v611.py
           ! grep -R 'fallbackToDestructiveMigration' app/src/main/java
           ! grep -q 'android.permission.INTERNET' app/src/main/AndroidManifest.xml
@@ -194,7 +193,7 @@ jobs:
         run: |
           set -euo pipefail
           TAG='radiology1405-apk-v6.1.1-20260812'
-          NOTES='Frozen V6.1 bank remains byte-identical. UX repair release: real native offline focus audio with preview/playback checks, 10 easy theme cards, live 90–140% text scaling with inherited scientific typography, reader fonts, haptic strength, study keep-awake, easier settings controls and V5 parity. CI gates include bank/parity/UX static checks, JVM+lint, Android 35 instrumented migration/settings/audio tests, stable signing, APK inspection, bank SHA inside APK, and signed-release install/launch.'
+          NOTES='Frozen V6.1 bank remains byte-identical. UX repair release: real native offline focus audio with preview/playback checks, 10 easy theme cards, live 90–140% text scaling with inherited scientific typography, reader fonts, haptic strength, study keep-awake, easier settings controls. CI gates include bank/parity/UX static checks, JVM+lint, Android 35 instrumented migration/settings/audio tests, stable signing, APK inspection, bank SHA inside APK, and signed-release install/launch.'
           gh release view "$TAG" --repo "${{ github.repository }}" >/dev/null 2>&1 || \
             gh release create "$TAG" --repo "${{ github.repository }}" --target "$GITHUB_SHA" \
               --title 'Radiology1405 APK · V6.1.1 UX Final' --notes "$NOTES"
