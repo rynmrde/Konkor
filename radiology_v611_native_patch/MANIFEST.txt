@@ -3,13 +3,13 @@ Radiology1405 V6.1.1 UX native overlay
 Base V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
 Frozen V6.1 source gzip bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
 Frozen V6.1 expanded DB SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
-UX overlay SHA256: 16144afe106b82f71d078ad0728ca1fe30845231479e2f5262349d155a04617d
-Workflow SHA256: ffb004b577e86513f87b49b59194f1e4469f7e4298afd7c6dd87ddd2ecc583d4
+UX overlay SHA256: d27f6adf8b3c3de4486cec679c7e80119adcab63159dde7c53ca4e9b62f5966c
+Workflow SHA256: ee35f3449c94094a3af2aae6e777657eabb3a9f549d277f4f452ac8bfa280c03
 App: com.rynmrde.konkor · versionCode 162 · versionName 6.1.1
 
-Overlay changes UI/experience/build compatibility only; the Frozen V6.1 source gzip bank is not modified.
-AndroidX, Android 12 splash, Kotlin/Compose, API-26 lint, AnimatedContent, absolute project isolation and androidTest API fixes remain applied.
-Runtime bank packaging fix: Android AAPT expands source .gz assets and exposes this bank as assets/radiology1405_bank_v6_1.db. BankStore reads the packaged expanded asset, retains a verified .db.gz fallback, validates fallback gzip bytes against the official gzip SHA, and validates expanded bytes against the official DB SHA before installation.
-BankStore close no longer initializes the lazy database merely to close it.
-CI verifies source .db.gz SHA pre-build, expanded DB SHA inside debug APK before instrumentation, Android 35 instrumented migration/settings/audio tests, stable signing, signed APK package/permissions/signature, expanded DB SHA inside signed APK, and signed-release install/launch on Android 35.
+Frozen V6.1 source gzip bank remains byte-identical.
+AAPT runtime-bank fix remains: BankStore reads packaged assets/radiology1405_bank_v6_1.db, validates the official expanded DB SHA, and retains a gzip-SHA-verified fallback.
+First-launch performance fix: day-plan bank access now runs on Dispatchers.IO and the duplicate eager refreshAll launch was removed, so initial bank installation/open no longer blocks the Compose main thread.
+Android UI smoke waits are resilient to unaccelerated CI while still failing if required settings/theme/text/audio UI never appears.
+CI verifies source gzip, expanded DB inside debug APK, four Android 35 instrumentation tests, stable release signing, signed APK package/signature/permissions/bank SHA, and signed APK install/launch.
 V5 is not a build baseline or parity gate; isolated legacy progress import remains only for user progress migration.
