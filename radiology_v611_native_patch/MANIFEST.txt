@@ -2,8 +2,9 @@ Radiology1405 V6.1.1 UX native overlay
 
 Base V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
 Frozen V6.1 bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
-UX overlay SHA256: d7120f26f868526c579f457e9d852ab4c49d524cfae7180248770512e4d8f401
-Workflow SHA256: e1d099b1bec0e5f9f1291cad82521931655b3a950ca58019a09121ad0f6453f8
+UX overlay SHA256: 4909e8888fc5c62fd0beaa94c4d5b2f0c31db50e2efddcc4d736eafef5079075
+Workflow SHA256: 4896f94e2802ea4977b316f7c7eac4d75f5e5b45be78667eb10e7db6d49ed4e7
 App: com.rynmrde.konkor · versionCode 162 · versionName 6.1.1
 
 Overlay changes UI/experience/build compatibility only; the frozen V6.1 bank is not stored in or modified by this overlay. AndroidX is enabled via root gradle.properties. V5 is not used as a build baseline or parity gate; legacy progress migration support remains isolated.
+Android 12 splash fix: removed invalid platform attribute android:postSplashScreenTheme; system windowSplashScreen attributes remain.
