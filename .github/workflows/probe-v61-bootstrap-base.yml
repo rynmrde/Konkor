@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Download existing GitHub build input
+      - name: Download existing GitHub build input and hash semantics
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -26,9 +26,29 @@ jobs:
           test -s "$BANK"
           echo "V5_GZ_SHA=$(sha256sum "$BANK" | awk '{print $1}')"
           python3 - "$BANK" <<'PY'
-          import gzip,hashlib,sys,tempfile,pathlib
+          import gzip,hashlib,sqlite3,sys,tempfile,os,pathlib
           src=sys.argv[1]
-          with gzip.open(src,'rb') as f: data=f.read()
-          print('V5_DB_SIZE='+str(len(data)))
-          print('V5_DB_SHA='+hashlib.sha256(data).hexdigest())
+          fd,tmp=tempfile.mkstemp(suffix='.db'); os.close(fd)
+          try:
+              with gzip.open(src,'rb') as f, open(tmp,'wb') as o: o.write(f.read())
+              data=pathlib.Path(tmp).read_bytes()
+              print('V5_DB_SIZE='+str(len(data)))
+              print('V5_DB_SHA='+hashlib.sha256(data).hexdigest())
+              con=sqlite3.connect(tmp)
+              qrows=con.execute('select id,full_json from question order by id').fetchall()
+              h=hashlib.sha256()
+              for qid,raw in qrows:
+                  h.update(qid.encode()); h.update(b'\0'); h.update(raw.encode()); h.update(b'\n')
+              print('Q_FULLJSON_HASH='+h.hexdigest())
+              print('Q_COUNT='+str(len(qrows)))
+              roots=con.execute('select key,json from bank_root order by key').fetchall()
+              h2=hashlib.sha256()
+              for k,raw in roots:
+                  h2.update(k.encode()); h2.update(b'\0'); h2.update(raw.encode()); h2.update(b'\n')
+              print('ROOT_HASH='+h2.hexdigest())
+              print('ROOT_COUNT='+str(len(roots)))
+              con.close()
+          finally:
+              try: os.unlink(tmp)
+              except FileNotFoundError: pass
           PY
