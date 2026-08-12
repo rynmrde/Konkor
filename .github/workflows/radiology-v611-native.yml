@@ -51,7 +51,7 @@ jobs:
           gdown "$V61_PROJECT_FILE_ID" -O _src/v61-project.zip
           echo "$V61_PROJECT_SHA256  _src/v61-project.zip" | sha256sum -c -
           unzip -q _src/v61-project.zip -d _src/unpacked
-          PROJECT="$(find _src/unpacked -type f -name settings.gradle.kts -printf '%h\n' | head -n1)"
+          PROJECT="$(find "$GITHUB_WORKSPACE/_src/unpacked" -type f -name settings.gradle.kts -printf '%h\n' | head -n1)"
           test -n "$PROJECT"
           test -f "$PROJECT/app/src/main/assets/radiology1405_bank_v6_1.db.gz"
           echo "PROJECT=$PROJECT" >> "$GITHUB_ENV"
