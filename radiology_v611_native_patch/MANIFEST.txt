@@ -3,13 +3,13 @@ Radiology1405 V6.1.1 UX native overlay
 Base V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
 Frozen V6.1 source gzip bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
 Frozen V6.1 expanded DB SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
-UX overlay SHA256: f011e78b17ebb91eb1df7c35dcb987e6d3742b6222e12e92506d8d1aff6e11da
-Workflow SHA256: 0c5f734c5cd7c9bc8c0e92f02a1c075420d64e50bab20ed2a29cfe306f390e86
+UX overlay SHA256: 16144afe106b82f71d078ad0728ca1fe30845231479e2f5262349d155a04617d
+Workflow SHA256: ffb004b577e86513f87b49b59194f1e4469f7e4298afd7c6dd87ddd2ecc583d4
 App: com.rynmrde.konkor · versionCode 162 · versionName 6.1.1
 
 Overlay changes UI/experience/build compatibility only; the Frozen V6.1 source gzip bank is not modified.
 AndroidX, Android 12 splash, Kotlin/Compose, API-26 lint, AnimatedContent, absolute project isolation and androidTest API fixes remain applied.
-Runtime bank packaging fix: Android AAPT expands source .gz assets and exposes this bank as assets/radiology1405_bank_v6_1.db. BankStore now reads that packaged expanded asset, retains a defensive .db.gz fallback, and validates expanded bytes against the official DB SHA before installation.
+Runtime bank packaging fix: Android AAPT expands source .gz assets and exposes this bank as assets/radiology1405_bank_v6_1.db. BankStore reads the packaged expanded asset, retains a verified .db.gz fallback, validates fallback gzip bytes against the official gzip SHA, and validates expanded bytes against the official DB SHA before installation.
 BankStore close no longer initializes the lazy database merely to close it.
-CI now verifies the source .db.gz SHA pre-build, the expanded DB SHA inside the debug APK before instrumentation, the Android 35 instrumented migration/settings/audio suite, the signed release APK signature/package/permissions, the expanded DB SHA inside the signed APK, and signed-release install/launch on Android 35.
+CI verifies source .db.gz SHA pre-build, expanded DB SHA inside debug APK before instrumentation, Android 35 instrumented migration/settings/audio tests, stable signing, signed APK package/permissions/signature, expanded DB SHA inside signed APK, and signed-release install/launch on Android 35.
 V5 is not a build baseline or parity gate; isolated legacy progress import remains only for user progress migration.
