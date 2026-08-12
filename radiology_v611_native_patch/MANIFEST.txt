@@ -2,11 +2,12 @@ Radiology1405 V6.1.1 UX native overlay
 
 Base V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
 Frozen V6.1 bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
-UX overlay SHA256: e80cdd224388f5fe585710fbfe1be18e01cc620eb00c23ae058abe9da144a508
-Workflow SHA256: b9476a33737b5d93056a6f7869fe6f9f365a6d08e0bae58d6a439ae3b613707e
+UX overlay SHA256: 76d98b78c9ad74b29a00cccd9d29c956156bbdddd7657c9ae0e8db7055bea684
+Workflow SHA256: 56edccb1b8e48d5dccc7ed569a2cd1e1a3c9c0842a38babe9f4a304209f22d50
 App: com.rynmrde.konkor · versionCode 162 · versionName 6.1.1
 
 Overlay changes UI/experience/build compatibility only; the frozen V6.1 bank is not stored in or modified by this overlay. AndroidX is enabled via root gradle.properties. V5 is not used as a build baseline or parity gate; legacy progress migration support remains isolated.
 Android 12 splash fix: removed invalid platform attribute android:postSplashScreenTheme; system windowSplashScreen attributes remain.
 Kotlin compile fixes: coroutine-safe study navigation, removed obsolete weight import, corrected @Composable function-type signature.
 Lint/API compatibility: removed API-27-only android:windowLightNavigationBar from the unqualified API-26 base style; platform default remains dark-icon-disabled, while v31 keeps the explicit value.
+Compose lint fix: AnimatedContent content now renders from its target-state parameter instead of ignoring the animation lookup state.
