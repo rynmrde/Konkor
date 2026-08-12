@@ -19,7 +19,8 @@ jobs:
       V61_PROJECT_FILE_ID: 14RbsAhiS1Cj3Y_JgPfR0pf1rmeXgxJUc
       V61_PROJECT_SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
       V61_BANK_SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
-      V611_OVERLAY_SHA256: 9b5bb1a8aba2ae3869fe25973355639dee31e1256434dedfc28ea17d50bf10f6
+      V61_DB_SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
+      V611_OVERLAY_SHA256: f011e78b17ebb91eb1df7c35dcb987e6d3742b6222e12e92506d8d1aff6e11da
 
     steps:
       - uses: actions/checkout@v4
@@ -91,6 +92,18 @@ jobs:
           cd "$PROJECT"
           gradle --no-daemon :app:testDebugUnitTest :app:lintDebug :app:assembleDebug --stacktrace
 
+      - name: Inspect debug APK bank packaging
+        run: |
+          set -euo pipefail
+          mkdir -p _out/_debug_inspect
+          DEBUG_APK="$PROJECT/app/build/outputs/apk/debug/app-debug.apk"
+          test -s "$DEBUG_APK"
+          unzip -l "$DEBUG_APK" > _out/_debug_inspect/contents.txt
+          unzip -p "$DEBUG_APK" assets/radiology1405_bank_v6_1.db > _out/_debug_inspect/apk-bank.db
+          test -s _out/_debug_inspect/apk-bank.db
+          echo "$V61_DB_SHA256  _out/_debug_inspect/apk-bank.db" | sha256sum -c -
+          ! grep -q 'assets/radiology1405_bank_v6_1.db.gz' _out/_debug_inspect/contents.txt
+
       - name: Instrumented migration, settings and real audio tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -141,8 +154,9 @@ jobs:
           aapt dump badging "$APK" | tee _out/_inspect/badging.txt
           grep -q "package: name='com.rynmrde.konkor' versionCode='162' versionName='6.1.1'" _out/_inspect/badging.txt
           ! aapt dump permissions "$APK" | grep -q android.permission.INTERNET
-          unzip -p "$APK" assets/radiology1405_bank_v6_1.db.gz > _out/_inspect/apk-bank.gz
-          echo "$V61_BANK_SHA256  _out/_inspect/apk-bank.gz" | sha256sum -c -
+          unzip -p "$APK" assets/radiology1405_bank_v6_1.db > _out/_inspect/apk-bank.db
+          test -s _out/_inspect/apk-bank.db
+          echo "$V61_DB_SHA256  _out/_inspect/apk-bank.db" | sha256sum -c -
           unzip -l "$APK" > _out/_inspect/contents.txt
           for n in ambient rain brown pulse; do grep -q "res/raw/focus_${n}.ogg" _out/_inspect/contents.txt; done
           cp "$APK" _out/Radiology1405-V6.1.1.apk
@@ -158,9 +172,10 @@ jobs:
           script: |
             set -euo pipefail
             adb uninstall com.rynmrde.konkor >/dev/null 2>&1 || true
-            adb install _out/Radiology1405-V6.1.1.apk
+            adb install "$GITHUB_WORKSPACE/_out/Radiology1405-V6.1.1.apk"
+            adb logcat -c
             adb shell monkey -p com.rynmrde.konkor -c android.intent.category.LAUNCHER 1
-            sleep 4
+            sleep 15
             adb shell pidof com.rynmrde.konkor
             adb shell dumpsys package com.rynmrde.konkor | grep -q 'versionName=6.1.1'
 
@@ -192,7 +207,7 @@ jobs:
         run: |
           set -euo pipefail
           TAG='radiology1405-apk-v6.1.1-20260812'
-          NOTES='Frozen V6.1 bank remains byte-identical. UX repair release: real native offline focus audio with preview/playback checks, 10 easy theme cards, live 90–140% text scaling with inherited scientific typography, reader fonts, haptic strength, study keep-awake, easier settings controls. CI gates include bank/UX static checks, JVM+lint, Android 35 instrumented migration/settings/audio tests, stable signing, APK inspection, bank SHA inside APK, and signed-release install/launch.'
+          NOTES='Frozen V6.1 source gzip remains byte-identical and is SHA-gated before build; AAPT-expanded bank bytes inside both debug and signed APKs are verified against the official DB SHA. Runtime BankStore handles Android AAPT gzip asset naming.  UX repair release: real native offline focus audio with preview/playback checks, 10 easy theme cards, live 90–140% text scaling with inherited scientific typography, reader fonts, haptic strength, study keep-awake, easier settings controls. CI gates include bank/UX static checks, JVM+lint, Android 35 instrumented migration/settings/audio tests, stable signing, APK inspection, bank SHA inside APK, and signed-release install/launch.'
           gh release view "$TAG" --repo "${{ github.repository }}" >/dev/null 2>&1 || \
             gh release create "$TAG" --repo "${{ github.repository }}" --target "$GITHUB_SHA" \
               --title 'Radiology1405 APK · V6.1.1 UX Final' --notes "$NOTES"
