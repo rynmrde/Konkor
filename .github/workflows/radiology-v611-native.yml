@@ -99,8 +99,7 @@ jobs:
           profile: pixel_6
           disable-animations: true
           script: |
-            cd "$PROJECT"
-            gradle --no-daemon :app:connectedDebugAndroidTest --stacktrace
+            gradle -p "$PROJECT" --no-daemon :app:connectedDebugAndroidTest --stacktrace
 
       - name: Prepare stable release signing key
         env:

@@ -3,7 +3,7 @@ Radiology1405 V6.1.1 UX native overlay
 Base V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
 Frozen V6.1 bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
 UX overlay SHA256: 76d98b78c9ad74b29a00cccd9d29c956156bbdddd7657c9ae0e8db7055bea684
-Workflow SHA256: 7cd11d1d1fbe653b85eb63382bc662c93efc6ddf090de74a7ed3f67e70690495
+Workflow SHA256: 7017ba7c99b97ddf6003687e86e195e75836a0f0109aab5e9ee49a690cdb61c3
 App: com.rynmrde.konkor · versionCode 162 · versionName 6.1.1
 
 Overlay changes UI/experience/build compatibility only; the frozen V6.1 bank is not stored in or modified by this overlay. AndroidX is enabled via root gradle.properties. V5 is not used as a build baseline or parity gate; legacy progress migration support remains isolated.
@@ -12,3 +12,4 @@ Kotlin compile fixes: coroutine-safe study navigation, removed obsolete weight i
 Lint/API compatibility: removed API-27-only android:windowLightNavigationBar from the unqualified API-26 base style; platform default remains dark-icon-disabled, while v31 keeps the explicit value.
 Compose lint fix: AnimatedContent content now renders from its target-state parameter instead of ignoring the animation lookup state.
 CI isolation fix: PROJECT is resolved as an absolute path under GITHUB_WORKSPACE before emulator-runner; device tests cannot fall back to any repository-root Android project.
+Emulator invocation fix: connectedDebugAndroidTest uses Gradle -p with the absolute Frozen V6.1 project path because android-emulator-runner executes script lines in separate shells.
