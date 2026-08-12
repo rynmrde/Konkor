@@ -19,7 +19,7 @@ jobs:
       V61_PROJECT_FILE_ID: 14RbsAhiS1Cj3Y_JgPfR0pf1rmeXgxJUc
       V61_PROJECT_SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
       V61_BANK_SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
-      V611_OVERLAY_SHA256: 38a2fe091cf83adb4e1941a7231ba5df0242d6217708719c04253cc39360f51f
+      V611_OVERLAY_SHA256: d7120f26f868526c579f457e9d852ab4c49d524cfae7180248770512e4d8f401
 
     steps:
       - uses: actions/checkout@v4
@@ -57,7 +57,7 @@ jobs:
           echo "PROJECT=$PROJECT" >> "$GITHUB_ENV"
           echo "V61_PROJECT_ZIP_SHA_PASS=$V61_PROJECT_SHA256"
 
-      - name: Verify and apply V6.1.1 UX/parity overlay
+      - name: Verify and apply V6.1.1 overlay
         run: |
           set -euo pipefail
           echo "$V611_OVERLAY_SHA256  radiology_v611_native_patch/overlay.tar.xz" | sha256sum -c -
@@ -75,7 +75,7 @@ jobs:
             ffprobe -v error -select_streams a:0 -show_entries stream=codec_name,sample_rate,channels -show_entries format=duration -of default=nw=1 "$f"
           done
 
-      - name: Frozen bank, parity and UX static gates
+      - name: Frozen bank and UX static gates
         run: |
           set -euo pipefail
           cd "$PROJECT"
@@ -193,7 +193,7 @@ jobs:
         run: |
           set -euo pipefail
           TAG='radiology1405-apk-v6.1.1-20260812'
-          NOTES='Frozen V6.1 bank remains byte-identical. UX repair release: real native offline focus audio with preview/playback checks, 10 easy theme cards, live 90–140% text scaling with inherited scientific typography, reader fonts, haptic strength, study keep-awake, easier settings controls. CI gates include bank/parity/UX static checks, JVM+lint, Android 35 instrumented migration/settings/audio tests, stable signing, APK inspection, bank SHA inside APK, and signed-release install/launch.'
+          NOTES='Frozen V6.1 bank remains byte-identical. UX repair release: real native offline focus audio with preview/playback checks, 10 easy theme cards, live 90–140% text scaling with inherited scientific typography, reader fonts, haptic strength, study keep-awake, easier settings controls. CI gates include bank/UX static checks, JVM+lint, Android 35 instrumented migration/settings/audio tests, stable signing, APK inspection, bank SHA inside APK, and signed-release install/launch.'
           gh release view "$TAG" --repo "${{ github.repository }}" >/dev/null 2>&1 || \
             gh release create "$TAG" --repo "${{ github.repository }}" --target "$GITHUB_SHA" \
               --title 'Radiology1405 APK · V6.1.1 UX Final' --notes "$NOTES"
