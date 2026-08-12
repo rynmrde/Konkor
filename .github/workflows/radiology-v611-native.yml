@@ -1,36 +1,32 @@
-name: V5 Bank Format Probe
+name: V6.1 Source PDF Probe
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 permissions:
   contents: read
-
 jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Inspect GitHub-hosted V5 bank format
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Verify public source PDFs needed by V6.1 crop regeneration
         run: |
           set -euo pipefail
           mkdir -p _probe
-          gh release download radiology1405-apk-v1.2.0-20260812 -p radiology1405_android_project_v1.2.0.zip -D _probe
-          unzip -q _probe/radiology1405_android_project_v1.2.0.zip -d _probe/v12
-          V5BIN="$(find _probe/v12 -type f -name '*bank_v5.bin' -print -quit)"
-          test -n "$V5BIN"
-          echo "V5BIN=$V5BIN"
-          ls -l "$V5BIN"
-          sha256sum "$V5BIN"
-          file "$V5BIN"
-          xxd -l 96 "$V5BIN"
-          echo '--- BankDb.kt ---'
-          cat "$(find _probe/v12 -type f -name BankDb.kt -print -quit)"
-          echo '--- verify_bank.py ---'
-          cat "$(find _probe/v12 -type f -path '*/tests/verify_bank.py' -print -quit)"
-          echo '--- MainActivity bank references ---'
-          grep -RniE 'bank_v5|BankDb|Inflater|GZIP|Deflater|decode|rawResource|SQLite' _probe/v12/app/src/main/java || true
+          python - <<'PY'
+          import urllib.request,hashlib,pathlib
+          files={
+            '1RLMr0QK1qYDfLduSzIwV2U_3UbYUH8Gm':'6b080cda86b850cc61f040475fc4c03e7d62d11519f7f02ce1bf8cc1bc59edf8',
+            '1rJU59jwXiEivi8N9hUdBlXfb3_7GyA7X':'ce7fc7fb03eba06a56f9abce0ffce9a0e88166ba1cd66f9e3d711b367c0a6b85',
+          }
+          for fid,expected in files.items():
+              url=f'https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t'
+              out=pathlib.Path('_probe')/f'{fid}.pdf'
+              urllib.request.urlretrieve(url,out)
+              b=out.read_bytes(); h=hashlib.sha256(b).hexdigest()
+              print(fid,len(b),h,b[:8])
+              assert h==expected,(fid,h,expected,len(b),b[:80])
+          print('SOURCE_PDF_SHA_PASS')
+          PY
