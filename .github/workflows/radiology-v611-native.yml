@@ -174,7 +174,7 @@ jobs:
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none -camera-front none
           script: |
-            set -euo pipefail
+            set -eu
             gradle -p "$PROJECT" --no-daemon :app:connectedDebugAndroidTest --stacktrace
             adb uninstall com.rynmrde.konkor >/dev/null 2>&1 || true
             adb install "$GITHUB_WORKSPACE/_out/Radiology1405-V6.1.1.apk"

@@ -4,7 +4,7 @@ Base V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5
 Frozen V6.1 source gzip bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
 Frozen V6.1 expanded DB SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
 UX overlay SHA256: 9db090582094a750d6a80afb401e180d1bf4f175fcb9f33df57b9b9541dd7412
-Workflow SHA256: fd35ffffa658020faf8c4573410b08489dbe57d01d6042af38d7c836d474d661
+Workflow SHA256: f51288154d8fddb6b79062fa72183c458d9c844ebd7c09513f2128082ec596c6
 App: com.rynmrde.konkor · versionCode 162 · versionName 6.1.1
 
 Frozen V6.1 source gzip bank remains byte-identical.
@@ -13,3 +13,5 @@ First-launch performance fix: day-plan bank access now runs on Dispatchers.IO an
 Android UI smoke now scrolls the tagged Settings LazyColumn to off-screen text-size and audio controls before asserting them, while retaining bounded waits for slow CI.
 CI verifies source gzip, expanded DB inside debug APK, stable release signing, and signed APK package/signature/permissions/bank SHA plus the compiled raw-audio resource table with build-tools 35 pinned by absolute path; four Android 35 instrumentation tests plus signed APK install/launch run in one emulator session.
 V5 is not a build baseline or parity gate; isolated legacy progress import remains only for user progress migration.
+
+CI shell compatibility: android-emulator-runner script uses POSIX `set -eu` because the action invokes /bin/sh; no device assertion is removed.
