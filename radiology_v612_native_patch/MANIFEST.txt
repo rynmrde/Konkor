@@ -1,0 +1,12 @@
+Radiology1405 V6.1.2 parity hardening overlay
+
+Base V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
+Frozen V6.1 source gzip bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
+Frozen V6.1 expanded DB SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
+V6.1.2 overlay SHA256: dd781155ef67409b13d932c93ecdc910be56ce943ae10d80316ee1573802e588
+Workflow SHA256: d43527f1969588e963360c11673f7a63865ae9e6446ac3f57a2f4189798ff20e
+App: com.rynmrde.konkor · versionCode 163 · versionName 6.1.2
+
+Restored and real: cumulative daily break reminders, distinct Balanced/Safety/Deep Focus/Hard Exam selection policies, distinct non-flashing Motion modes, comfortable/compact study density, completion SFX/haptic, and restrained major-action icons.
+Intentionally removed/kept absent: Glass decoration, Reduce Glow toggle without a real glow layer, redundant feedback pulse, and decorative illustrations; these add distraction or fake controls without study value.
+SIM1/SIM2/FINAL selection and the frozen bank remain outside Study Mode customization.
