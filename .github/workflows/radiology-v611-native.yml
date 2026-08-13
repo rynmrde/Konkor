@@ -150,7 +150,8 @@ jobs:
           test -s _out/_inspect/apk-bank.db
           echo "$V61_DB_SHA256  _out/_inspect/apk-bank.db" | sha256sum -c -
           unzip -l "$APK" > _out/_inspect/contents.txt
-          for n in ambient rain brown pulse; do grep -q "res/raw/focus_${n}.ogg" _out/_inspect/contents.txt; done
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump resources "$APK" > _out/_inspect/resources.txt
+          for n in ambient rain brown pulse; do grep -q ":raw/focus_${n}" _out/_inspect/resources.txt; done
           cp "$APK" _out/Radiology1405-V6.1.1.apk
           sha256sum _out/Radiology1405-V6.1.1.apk > _out/Radiology1405-V6.1.1.apk.sha256
 
