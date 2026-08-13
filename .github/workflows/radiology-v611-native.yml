@@ -181,10 +181,9 @@ jobs:
             adb logcat -c
             adb shell monkey -p com.rynmrde.konkor -c android.intent.category.LAUNCHER 1
             sleep 15
-            PID="$(adb shell pidof com.rynmrde.konkor | tr -d '\r')"
-            test -n "$PID"
+            adb shell pidof com.rynmrde.konkor | grep -Eq '[0-9]+'
             adb shell dumpsys package com.rynmrde.konkor | grep -q 'versionName=6.1.1'
-            ! adb logcat -d --pid="$PID" | grep -q 'FATAL EXCEPTION'
+            ! adb logcat -d -s AndroidRuntime:E | grep -q 'Process: com.rynmrde.konkor'
 
       - name: Package audited V6.1.1 project source
         run: |
