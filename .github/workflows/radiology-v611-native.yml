@@ -41,6 +41,8 @@ jobs:
           set -euo pipefail
           yes | sdkmanager --licenses >/dev/null 2>&1 || true
           sdkmanager 'platforms;android-36' 'build-tools;35.0.0' 'platform-tools'
+          test -x "$ANDROID_HOME/build-tools/35.0.0/apksigner"
+          test -x "$ANDROID_HOME/build-tools/35.0.0/aapt"
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg
           python -m pip install --quiet gdown
@@ -140,10 +142,10 @@ jobs:
           mkdir -p _out/_inspect
           APK="$PROJECT/app/build/outputs/apk/release/app-release.apk"
           test -s "$APK"
-          apksigner verify --verbose --print-certs "$APK" | tee _out/_inspect/signature.txt
-          aapt dump badging "$APK" | tee _out/_inspect/badging.txt
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs "$APK" | tee _out/_inspect/signature.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | tee _out/_inspect/badging.txt
           grep -q "package: name='com.rynmrde.konkor' versionCode='162' versionName='6.1.1'" _out/_inspect/badging.txt
-          ! aapt dump permissions "$APK" | grep -q android.permission.INTERNET
+          ! "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions "$APK" | grep -q android.permission.INTERNET
           unzip -p "$APK" assets/radiology1405_bank_v6_1.db > _out/_inspect/apk-bank.db
           test -s _out/_inspect/apk-bank.db
           echo "$V61_DB_SHA256  _out/_inspect/apk-bank.db" | sha256sum -c -
