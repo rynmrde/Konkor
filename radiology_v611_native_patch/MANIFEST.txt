@@ -3,13 +3,13 @@ Radiology1405 V6.1.1 UX native overlay
 Base V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
 Frozen V6.1 source gzip bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
 Frozen V6.1 expanded DB SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
-UX overlay SHA256: d27f6adf8b3c3de4486cec679c7e80119adcab63159dde7c53ca4e9b62f5966c
-Workflow SHA256: ee35f3449c94094a3af2aae6e777657eabb3a9f549d277f4f452ac8bfa280c03
+UX overlay SHA256: 9db090582094a750d6a80afb401e180d1bf4f175fcb9f33df57b9b9541dd7412
+Workflow SHA256: d44c4f505cabcc12209d21f95d0d8c7cdac38c6cc562ba51fde22c4cbdb69528
 App: com.rynmrde.konkor · versionCode 162 · versionName 6.1.1
 
 Frozen V6.1 source gzip bank remains byte-identical.
 AAPT runtime-bank fix remains: BankStore reads packaged assets/radiology1405_bank_v6_1.db, validates the official expanded DB SHA, and retains a gzip-SHA-verified fallback.
 First-launch performance fix: day-plan bank access now runs on Dispatchers.IO and the duplicate eager refreshAll launch was removed, so initial bank installation/open no longer blocks the Compose main thread.
-Android UI smoke waits are resilient to unaccelerated CI while still failing if required settings/theme/text/audio UI never appears.
-CI verifies source gzip, expanded DB inside debug APK, four Android 35 instrumentation tests, stable release signing, signed APK package/signature/permissions/bank SHA, and signed APK install/launch.
+Android UI smoke now scrolls the tagged Settings LazyColumn to off-screen text-size and audio controls before asserting them, while retaining bounded waits for slow CI.
+CI verifies source gzip, expanded DB inside debug APK, four Android 35 instrumentation tests, stable release signing, signed APK package/signature/permissions/bank SHA, and signed APK install/launch in one Android 35 emulator session.
 V5 is not a build baseline or parity gate; isolated legacy progress import remains only for user progress migration.
