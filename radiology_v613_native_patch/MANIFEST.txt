@@ -1,0 +1,12 @@
+Radiology1405 V6.1.3 day-selector overlay
+
+Base V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
+Frozen V6.1 source gzip bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
+Frozen V6.1 expanded DB SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
+V6.1.3 overlay SHA256: 07c0f402bc6aeda5372be1918f43c76271027c7e800ef4e79d336355171fb7c4
+Workflow SHA256: 14b05c214322aa27bca506082371c58b6095ae4a66a95d8d30b8d76de0e24b32
+App: com.rynmrde.konkor · versionCode 164 · versionName 6.1.3
+
+Restored day selection: 8 interactive day chips on Home/Plan, exact selected DayPlan start, selected-day progress count, Today reset, and active-session isolation.
+Safety: future SIM1/SIM2/FINAL remain locked until their scheduled date so holdout questions cannot leak early. Training days remain manually selectable.
+All V6.1.2 parity hardening remains; Glass/Reduce Glow/redundant pulse/decorative illustrations stay intentionally absent.
