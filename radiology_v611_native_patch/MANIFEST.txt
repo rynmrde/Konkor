@@ -4,7 +4,7 @@ Base V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5
 Frozen V6.1 source gzip bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
 Frozen V6.1 expanded DB SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
 UX overlay SHA256: 9db090582094a750d6a80afb401e180d1bf4f175fcb9f33df57b9b9541dd7412
-Workflow SHA256: febec70814b700762b0de8fd1a5cb8309cb7c08160b34a6b15fffb969beb8432
+Workflow SHA256: 3d38acf7f41c700eb9d2838da5604f9c08b03eeaebe4127f31ee575f018b209d
 App: com.rynmrde.konkor · versionCode 162 · versionName 6.1.1
 
 Frozen V6.1 source gzip bank remains byte-identical.
@@ -17,3 +17,5 @@ V5 is not a build baseline or parity gate; isolated legacy progress import remai
 CI shell compatibility: android-emulator-runner script uses POSIX `set -eu` because the action invokes /bin/sh; no device assertion is removed.
 
 Release smoke assertions are line-local for android-emulator-runner: direct pidof, versionName, and AndroidRuntime crash-log checks; no cross-line shell variables.
+
+Delivery: GitHub Actions artifact upload removed because repository Actions artifact quota is exhausted; audited APK/source files publish directly through GitHub Release assets. App/test gates are unchanged.
