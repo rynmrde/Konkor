@@ -215,17 +215,6 @@ jobs:
             echo "- NOT_RUN — local emulator (CI emulator is the authoritative run)"
           } > _out/TEST-SUMMARY.md
 
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Radiology1405-V6.1.4-release
-          path: |
-            _out/Radiology1405-V6.1.4.apk
-            _out/Radiology1405-V6.1.4.apk.sha256
-            _out/radiology1405_android_project_v6.1.4.zip
-            _out/radiology1405_android_project_v6.1.4.zip.sha256
-            _out/BANK-SHA256.txt
-            _out/CHANGELOG.md
-            _out/TEST-SUMMARY.md
 
       - name: Publish V6.1.4 Three-Day Rescue release
         env:
