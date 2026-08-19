@@ -1,0 +1,3 @@
+Base: Foreman V6.1.5 composition, source-level only.
+Retains A3 persistence/Map/duplicate safeguards and no-reserve Final-Hours scheduler.
+Never wholesale replace final UI overlay collision files.
