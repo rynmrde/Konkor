@@ -1,0 +1,24 @@
+Radiology1405 A2 Mathematics and duplicate/session QA overlay — integration candidate only
+
+Role: KONKOR-A2-M2-MATH-DUP (Normal/Standard) · account label A2
+GitHub baseline commit: 72dc76e56b7ae625ad1904c76910eeaec5f90f58
+Base app line: V6.1.4 Three-Day Rescue; this is a non-release overlay intended to be applied after radiology_v614_rescue_patch/overlay.tar.xz.
+
+Frozen bank: unchanged
+- gzip SHA-256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
+- expanded SQLite SHA-256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
+- no IDs, options, answers, source metadata, holdouts, or bank rows were edited.
+
+Scoped changes:
+1. Add evidence-family fingerprints that mask superficial numeric changes and reusable prompt shells for normal TRAIN selection only.
+2. Prevent duplicate IDs, historical exact repeats, and same-evidence-family variants in a normal TRAIN block. If fresh safe evidence is exhausted, create a shorter adaptive block rather than repeat.
+3. Retain intentional spaced retrieval as a distinct alternate question; preserve SIM1/SIM2 holdout selection and 117-question size.
+4. Prevent a correct re-exposure of the same question ID from increasing mastery, while retaining memory/spacing tracking and negative diagnostic evidence.
+5. Add JVM regression coverage and a 2,000-seed deterministic mass session-selection verifier.
+
+Required integration steps:
+- Apply V6.1.4 rescue overlay first, then this overlay.
+- Bump app-only version if the Foreman integrates it, run all required build/instrumentation/signed-APK gates, and add the verifier to the final workflow without modifying or publishing historical releases.
+- Review short-block behavior against the Final-Hours adaptive-volume policy; it must not be treated as a fixed quota failure.
+
+Overlay SHA-256: 6bcf6f86f692aba2bf7dc5756c4320a4cb5ced91331a150b447d5fd81289ac89
