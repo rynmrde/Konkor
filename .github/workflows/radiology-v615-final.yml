@@ -100,6 +100,11 @@ jobs:
           assert old_schema in s, 'legacy Room schema assertion not found'
           p.write_text(s.replace(old_schema, new_schema, 1))
           print('PASS V6.1.5 explicit non-destructive Room v3->v4 compatibility assertion update')
+          old_hook = "'QuestionNavigator'"
+          new_hook = "'QuestionMap('"
+          assert old_hook in s, 'legacy QuestionNavigator hook assertion not found'
+          p.write_text(s.replace(old_hook, new_hook, 1))
+          print('PASS V6.1.5 legacy navigation hook aligned to persistent QuestionMap')
           PY
 
       - name: Frozen bank, Final-Hours and compatibility gates
