@@ -1,0 +1,3 @@
+Base: Foreman V6.1.5 composition supplied 2026-08-19.
+Restores existing non-persistent rescue-unlock UI contract only; deletes obsolete V6.1.4 DaySelectionPolicyTest fixture.
+No Room schema, migration, stable ID, bank, active-session, backup, mastery, or progress data change.
