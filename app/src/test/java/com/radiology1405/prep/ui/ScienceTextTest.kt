@@ -20,4 +20,17 @@ class ScienceTextTest {
         assertTrue(rendered.contains("خطای محاسبه"))
         assertTrue(rendered.contains("مدیریت زمان"))
     }
+
+    @Test
+    fun learnerFacingScientificText_removesStockFillerButKeepsScientificReason() {
+        val rendered = learnerFacingScientificText(
+            "منشأ دام این گزینه wrong_condition است. این گزاره دام مفهومی دارد؛ کدون روی mRNA قرار دارد. روش کنترل: جایگاه کدون و پادکدون را مقایسه کن."
+        )
+
+        assertFalse(rendered.contains("منشأ دام"))
+        assertFalse(rendered.contains("دام مفهومی"))
+        assertFalse(rendered.contains("روش کنترل:"))
+        assertTrue(rendered.contains("کدون روی mRNA قرار دارد"))
+        assertTrue(rendered.contains("جایگاه کدون و پادکدون را مقایسه کن"))
+    }
 }
