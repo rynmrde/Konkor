@@ -1,0 +1,16 @@
+Question Map session-persistence helper delta
+Worker branch: parallel/help-a3-question-map-persistence
+Base main: 72dc76e56b7ae625ad1904c76910eeaec5f90f58
+Required predecessor: radiology_v615_final_hours_patch/overlay.tar.xz
+Required predecessor SHA256: e2b9f7752823a94c63295b1ce1baea328275520d16880dc4123d4042dcf4f156
+Related presentation contract: parallel/a2-review-question-map ReviewQuestionMap.kt
+Delta archive SHA256: aa52bcdb5f93e516d49119f42b137c6e4a838d5da1c52906b7b1d7cc9b7e0361
+
+This archive is a V6.1.5-on-V6.1.5 delta, not an independent app overlay.
+Extract only after the validated A3 V6.1.5 Final-Hours overlay. It replaces the
+V6.1.5 StudyRepository with the same version plus questionMapSnapshot() and
+goToQuestion(questionId), adds QuestionMapSessionProjection.kt and the focused
+JVM test, and adds org.json only to the unit-test dependency classpath.
+
+No bank data, question identity, Room schema, package identity, signing, main,
+workflow, release, or historical V6.1.4 archive is changed by this helper delta.
