@@ -102,3 +102,83 @@ The Foreman must run generated-audio setup, Kotlin compilation, JVM tests, lint,
 The detector is intentionally conservative. It prevents evidence reuse at runtime but does not rewrite the frozen authored content or assert that every near-duplicate pair is scientifically identical. The safe-question supply is low for Mathematics under existing `needs_human_review` flags, so Final-Hours volume must remain adaptive. The 61 short blocks seen in the conservative Monte Carlo are correct behavior under a no-repeat rule, not a failure to meet an obsolete quota.
 
 The report is evidence for handoff, not release certification. No signed APK, Android instrumentation pass, or release asset was produced on this branch.
+
+## SECOND_PASS_REVIEW
+
+**Second-pass role:** A2 Mathematics / duplicate-session QA. **Bank evidence:** immutable V6.1 gzip SHA-256 `b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14`; no bank row, ID, key, option, source label, or progress record was modified in this pass.
+
+### Canonical paired-statement disposition
+
+The 21 previously blocked records are **not quarantined and not rewritten**. The checksum-verified frozen record for every ID contains a non-empty canonical `stimulus.left` and `stimulus.right`; the visible-stem defect is therefore an integration/UI rendering concern, not a bank-identity or selection defect. Stable question IDs remain unchanged, so historical `attempt.questionId`, mastery, due-credit, active-session, backup, and review references require **no mapping or Room migration**. The Review/UI owner must render these canonical structured fields in both test and review surfaces.
+
+| Stable ID | Canonical left (A) | Canonical right (B) | Key | Disposition |
+|---|---|---|---:|---|
+| `v3_bio_02_12` | DNAپلیمراز رشتهٔ جدید را فقط در جهت ۵′ به ۳′ طویل می‌کند. | هر جهش الزاماً رخ‌نمود جاندار را تغییر می‌دهد. | 3 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_bio_05_12` | چرخهٔ کربس در مادهٔ زمینه‌ای راکیزه انجام می‌شود. | در خود قندکافت کربن‌دی‌اکسید آزاد می‌شود. | 3 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_bio_06_07` | اکسیژن آزادشده در فتوسنتز از شکستن آب به‌دست می‌آید. | گیاهان CAM معمولاً روزنه‌های خود را در روز باز می‌کنند. | 4 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_bio_07_15` | افزایش فشار هیدروستاتیک مویرگ خروج آب به مایع میان‌بافتی را تقویت می‌کند. | همهٔ سیاهرگ‌ها خون کم‌اکسیژن حمل می‌کنند. | 4 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_bio_08_07` | صفرا آنزیم گوارشی ندارد و با ریزکردن قطره‌های چربی سطح تماس را زیاد می‌کند. | پرزهای فراوان، ویژگی اصلی رودهٔ بزرگ برای جذب مواد غذایی‌اند. | 3 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_bio_10_11` | تراوش خون در کلافک و ورود مواد به کپسول بومن آغاز می‌شود. | آلدوسترون فقط و مستقیماً بازجذب آب را زیاد می‌کند. | 1 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_bio_11_07` | بازشدن کانال‌های ولتاژی سدیم، فاز سریع ناقطبی‌شدن را ایجاد می‌کند. | ناقل عصبی از یاختهٔ پس‌سیناپسی به فضای سیناپسی رها می‌شود. | 1 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_bio_12_07` | هورمون‌های تیروئیدی معمولاً سوخت‌وساز پایه را افزایش می‌دهند. | FSH و LH را هیپوتالاموس ترشح می‌کند. | 2 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_bio_14_10` | HCG در اوایل بارداری به حفظ جسم زرد کمک می‌کند. | لقاح معمولاً در حفرهٔ رحم انجام می‌شود. | 3 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_bio_15_15` | پس از لقاح مضاعف در نهاندانگان، تخم و یاختهٔ آغازین آندوسپرم تشکیل می‌شوند. | همهٔ عناصر رسانای آوند چوبی در بلوغ زنده‌اند. | 3 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_bio_16_10` | رانش ژنی در جمعیت‌های کوچک اثر نسبی بیشتری دارد. | صفات اکتسابی هر فرد الزاماً به نسل بعد منتقل می‌شوند. | 1 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_chem_20_03` | افزایش نیروهای بین‌مولکولی معمولاً نقطهٔ جوش را افزایش می‌دهد. | جفت‌الکترون ناپیوندی هیچ اثری بر شکل مولکول ندارد. | 4 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_chem_26_03` | ایزومرهای ساختاری فرمول مولکولی یکسان و اتصال اتمی متفاوت دارند. | فرمول عمومی آلکن زنجیری تک‌پیونددوگانه CₙH₂ₙ₊₂ است. | 3 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_chem_54_07` | خوردگی آهن یک فرایند اکسایش‌ـ‌کاهش است و حضور آب و اکسیژن آن را تسهیل می‌کند. | هر سنگ معدنی با عیار بیشتر، بدون توجه به هزینه‌ها، الزاماً اقتصادی‌تر است. | 3 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_phys_30_02` | نیروی شناوری برابر وزن شارهٔ جابه‌جا‌شده است. | در لولهٔ باریک‌تر، سرعت شارهٔ پایا کمتر است. | 3 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_phys_33_02` | در اتصال موازی، اختلاف پتانسیل دو سر شاخه‌ها یکسان است. | ولت‌سنج آرمانی مقاومت ناچیز دارد. | 3 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_phys_34_03` | جهت جریان القایی با تغییری که آن را ایجاد کرده مخالفت می‌کند. | سیم موازی میدان بیشترین نیروی مغناطیسی را می‌گیرد. | 4 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_geo_45_09` | در مرز واگرا پوستهٔ اقیانوسی جدید می‌تواند ساخته شود. | گسل امتدادلغز فقط جابه‌جایی قائم ایجاد می‌کند. | 3 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_geo_46_08` | سنگ دگرگونی بدون ذوب کامل و بر اثر دما/فشار تغییر می‌کند. | سختی موس مقدار مقاومت سنگ در برابر ضربه است. | 1 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_geo_47_07` | افزایش عیار معمولاً ارزش اقتصادی ذخیره را بیشتر می‌کند. | عیار هیچ ارتباطی با مقدار مادهٔ مفید ندارد. | 3 | **RETAIN**; canonical stimulus available; UI rendering required |
+| `v3_geo_49_08` | خاک حاصل برهم‌کنش سنگ مادر، اقلیم، جانداران، پستی‌وبلندی و زمان است. | حذف پوشش گیاهی معمولاً فرسایش آبی را کم می‌کند. | 2 | **RETAIN**; canonical stimulus available; UI rendering required |
+
+**Canonical-stimulus gate:** PASS — 21/21 IDs retained their stable identity; 21/21 have non-empty left/right structured fields; 0 exact IDs require quarantine or bank rewrite.
+
+### Duplicate and numeric-variant cluster disposition
+
+The selection layer treats an evidence family as a non-novel exposure by normalizing superficial number changes, reusable wrappers, option-method suffixes, and option order. Any group below is therefore blocked from appearing twice in one normal TRAIN block and a correct exact re-exposure has zero mastery delta. The independent five-exact/five-numeric finding did not supply member IDs; the deterministic cross-check is stronger operationally because it protects all detected family collisions, not only a fixed ten-group subset.
+
+| Detector / disposition | Group count | Member IDs / handling |
+|---|---:|---|
+| Literal same prompt with reordered options | 4 | v3_chem_26_10, v3_chem_26_11, v3_chem_26_12, v3_chem_26_13; v3_chem_20_18, v3_chem_20_19, v3_chem_20_20; v3_chem_19_11, v3_chem_19_12, v3_chem_19_13; v3_chem_54_11, v3_chem_54_12, v3_chem_54_13 — **SUPPRESS** in same normal TRAIN block and do not count as unique evidence. |
+| Template/direct-path same-problem families | 21 | v3_math_41_04, v3_math_41_08, v3_math_41_12; v3_chem_24_03, v3_chem_24_07; v3_math_40_03, v3_math_40_07; v3_math_40_04, v3_math_40_08, v3_math_40_12; v3_math_40_06, v3_math_40_10; v3_geo_44_08, v3_geo_44_12; v3_math_39_04, v3_math_39_08, v3_math_39_12; v3_chem_23_04, v3_chem_23_08; v3_chem_23_05, v3_chem_23_09; v3_phys_34_04, v3_phys_34_08; v3_phys_32_04, v3_phys_32_08, v3_phys_32_12; v3_phys_35_04, v3_phys_35_08; v3_geo_50_07, v3_geo_50_11; v3_chem_25_02, v3_chem_25_06, v3_chem_25_10; v3_phys_30_04, v3_phys_30_08; v3_phys_30_06, v3_phys_30_10; v3_chem_22_03, v3_chem_22_07; v3_math_36_06, v3_math_36_10; v3_geo_43_07, v3_geo_43_11; v3_geo_48_09, v3_geo_48_13; v3_chem_17_04, v3_chem_17_08 — **SUPPRESS** by `evidenceFamily`; distinct instructional shells are not fresh mastery evidence. |
+| All evidence-family collisions after canonical stimulus expansion | 25 | **SUPPRESS** in same normal TRAIN block; the mass gate verifies no selected family repeats. |
+| Strict digit-canonical prompt variants with changed literal prompt | 0 | None under this conservative prompt-only detector — any future detected case is already covered by digit-normalized evidence-family suppression. |
+
+### Final-Hours composition and unique-mastery protection
+
+The deterministic composed-source gate scopes `StudyRepository.startOrResume` through active-session construction and fails if a Final-Hours overlay adds the historical exact-repeat fallback. It requires the normal TRAIN invariant, `attempted + selected` exclusions, at least three evidence-family exclusions across the selection paths, and the `AdaptiveEngine` rule `val masteryDelta = if (exactRepeat && correct) 0.0 else delta`.
+
+| Gate | Result | Observed output |
+|---|---|---|
+| Frozen IDs / four options / key range / option-analysis coverage | PASS | 1,216 records; every key in `0..3`; four options per record. |
+| Canonical pair stable-ID/stimulus gate | PASS | 21/21 stable IDs; 21/21 non-empty left/right; SIM intersection 0. |
+| Mass normal TRAIN generation | PASS | 2,000 generated blocks; duplicate ID 0; historical-repeat exposure 0; evidence-family repeat 0; adaptive short blocks 61. |
+| SIM isolation | PASS | SIM1 117; SIM2 117; mutually disjoint; no normal TRAIN holdout leakage. |
+| Final-Hours composed selection source gate | PASS | No `poolIds` repeat fallback in `startOrResume`; historical and evidence-family exclusions present. |
+| Unique mastery | PASS | Correct exact re-exposure mastery delta remains zero. |
+
+**Integration instruction:** apply the existing A2 duplicate/mastery overlay, then this second-pass test/report overlay, then the Review/UI canonical-stimulus renderer. Run `tests/verify_a2_duplicate_session.py` only after all overlays are composed; it is intentionally a final-composition regression gate.
+
+### Second-pass references
+
+- Frozen authoritative bank folder: `RADIOLOGY_1405_V6_1_FINAL_FREEZE_2026-08-12` (`1R2IovFE_e0O_vU4IBCSiJpqrwK4LecxK`).
+- Frozen bank gzip SHA-256: `b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14`.
+- A2 primary baseline: `72dc76e56b7ae625ad1904c76910eeaec5f90f58`; original A2 handoff commit: `77d55808293f7258a36de0e3f1e57166233c70a7`.
+
+
+### Physics duplicate contract addendum
+
+The frozen full-source records confirm that the following IDs differ in presentation shell but share an immutable `followup_group`. They are not independently novel within one normal TRAIN block. The composed selector now constructs a multi-key contract containing the existing evidence-family key plus `followup:<group>` and any present canonical-scenario key. Candidate filtering and the final block invariant both reject a collision on **any** such key.
+
+| Pair | Frozen shared `followup_group` | Same-session disposition | Later exposure disposition |
+|---|---|---|---|
+| `v3_phys_30_04` / `v3_phys_30_08` | `فشار، چگالی و شاره‌ها::subskill_4` | **Suppress** the second member, even if IDs and UI scenario families differ. | Retain only as review evidence; set the existing `spacedRetrieval` marker; zero correct-answer mastery delta and no distinct-coverage increment. |
+| `v3_phys_30_06` / `v3_phys_30_10` | `فشار، چگالی و شاره‌ها::subskill_2` | **Suppress** the second member, even if IDs and UI scenario families differ. | Retain only as review evidence; set the existing `spacedRetrieval` marker; zero correct-answer mastery delta and no distinct-coverage increment. |
+
+The two exact pair regressions are part of the 2,000-block mass gate. The gate verifies their source group equality, proves the selector supplies a shared suppression key, and asserts neither pair co-occurs in any normal TRAIN block. The independent five exact and five numeric cluster finding is covered by the same evidence-family component of the multi-key contract; any cluster member collision is blocked before selection and rechecked at block construction.
+
+**Post-addendum composed-gate result:** PASS — 1,216 frozen IDs; four-option/key coverage PASS; canonical paired stimulus 21/21; 2,000 normal blocks with no duplicate ID, evidence/follow-up/canonical collision, historical exact repeat, or SIM leakage; 169 adaptive short blocks rather than forced repetition; exact Physics follow-up regressions 2/2 PASS. The result is a test-only/code overlay handoff; no bank rows, stable IDs, Room schema, migration mapping, main branch, or release was changed.

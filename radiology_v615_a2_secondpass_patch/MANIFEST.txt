@@ -1,0 +1,34 @@
+A2 SECOND-PASS INTEGRATION-ONLY OVERLAY — NO MAIN / NO RELEASE
+
+Role: Mathematics scientific QA + duplicate/session/unique-mastery owner.
+Base: V6.1.4 rescue overlay plus A2 primary duplicate overlay.
+Frozen bank: unchanged. gzip SHA-256 b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14.
+
+Purpose:
+1. Preserve canonical `stimulus.left/right` for the 21 paired-statement records; do not mutate, quarantine, or map their stable IDs.
+2. Extend normal TRAIN selection exclusion from evidence family to frozen follow-up group and canonical scenario fingerprint.
+3. Mark later same-evidence/follow-up/scenario exposure as review using the existing spacedRetrieval field, while correct review repeats add zero mastery and zero unique-evidence coverage.
+4. Add deterministic final-composition bank/session/duplicate/SIM regression gate and a direct AdaptiveEngine follow-up-repeat regression.
+
+Overlay SHA-256:
+64bfc1f47ac71462821be4e4d009e053c729619787d2db529d119237ec42e36c  overlay.tar.xz
+
+Files:
+- app/src/main/java/com/radiology1405/prep/data/Models.kt
+- app/src/main/java/com/radiology1405/prep/data/BankStore.kt
+- app/src/main/java/com/radiology1405/prep/data/StudyRepository.kt
+- app/src/main/java/com/radiology1405/prep/engine/AdaptiveEngine.kt
+- app/src/test/java/com/radiology1405/prep/engine/AdaptiveEngineTest.kt
+- tests/verify_a2_duplicate_session.py
+
+Required after ALL overlays are composed:
+python3 tests/verify_a2_duplicate_session.py --bank-gz <checksum-verified-radiology1405_bank_v6_1.db.gz>
+
+Expected final output includes:
+- frozen_question_ids 1216
+- four_option_and_key_gate PASS
+- canonical_paired_stimulus_ids_preserved 21
+- physics_followup_pair_regressions 2
+- final_hours_composed_selection_source_gate PASS
+
+The Review/UI owner remains responsible for rendering canonical stimulus.left/right in both test and review screens. This overlay only preserves/test-verifies the source and selection/mastery contracts.
