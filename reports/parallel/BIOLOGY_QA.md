@@ -82,7 +82,7 @@ No Android SDK/Gradle wrapper was present in the extracted source bundle, so thi
 |---|---|
 | Baseline | `72dc76e56b7ae625ad1904c76910eeaec5f90f58` |
 | Superseded implementation | `09ab5fc6ee77cd8b06af2a744b543836795320bc` — do **not** integrate; it contained the pre-reconciliation declassification draft. |
-| Reconciled implementation | Pending branch commit immediately following this report generation. |
+| Reconciled implementation | [`8ca9768c10f00676b92767d1884d01d01f2f1f83`](https://github.com/rynmrde/Konkor/commit/8ca9768c10f00676b92767d1884d01d01f2f1f83) |
 
 ## Unresolved risks
 
