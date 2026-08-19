@@ -71,8 +71,8 @@ No Room migration is required because every question ID, stem, option set, corre
 | Commit record | Value |
 |---|---|
 | Baseline commit | `72dc76e56b7ae625ad1904c76910eeaec5f90f58` |
-| Biology implementation commit | **Pending branch upload; this report is updated immediately after the code payload commit.** |
-| Report commit | **Pending branch upload; no main/release action is authorized.** |
+| Biology implementation commit | [`09ab5fc6ee77cd8b06af2a744b543836795320bc`](https://github.com/rynmrde/Konkor/commit/09ab5fc6ee77cd8b06af2a744b543836795320bc) |
+| Report commit | This report update is committed separately to the same worker branch; no main/release action is authorized. |
 
 ## Unresolved risks
 
