@@ -81,6 +81,16 @@ jobs:
           assert manifest['version_code'] == int(os.environ['RELEASE_VERSION_CODE'])
           print('PASS V6.1.5 overlay provenance manifest')
           PY
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('tests/verify_native_experience_v61.py')
+          s = p.read_text()
+          old = "assert 'versionCode = 165' in build and 'versionName = \"6.1.4\"' in build"
+          new = "assert 'versionCode = 166' in build and 'versionName = \"6.1.5\"' in build"
+          assert old in s, 'legacy native-experience version assertion not found'
+          p.write_text(s.replace(old, new))
+          print('PASS V6.1.5 legacy native-experience version assertion update')
+          PY
 
       - name: Frozen bank, Final-Hours and compatibility gates
         run: |
