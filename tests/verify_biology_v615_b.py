@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the W04 Biology-B compact analysis overlay against the frozen V6.1 bank."""
+"""Validate the deterministic W04 Biology overlay against the frozen V6.1 bank."""
 from __future__ import annotations
 
 import hashlib
@@ -9,22 +9,16 @@ import sys
 from pathlib import Path
 
 BASE_SHA256 = "d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c"
-EXPECTED_IDS = [
-    "v3_bio_01_02", "v3_bio_04_02", "v3_bio_09_02", "v3_bio_07_02",
-    "v3_bio_08_02", "v3_bio_12_02", "v3_bio_02_02", "v3_bio_16_02",
-    "v3_bio_05_02", "v3_bio_15_02", "v3_bio_11_02", "v3_bio_10_02",
-    "v3_bio_14_02", "v3_bio_03_02", "v3_bio_13_02", "v3_bio_06_02",
-]
-W03_IDS = {
-    "v3_bio_01_01", "v3_bio_02_01", "v3_bio_03_01", "v3_bio_04_01",
-    "v3_bio_05_01", "v3_bio_06_01", "v3_bio_07_01", "v3_bio_08_01",
-    "v3_bio_09_01", "v3_bio_10_01", "v3_bio_11_01", "v3_bio_12_01",
-    "v3_bio_13_01", "v3_bio_14_01", "v3_bio_15_01", "v3_bio_16_01",
+PATCH_NAME = "biology_v620_w04_patch.json"
+MANUAL_REPAIRS = {
+    "v3_bio_10_11", "v3_bio_11_07", "v3_bio_11_24", "v3_bio_12_07", "v3_bio_13_15",
+    "v3_bio_14_10", "v3_bio_14_20", "v3_bio_15_15", "v3_bio_15_24", "v3_bio_16_10", "v3_bio_16_16",
 }
+MISSING_REFERENCE_REPAIRS = MANUAL_REPAIRS - {"v3_bio_13_15"}
 FORBIDDEN = (
-    "condition_wrong", "truth_partial", "wrong_condition", "partial_truth",
-    "از کلیدواژه جواب نده", "روش کنترل:", "صورت را به بخش‌های مستقل",
-    "صورت را به بخش هاي مستقل", "keyword", "trap/control",
+    "condition_wrong", "truth_partial", "wrong_condition", "partial_truth", "overgeneralization",
+    "calculation_trap", "unit_mistake", "keyword", "کلیدواژه", "دام مفهومی", "روش کنترل",
+    "از کلیدواژه جواب نده", "این گزینه با همهٔ شرط‌ها سازگار است",
 )
 
 
@@ -44,7 +38,7 @@ def main() -> None:
     if len(sys.argv) != 2:
         fail("usage: verify_biology_v615_b.py /path/to/radiology1405_bank_v6_1.db")
     database = Path(sys.argv[1])
-    patch_path = Path(__file__).resolve().parents[1] / "app/src/main/assets/biology_v615_b_patch.json"
+    patch_path = Path(__file__).resolve().parents[1] / "app/src/main/assets" / PATCH_NAME
     if not database.is_file():
         fail(f"bank not found: {database}")
     if sha256(database) != BASE_SHA256:
@@ -53,40 +47,59 @@ def main() -> None:
     if patch.get("base_db_sha256") != BASE_SHA256:
         fail("patch base SHA-256 mismatch")
     updates = patch.get("updates")
-    if not isinstance(updates, list) or len(updates) != len(EXPECTED_IDS):
-        fail("update count is not exactly 16")
-    update_ids = [update.get("id") for update in updates]
-    if update_ids != EXPECTED_IDS or patch.get("rewritten_analysis_ids") != EXPECTED_IDS:
-        fail("patch IDs/order do not equal the documented complementary set")
-    if len(set(update_ids)) != len(update_ids):
-        fail("duplicate patch ID")
-    if set(update_ids) & W03_IDS:
-        fail("overlap with W03 Biology-A rewritten IDs")
+    if not isinstance(updates, list) or len(updates) != 145:
+        fail("update count is not exactly 145")
 
     conn = sqlite3.connect(f"file:{database}?mode=ro", uri=True)
     conn.row_factory = sqlite3.Row
     if conn.execute("PRAGMA quick_check").fetchone()[0] != "ok":
-        fail("frozen base database quick_check failed")
+        fail("frozen database quick_check failed")
+    eligible = conn.execute(
+        """
+        SELECT * FROM question
+        WHERE subject='زیست' AND source_type='authored' AND access_pool='TRAIN'
+          AND obsolete=0 AND runtime_scope_status IN ('A_CORE_FULL', 'B_RAPID_EXPOSURE')
+        ORDER BY id
+        """
+    ).fetchall()
+    if len(eligible) != 290:
+        fail(f"expected 290 deterministic Biology split candidates, found {len(eligible)}")
+    w03_ids = [row["id"] for row in eligible[:145]]
+    w04_ids = [row["id"] for row in eligible[145:]]
+    update_ids = [update.get("id") for update in updates]
+    if update_ids != w04_ids or patch.get("rewritten_analysis_ids") != w04_ids:
+        fail("updates do not exactly equal lexicographic W04 positions 146..290")
+    if set(update_ids) & set(w03_ids):
+        fail("W04 overlap with W03 positions 1..145")
+    if patch.get("manual_completeness_repairs") != sorted(MANUAL_REPAIRS):
+        fail("manual completeness-repair manifest mismatch")
+
+    row_by_id = {row["id"]: row for row in eligible}
+    stem_repairs = set()
+    option_repairs = set()
     for update in updates:
         question_id = update["id"]
-        row = conn.execute("SELECT * FROM question WHERE id=?", (question_id,)).fetchone()
-        if row is None:
-            fail(f"missing stable ID: {question_id}")
-        source = json.loads(row["full_json"])
-        if row["subject"] != "زیست" or row["source_type"] != "authored" or row["access_pool"] != "TRAIN":
-            fail(f"non-authored Biology TRAIN target: {question_id}")
-        if row["selected_scope"] != 1 or row["obsolete"] != 0:
-            fail(f"out-of-scope or obsolete target: {question_id}")
-        options = source.get("options")
-        if not isinstance(options, list) or len(options) != 4 or any(not str(value).strip() for value in options):
-            fail(f"invalid base options: {question_id}")
-        if source.get("correct_index") not in range(4):
-            fail(f"invalid base key: {question_id}")
+        row = row_by_id[question_id]
+        original = json.loads(row["full_json"])
         if update.get("source_type") != "authored":
             fail(f"source-type guard missing: {question_id}")
         fields = update.get("fields")
-        if set(fields) != {"correct_analysis", "distractor_analyses", "short_lesson"}:
-            fail(f"identity-bearing or unsupported field in overlay: {question_id}")
+        allowed = {"stem", "options", "correct_analysis", "distractor_analyses", "short_lesson"}
+        if not isinstance(fields, dict) or not set(fields) <= allowed:
+            fail(f"unsupported identity-bearing field: {question_id}")
+        if not {"correct_analysis", "distractor_analyses", "short_lesson"} <= set(fields):
+            fail(f"missing required analysis field: {question_id}")
+        if "stem" in fields:
+            stem_repairs.add(question_id)
+        if "options" in fields:
+            option_repairs.add(question_id)
+        if ("stem" in fields or "options" in fields) and question_id not in MANUAL_REPAIRS:
+            fail(f"unapproved material-field change: {question_id}")
+        options = fields.get("options", original.get("options"))
+        if not isinstance(options, list) or len(options) != 4 or any(not str(value).strip() for value in options):
+            fail(f"invalid post-patch options: {question_id}")
+        if original.get("correct_index") not in range(4):
+            fail(f"invalid immutable base key: {question_id}")
         analyses = fields["distractor_analyses"]
         if set(analyses) != {"0", "1", "2", "3"}:
             fail(f"not exactly four option analyses: {question_id}")
@@ -96,11 +109,22 @@ def main() -> None:
         combined = " ".join(texts).casefold()
         if any(marker.casefold() in combined for marker in FORBIDDEN):
             fail(f"generic filler or raw enum leakage: {question_id}")
-        # Each item must name its concrete biological content, not merely call a choice correct or wrong.
-        if all(token not in combined for token in ("زیرا", "راکیزه", "فامتن", "هورمون", "آوند", "پادتن", "نفرون", "تیلاکوئید", "ریبوزوم", "دیافراگم", "سرخرگ", "آبکش")):
-            fail(f"no concrete scientific reasoning token: {question_id}")
+    if stem_repairs != MISSING_REFERENCE_REPAIRS:
+        fail(f"unexpected stem-repair set: {sorted(stem_repairs)}")
+    if option_repairs != {"v3_bio_11_24", "v3_bio_13_15", "v3_bio_14_20", "v3_bio_15_24", "v3_bio_16_16"}:
+        fail(f"unexpected option-repair set: {sorted(option_repairs)}")
+
+    update_by_id = {update["id"]: update for update in updates}
+    for question_id in MISSING_REFERENCE_REPAIRS:
+        stem = update_by_id[question_id]["fields"]["stem"]
+        if "A و B" in stem or "جدول" in stem:
+            fail(f"incomplete visual/statement reference remains active: {question_id}")
+    if not update_by_id["v3_bio_13_15"]["fields"]["options"][3].startswith("پادتن با اتصال اختصاصی"):
+        fail("immune causal-chain repair did not restore correct direction")
     conn.close()
-    print("PASS: 16 disjoint Biology-B analysis-only updates validated against immutable V6.1 base")
+    print("PASS: 145 disjoint W04 Biology updates validate against immutable V6.1 base")
+    print("PASS: W03/W04 split is exactly 145/145 with no overlap")
+    print("PASS: ten incomplete A/B-or-table references and one immune causal chain have explicit repairs")
     print(f"PATCH_SHA256={sha256(patch_path)}")
 
 
