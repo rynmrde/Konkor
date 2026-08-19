@@ -1,0 +1,182 @@
+{
+  "summary": {
+    "PASS": 11
+  },
+  "results": [
+    {
+      "gate": "compressed v6.2 asset expands to candidate DB",
+      "status": "PASS",
+      "evidence": {
+        "candidate_db_sha256": "ed84693259455e6da488af23a7fa39c6548ea64e95bee6a93ba5cedf8f7656c6",
+        "expanded_sha256": "ed84693259455e6da488af23a7fa39c6548ea64e95bee6a93ba5cedf8f7656c6"
+      }
+    },
+    {
+      "gate": "candidate SQLite integrity",
+      "status": "PASS",
+      "evidence": "ok"
+    },
+    {
+      "gate": "candidate question IDs are unique",
+      "status": "PASS",
+      "evidence": {
+        "rows": 1221,
+        "unique": 1221
+      }
+    },
+    {
+      "gate": "v6.2 Chemistry counts and selected scope",
+      "status": "PASS",
+      "evidence": {
+        "chemistry": 272,
+        "active_train": 203
+      }
+    },
+    {
+      "gate": "all Chemistry records have valid choices, key, and option analyses",
+      "status": "PASS",
+      "evidence": {
+        "bad_options": [],
+        "bad_key": [],
+        "missing_analysis": []
+      }
+    },
+    {
+      "gate": "no raw internal review enums or generic solution templates remain",
+      "status": "PASS",
+      "evidence": {
+        "raw_enums": [],
+        "generic_template": []
+      }
+    },
+    {
+      "gate": "all declared Chemistry calculations have an explicit path or unit",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "gate": "no exact duplicate inside active Chemistry training including stimulus",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "gate": "retired cosmetic variants and new identity mapping",
+      "status": "PASS",
+      "evidence": [
+        {
+          "retired_id": "v3_chem_17_06",
+          "replacement_id": "v62_chem_17_06",
+          "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+          "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+        },
+        {
+          "retired_id": "v3_chem_17_07",
+          "replacement_id": "v62_chem_17_07",
+          "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+          "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+        },
+        {
+          "retired_id": "v3_chem_17_08",
+          "replacement_id": "v62_chem_17_08",
+          "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+          "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+        },
+        {
+          "retired_id": "v3_chem_17_09",
+          "replacement_id": "v62_chem_17_09",
+          "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+          "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+        },
+        {
+          "retired_id": "v3_chem_17_10",
+          "replacement_id": "v62_chem_17_10",
+          "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+          "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+        }
+      ]
+    },
+    {
+      "gate": "stable keys preserved for all unchanged identities",
+      "status": "PASS",
+      "evidence": []
+    },
+    {
+      "gate": "v6.2 metadata preserves source and progress-migration policy",
+      "status": "PASS",
+      "evidence": {
+        "bank_version": "6.2.0-chemistry-qa-candidate",
+        "baseline_db_sha256": "d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c",
+        "scope": "Chemistry review-quality and duplicate remediation only",
+        "question_total": 1221,
+        "chemistry_total": 272,
+        "deep_reviewed_ids": [
+          "real_1403_n1in_chem_103",
+          "v3_chem_17_01",
+          "v3_chem_17_02",
+          "v3_chem_17_03",
+          "v3_chem_17_04",
+          "v3_chem_17_05",
+          "v3_chem_17_14",
+          "v3_chem_17_15",
+          "v3_chem_17_16",
+          "v3_chem_17_17",
+          "v3_chem_17_18",
+          "v3_chem_17_19"
+        ],
+        "targeted_scan_repaired_ids": [
+          "real_1404_n1in_chem_110",
+          "real_1404_n2in_chem_088",
+          "real_1404_n2in_chem_104",
+          "v3_chem_17_20",
+          "v3_chem_21_15",
+          "v3_chem_22_03",
+          "v3_chem_22_07",
+          "v3_chem_23_13",
+          "v3_chem_24_03",
+          "v3_chem_24_07",
+          "v3_chem_25_05",
+          "v3_chem_25_09"
+        ],
+        "retirement_mapping": [
+          {
+            "retired_id": "v3_chem_17_06",
+            "replacement_id": "v62_chem_17_06",
+            "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+            "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+          },
+          {
+            "retired_id": "v3_chem_17_07",
+            "replacement_id": "v62_chem_17_07",
+            "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+            "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+          },
+          {
+            "retired_id": "v3_chem_17_08",
+            "replacement_id": "v62_chem_17_08",
+            "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+            "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+          },
+          {
+            "retired_id": "v3_chem_17_09",
+            "replacement_id": "v62_chem_17_09",
+            "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+            "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+          },
+          {
+            "retired_id": "v3_chem_17_10",
+            "replacement_id": "v62_chem_17_10",
+            "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+            "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+          }
+        ],
+        "source_evidence": {
+          "chemistry_1_drive_file_id": "1rmRyR509x-8bDAS0FG6WiP9R5DtXjfXH",
+          "chemistry_1_title": "Shimi 10.pdf",
+          "molar_volume_source_pdf_page": 88,
+          "molar_volume_excerpt": "حجم یک مول گاز در STP برابر با 22.4 لیتر است."
+        },
+        "progress_migration": "No destructive Room migration. BankStore must use a new v6_2 asset/database name; the existing progress database remains untouched. Retired questions keep their IDs for historical attempts and replacements receive distinct IDs with no fabricated mastery transfer."
+      }
+    }
+  ]
+}

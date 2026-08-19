@@ -1,0 +1,2362 @@
+{
+  "baseline_chemistry": 267,
+  "candidate_chemistry": 272,
+  "unchanged_existing": 0,
+  "changed_existing": 267,
+  "retired_existing": [
+    "v3_chem_17_06",
+    "v3_chem_17_07",
+    "v3_chem_17_08",
+    "v3_chem_17_09",
+    "v3_chem_17_10"
+  ],
+  "new_ids": [
+    "v62_chem_17_06",
+    "v62_chem_17_07",
+    "v62_chem_17_08",
+    "v62_chem_17_09",
+    "v62_chem_17_10"
+  ],
+  "field_change_counts": {
+    "calculation_required": 2,
+    "correct_analysis": 241,
+    "distractor_analyses": 241,
+    "fast_method": 24,
+    "obsolete_for_1405": 5,
+    "review_default": 267,
+    "scientific_verification_v6_2": 24,
+    "selected_scope": 5,
+    "short_lesson": 154,
+    "start_method": 24,
+    "v6_2_retirement": 5
+  },
+  "changed": [
+    {
+      "id": "real_1401_in_chem_081",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1401_in_chem_099",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1401_in_chem_105",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1401_in_chem_106",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1402_n2in_chem_097",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1402_n2in_chem_099",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1402_n2in_chem_102",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1402_n2in_chem_103",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1402_n2in_chem_106",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1402_n2in_chem_107",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1402_n2in_chem_109",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1403_n1_chem_102",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1403_n1_chem_109",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1403_n1in_chem_088",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1403_n1in_chem_089",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1403_n1in_chem_097",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1403_n1in_chem_098",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1403_n1in_chem_103",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "real_1403_n1in_chem_105",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1403_n1in_chem_106",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1404_n1in_chem_079",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1404_n1in_chem_086",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1404_n1in_chem_088",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1404_n1in_chem_105",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1404_n1in_chem_106",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1404_n1in_chem_110",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "real_1404_n2in_chem_088",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "real_1404_n2in_chem_091",
+      "fields": [
+        "review_default"
+      ]
+    },
+    {
+      "id": "real_1404_n2in_chem_104",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_05",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "obsolete_for_1405",
+        "review_default",
+        "selected_scope",
+        "short_lesson",
+        "v6_2_retirement"
+      ]
+    },
+    {
+      "id": "v3_chem_17_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "obsolete_for_1405",
+        "review_default",
+        "selected_scope",
+        "short_lesson",
+        "v6_2_retirement"
+      ]
+    },
+    {
+      "id": "v3_chem_17_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "obsolete_for_1405",
+        "review_default",
+        "selected_scope",
+        "short_lesson",
+        "v6_2_retirement"
+      ]
+    },
+    {
+      "id": "v3_chem_17_09",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "obsolete_for_1405",
+        "review_default",
+        "selected_scope",
+        "short_lesson",
+        "v6_2_retirement"
+      ]
+    },
+    {
+      "id": "v3_chem_17_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "obsolete_for_1405",
+        "review_default",
+        "selected_scope",
+        "short_lesson",
+        "v6_2_retirement"
+      ]
+    },
+    {
+      "id": "v3_chem_17_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_17_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_17_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_17_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_17",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_18",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_17_20",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_18_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_05",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_09",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_18_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_18_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_17",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_18_20",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_19_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_19_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_05",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_19_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_19_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_19_09",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_17",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_18",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_19_20",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_20_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_20_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_20_05",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_20_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_20_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_20_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_09",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_18",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_20_20",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_21_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_05",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_09",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_21_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_21_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_21_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_17",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_18",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_21_20",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_22_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_05",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_22_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_09",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_22_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_22_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_22_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_17",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_18",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_22_20",
+      "fields": [
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_05",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_09",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_23_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_23_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_23_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_17",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_18",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_23_20",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_24_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_05",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_24_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_09",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_24_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_24_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_24_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_17",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_18",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_24_20",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_05",
+      "fields": [
+        "calculation_required",
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_25_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_09",
+      "fields": [
+        "calculation_required",
+        "correct_analysis",
+        "distractor_analyses",
+        "fast_method",
+        "review_default",
+        "scientific_verification_v6_2",
+        "short_lesson",
+        "start_method"
+      ]
+    },
+    {
+      "id": "v3_chem_25_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_25_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_25_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_17",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_18",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_25_20",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_26_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_26_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_26_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_05",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_26_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_26_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_26_09",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_26_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_17",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_18",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_26_20",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_54_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_54_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_54_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_54_05",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_54_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_54_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_09",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_17",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_18",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_54_20",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_01",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_55_02",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_55_03",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_55_04",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_55_05",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_55_06",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default",
+        "short_lesson"
+      ]
+    },
+    {
+      "id": "v3_chem_55_07",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_08",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_09",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_10",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_11",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_12",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_13",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_14",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_15",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_16",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_17",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_18",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_19",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    },
+    {
+      "id": "v3_chem_55_20",
+      "fields": [
+        "correct_analysis",
+        "distractor_analyses",
+        "review_default"
+      ]
+    }
+  ]
+}

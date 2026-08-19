@@ -1,0 +1,35 @@
+{
+  "retirements": [
+    {
+      "retired_id": "v3_chem_17_06",
+      "replacement_id": "v62_chem_17_06",
+      "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+      "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+    },
+    {
+      "retired_id": "v3_chem_17_07",
+      "replacement_id": "v62_chem_17_07",
+      "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+      "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+    },
+    {
+      "retired_id": "v3_chem_17_08",
+      "replacement_id": "v62_chem_17_08",
+      "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+      "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+    },
+    {
+      "retired_id": "v3_chem_17_09",
+      "replacement_id": "v62_chem_17_09",
+      "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+      "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+    },
+    {
+      "retired_id": "v3_chem_17_10",
+      "replacement_id": "v62_chem_17_10",
+      "reason": "duplicate/cosmetic variant in priority-74 stoichiometry training",
+      "progress_policy": "Keep historical attempts under the retired ID. Do not transfer mastery or attempts to the replacement because identity changed."
+    }
+  ],
+  "policy": "No destructive Room migration. BankStore must use a new v6_2 asset/database name; the existing progress database remains untouched. Retired questions keep their IDs for historical attempts and replacements receive distinct IDs with no fabricated mastery transfer."
+}
