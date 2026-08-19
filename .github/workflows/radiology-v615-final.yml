@@ -69,6 +69,7 @@ jobs:
           echo "$V615_OVERLAY_SHA256  radiology_v615_final_patch/overlay.tar.xz" | sha256sum -c -
           ! tar -tJf radiology_v615_final_patch/overlay.tar.xz | grep -E '(^/|(^|/)\.\.(/|$)|radiology1405_bank_v6_1\.db\.gz$)'
           tar -xJf radiology_v615_final_patch/overlay.tar.xz -C "$PROJECT"
+          bash "$PROJECT/tools/generate_audio.sh" "$PROJECT/app/src/main/res/raw"
           test -f "$PROJECT/tests/bank_final_gate.py"
           test -f "$PROJECT/tests/verify_final_hours_v615.py"
           test -f "$PROJECT/app/src/main/java/com/radiology1405/prep/data/QuestionMapSessionProjection.kt"
