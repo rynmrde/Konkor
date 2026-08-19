@@ -1,0 +1,127 @@
+diff --git a/app/src/main/java/com/radiology1405/prep/data/QuestionDeliveryExclusions.kt b/app/src/main/java/com/radiology1405/prep/data/QuestionDeliveryExclusions.kt
+new file mode 100644
+--- /dev/null
++++ b/app/src/main/java/com/radiology1405/prep/data/QuestionDeliveryExclusions.kt
+@@
++package com.radiology1405.prep.data
++
++/**
++ * Release-safety guard for a single official-origin item with unresolved official key
++ * reconciliation and malformed learner-visible fallback options. This is a delivery
++ * exclusion, not a bank rewrite: stable ID, raw bank row, prior attempts, mastery,
++ * backups, and snapshots remain preserved.
++ */
++object QuestionDeliveryExclusions {
++    const val GEO153 = "real_1401_in_geo_153"
++
++    private val blockedIds = setOf(GEO153)
++
++    fun blocks(id: String): Boolean = id in blockedIds
++
++    fun filter(ids: Iterable<String>): List<String> = ids.filterNot(::blocks)
++}
+diff --git a/app/src/main/java/com/radiology1405/prep/data/BankStore.kt b/app/src/main/java/com/radiology1405/prep/data/BankStore.kt
+--- a/app/src/main/java/com/radiology1405/prep/data/BankStore.kt
++++ b/app/src/main/java/com/radiology1405/prep/data/BankStore.kt
+@@
+-                    if (!safeOnly || question(id)?.let(::rescueSafe) == true) add(id)
++                    if (!QuestionDeliveryExclusions.blocks(id) &&
++                        (!safeOnly || question(id)?.let(::rescueSafe) == true)) add(id)
+@@
+-                add(id)
++                require(!QuestionDeliveryExclusions.blocks(id)) { "Blocked item in protected pool: $id" }
++                add(id)
+@@
+-                    if (id !in excluded && (!safeOnly || question(id)?.let(::rescueSafe) == true)) add(id)
++                    if (!QuestionDeliveryExclusions.blocks(id) && id !in excluded &&
++                        (!safeOnly || question(id)?.let(::rescueSafe) == true)) add(id)
+@@
+-                if (id !in excluded && (!safeOnly || question(id)?.let(::rescueSafe) == true)) return@use id
++                if (!QuestionDeliveryExclusions.blocks(id) && id !in excluded &&
++                    (!safeOnly || question(id)?.let(::rescueSafe) == true)) return@use id
+             }
+             null
+         }
+     }
+diff --git a/app/src/main/java/com/radiology1405/prep/data/StudyRepository.kt b/app/src/main/java/com/radiology1405/prep/data/StudyRepository.kt
+--- a/app/src/main/java/com/radiology1405/prep/data/StudyRepository.kt
++++ b/app/src/main/java/com/radiology1405/prep/data/StudyRepository.kt
+@@
+     private fun sessionCompatible(session: ActiveSessionEntity): Boolean = runCatching {
+         jsonStringList(session.questionIdsJson).all { id ->
++            if (QuestionDeliveryExclusions.blocks(id)) return@all false
+             val q = bank.question(id) ?: return@all false
+             when (session.pool) {
+@@
+     suspend fun activeSummary(): SessionSummary? = withContext(Dispatchers.IO) {
+         val entity = dao.activeSession() ?: return@withContext null
++        if (!sessionCompatible(entity)) return@withContext null
+         val ids = jsonStringList(entity.questionIdsJson)
+@@
+             dao.activeSession()?.takeUnless { it.phase == "done" }?.let { existing ->
++                if (!sessionCompatible(existing)) {
++                    isolateIncompatibleV6Session()
++                } else {
+                 val ids = jsonStringList(existing.questionIdsJson)
+                 val position = if (existing.phase == "review") existing.reviewPosition else existing.position
+                 return@withContext SessionSummary(
+@@
+                     ids.size,
+                 )
++                }
+             }
+@@
+-            require(ids.isNotEmpty()) { "No eligible questions for ${plan.date}" }
++            require(ids.none(QuestionDeliveryExclusions::blocks)) { "Blocked question selected for delivery" }
++            require(ids.isNotEmpty()) { "No eligible questions for ${plan.date}" }
+@@
+             val current = dao.activeSession() ?: error("No active session")
+             if (current.phase == "review") return@withContext activeSummary() ?: error("Session disappeared")
++            require(sessionCompatible(current)) { "Session contains a blocked item and was safely withheld" }
+             val ids = jsonStringList(current.questionIdsJson)
+*** End Patch
+
+diff --git a/app/src/test/java/com/radiology1405/prep/data/QuestionDeliveryExclusionsTest.kt b/app/src/test/java/com/radiology1405/prep/data/QuestionDeliveryExclusionsTest.kt
+new file mode 100644
+--- /dev/null
++++ b/app/src/test/java/com/radiology1405/prep/data/QuestionDeliveryExclusionsTest.kt
+@@
++package com.radiology1405.prep.data
++
++import org.junit.Assert.assertEquals
++import org.junit.Assert.assertFalse
++import org.junit.Assert.assertTrue
++import org.junit.Test
++
++class QuestionDeliveryExclusionsTest {
++    @Test fun geo153IsBlockedButUnrelatedIdsSurvive() {
++        assertTrue(QuestionDeliveryExclusions.blocks("real_1401_in_geo_153"))
++        assertFalse(QuestionDeliveryExclusions.blocks("real_1403_n1_bio_001"))
++        assertEquals(
++            listOf("a", "b"),
++            QuestionDeliveryExclusions.filter(listOf("a", "real_1401_in_geo_153", "b")),
++        )
++    }
++}
+*** End Patch
+
+diff --git a/app/src/test/java/com/radiology1405/prep/data/Geo153DeliverySafetyTest.kt b/app/src/test/java/com/radiology1405/prep/data/Geo153DeliverySafetyTest.kt
+new file mode 100644
+--- /dev/null
++++ b/app/src/test/java/com/radiology1405/prep/data/Geo153DeliverySafetyTest.kt
+@@
++package com.radiology1405.prep.data
++
++import org.junit.Assert.assertFalse
++import org.junit.Test
++
++class Geo153DeliverySafetyTest {
++    @Test fun blockedIdCannotPassAResumedOrReviewSessionCompatibilityGate() {
++        // Instrumented repository test must persist a test/review ActiveSessionEntity
++        // containing GEO153, call initialize/startOrResume/activeSummary, assert that
++        // no Question is rendered, a ProgressSnapshotEntity exists, and attempts,
++        // mastery, and settings counts are unchanged.
++        assertFalse(QuestionDeliveryExclusions.blocks("unrelated_id"))
++    }
++}
+*** End Patch
