@@ -86,6 +86,7 @@ jobs:
           from pathlib import Path
           p = Path(os.environ['PROJECT']) / 'tests' / 'verify_native_experience_v61.py'
           s = p.read_text()
+
           wanted = "assert 'versionCode = 166' in build and 'versionName = \"6.1.5\"' in build"
           if wanted not in s:
               matches = [line for line in s.splitlines() if "assert 'versionCode = " in line and "' in build and 'versionName = " in line]
@@ -93,18 +94,21 @@ jobs:
               line = matches[0]
               indent = line[:len(line) - len(line.lstrip())]
               s = s.replace(line, indent + wanted, 1)
-              p.write_text(s)
-          print('PASS V6.1.5 legacy native-experience version assertion update')
+
           old_schema = "assert 'version = 3' in progress and 'fallbackToDestructiveMigration' not in progress"
           new_schema = "assert 'version = 4' in progress and 'MIGRATION_3_4' in progress and '.addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)' in progress and 'fallbackToDestructiveMigration' not in progress"
-          assert old_schema in s, 'legacy Room schema assertion not found'
-          p.write_text(s.replace(old_schema, new_schema, 1))
-          print('PASS V6.1.5 explicit non-destructive Room v3->v4 compatibility assertion update')
+          assert old_schema in s or new_schema in s, 'legacy Room schema assertion not found'
+          if old_schema in s:
+              s = s.replace(old_schema, new_schema, 1)
+
           old_hook = "'QuestionNavigator'"
           new_hook = "'QuestionMap('"
-          assert old_hook in s, 'legacy QuestionNavigator hook assertion not found'
-          p.write_text(s.replace(old_hook, new_hook, 1))
-          print('PASS V6.1.5 legacy navigation hook aligned to persistent QuestionMap')
+          assert old_hook in s or new_hook in s, 'legacy navigation hook assertion not found'
+          if old_hook in s:
+              s = s.replace(old_hook, new_hook, 1)
+
+          p.write_text(s)
+          print('PASS V6.1.5 legacy compatibility assertions updated atomically')
           PY
 
       - name: Frozen bank, Final-Hours and compatibility gates
