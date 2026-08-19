@@ -1,0 +1,33 @@
+KONKOR A3 PERSISTENCE SECOND-PASS COMPOSITION OVERLAY
+
+Role: A3 Room / migration / progress-preservation / cross-system persistence QA
+Local worker branch: parallel/a3-persistence-qa
+Corrected Final-Hours source commit: ee706e9836bd499decae0a1d79ea643884ab4d1c
+Corrected Final-Hours overlay SHA-256: 59a8ff9e5aa62bbe164fa8dffb6fc5056795eeb5ee82b511cc55fbff9281599d
+Frozen V6.1 project ZIP SHA-256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
+Frozen verified JSON SHA-256: 54f349cbcd731b89d440d2f9486c2126efef564b57f223082610a344913b263d
+Frozen expanded SQLite SHA-256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
+A3 second-pass overlay SHA-256: d012e645ea10eb3302442c9ad8e83312b05dc915332b7a1ae42f0a41b7cc7e84
+
+Scope
+- Preserves corrected Final-Hours dynamic selector behavior, including its safe error when a distinct TRAIN recommendation cannot be fulfilled.
+- Retains duplicate/evidence-family suppression in BankStore and StudyRepository. A normal TRAIN block has no prior attempted ID, no within-block duplicate ID, and no repeated evidence family.
+- Retains unique-mastery semantics: repeated correct attempts are useful for spacing but cannot raise fresh mastery or distinct-question coverage.
+- Adds fail-closed validation of active sessions and V6/V6.1 backup payloads before an imported payload can clear Room state.
+- Retains raw snapshot protection for malformed/incompatible active state and pre-restore snapshots for external and V6 backups.
+- Makes SIM reviewed witness and active-session done transition a single Room transaction.
+- Rebuilds Review Map entries from persisted session and session-scoped attempts across navigation, recreation, resume, Review reopen, and restore.
+- Retains explicit Room v1→v2→v3→v4 migration registration and adds instrumented process-recreation coverage for atomic SIM review completion.
+
+Required application order
+1. Materialize the full frozen V6.1.4 source and V6.1.4 overlay.
+2. Apply corrected Final-Hours overlay at ee706e9836bd499decae0a1d79ea643884ab4d1c and verify SHA-256 59a8ff9e5aa62bbe164fa8dffb6fc5056795eeb5ee82b511cc55fbff9281599d.
+3. Extract this A3 overlay.
+4. Remove every path listed in REMOVED_PATHS.txt. This removes a stale V6.1.4 dated-policy unit test intentionally deleted by corrected Final-Hours source.
+5. If later duplicate/UI worker overlays replace BankStore.kt, StudyRepository.kt, StudyViewModel.kt, or RadiologyApp.kt, merge source-level deltas rather than applying them wholesale. This A3 overlay already includes the current duplicate evidence-family/no-repeat behavior and corrected Question Map persisted-entry schema.
+6. Run static guards, JVM tests, Kotlin compilation, lint, debug APK, API 35 instrumentation, migration/restore, Review/Map persistence, signed APK, and release gates before integration.
+
+Excluded by design
+- Immutable bank assets and generated audio.
+- Any main branch, tag, release, signing key, APK, and generated build output.
+- Android API 35 runtime/instrumentation evidence; this remains a foreman gate.
