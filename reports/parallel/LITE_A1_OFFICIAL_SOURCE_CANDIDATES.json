@@ -1,0 +1,53 @@
+{
+  "role": "KONKOR-A1-L1-OFFICIAL-SUPPORT",
+  "account_label": "A1",
+  "baseline_commit": "72dc76e56b7ae625ad1904c76910eeaec5f90f58",
+  "baseline_ref": "refs/heads/main",
+  "access_route": "Composio -> GitHub",
+  "repository": "rynmrde/Konkor",
+  "generated_at_utc": "2026-08-19T13:21:00Z",
+  "status": "completed_with_source_payload_gap",
+  "claims_observed": {
+    "total_questions": 1216,
+    "verified_real_exam": 17,
+    "authored": 1112,
+    "official_stem_training": 71,
+    "quarantined_key_conflict": 16,
+    "coverage_microtopics": 56,
+    "official_source_crops": 104
+  },
+  "candidate_lists": {
+    "claimed_real_exam_records_needing_authoritative_record_level_verification": [],
+    "records_with_missing_or_weak_source_fields": [],
+    "year_session_question_number_inconsistencies": [],
+    "obsolete_or_quarantine_or_holdout_candidates": [
+      {
+        "scope": "bank-wide",
+        "status": "needs_direct_bank inspection",
+        "reason": "The newest origin/main tree contains only patch archives and does not expose the frozen SQLite/verified JSON bank as individual files.",
+        "expected_quarantine_count": 16,
+        "holdout_rule_observed": "SIM holdout questions must be authored, eligible_for_safety_evidence=true, needs_human_review=false, and access_pool must match the simulation pool."
+      }
+    ],
+    "source_file_page_candidates": [
+      {
+        "scope": "all source-backed questions",
+        "status": "needs direct bank inspection",
+        "reason": "Question model supports source_file, source_page, official_key_verified, source_crop, and source_crop_sha256, but the question rows are inside the frozen DB not present as a repository path."
+      }
+    ]
+  },
+  "non_findings": [
+    "No scientific answer was changed.",
+    "No real_exam label was newly promoted.",
+    "No quarantine or holdout item was opened or modified.",
+    "No standalone GitHub or Drive connector was used."
+  ],
+  "follow_up_required": [
+    "Obtain the frozen verified JSON or SQLite through Composio Google Drive, preserving the historical hashes.",
+    "Enumerate every source_type=real_exam row and check year, session, question number, source file/page, stem, four options, official key, and current-textbook relevance.",
+    "Confirm all 16 QUARANTINE rows remain excluded from training and both SIM pools.",
+    "Run the existing validators against the extracted bank and attach their real output."
+  ]
+}
+
