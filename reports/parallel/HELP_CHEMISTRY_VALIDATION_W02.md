@@ -4,7 +4,8 @@
 **Helper branch:** `parallel/help-chemistry-validation-w02`  
 **Baseline:** `72dc76e56b7ae625ad1904c76910eeaec5f90f58` (`main`)  
 **Chemistry candidate branch reviewed:** `parallel/bank-chemistry` at `2a9b001e7d7f534affec3aed80fa4c33913fac28`  
-**Helper implementation commit:** `d0240acb12a183dec709746a53ca5d73d5ad6d9f` (local helper branch)
+**Helper implementation commit:** `94910d23bfe08cf925ffee5bea50c047d44bae34` (published helper branch)  
+**Local helper commits:** `d0240acb12a183dec709746a53ca5d73d5ad6d9f`, `ddda99c069533538875d7af4e6e868ac02f9b694`
 
 ## Scope
 
