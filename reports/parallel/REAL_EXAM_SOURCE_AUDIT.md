@@ -84,4 +84,4 @@ Integrate only the two files above. Before merging, the integrator should extrac
 
 [1] [Sanjesh: 1403 first-session question booklets and key notice](https://sanjesh.org/fa-IR/sanjesh/4936/news/view/14591/11277/Staging)  
 [2] [Supplied Biology source folder](https://drive.google.com/drive/folders/1ml6rbR86DP0J8uzEbklj73YKmMDvr0qg) and [Chemistry source folder](https://drive.google.com/drive/folders/1HY_9LuGRtpqhpvSRyCdJH-Gce0j4Iacc)  
-[3] [V6.1 final-freeze manifest](https://drive.google.com/file/d/1zqhe3VxMEP3JCBCTuFflYbRB4zudXqJt/view) and [verified frozen bank JSON](https://drive.google.com/file/d/1D07Qbp2iPOwfmksy09kdyjSc3hWHiq03/view)
+[3] [V6.1 final-freeze folder](https://drive.google.com/drive/folders/1R2IovFE_e0O_vU4IBCSiJpqrwK4LecxK)
