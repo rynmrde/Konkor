@@ -93,3 +93,79 @@ A material bank follow-up remains necessary for `real_1401_in_geo_153` and the d
 [2]: https://drive.google.com/drive/folders/1ml6rbR86DP0J8uzEbklj73YKmMDvr0qg "Biology curriculum and examination sources"
 [3]: https://drive.google.com/drive/folders/1lV90myeWo3jl5sBsbBbV2MU-InI3d2nL "Geology curriculum and examination sources"
 [4]: https://github.com/rynmrde/Konkor/tree/parallel/a1-biology-geology "Assigned worker branch"
+
+
+---
+
+## SECOND_PASS_REVIEW — authoritative reconciliation
+
+**Second-pass scope.** This section supersedes any first-pass implication that the branch-local renderer alone was build-effective, that stock boilerplate deletion was scientifically justified across all records, or that unresolved visible-stem text could be reconstructed. The review used the independent cross-review at commit [`55c19556fe8429548d1d7ae60939a61510bfa49e`][5], the exact frozen verified JSON, and the V6.1.4 build overlay. The frozen JSON download again matched SHA-256 `54f349cbcd731b89d440d2f9486c2126efef564b57f223082610a344913b263d`, contained **1,216** records, and is the only source used for canonical stimulus text.[1] [5]
+
+### Exact conflict reconciliation
+
+The eight overlapping updates below occurred in both candidate Biology payloads with different analysis fields. The deterministic successor payload assigns all eight to the compact `biology-v6.1.5-analysis-safety` analysis after comparison with their original frozen stems/options and declared micro-skills. The final payload rejects duplicate IDs before any rendering; it never relies on application order.
+
+| ID | Intended skill | Deterministic source | Disposition |
+|---|---|---|---|
+| `v3_bio_09_01` | Respiratory partial-pressure diffusion | Compact v6.1.5 | Kept as analysis-only update. |
+| `v3_bio_10_01` | Glomerular filtration, reabsorption, and secretion | Compact v6.1.5 | Kept as analysis-only update. |
+| `v3_bio_11_01` | Resting potential, synapse, and ATP–myosin separation | Compact v6.1.5 | Kept as analysis-only update. |
+| `v3_bio_12_01` | Endocrine axis, hormone receptors, and insulin | Compact v6.1.5 | Kept as analysis-only update. |
+| `v3_bio_13_01` | Innate versus adaptive immunity | Compact v6.1.5 | Kept as analysis-only update. |
+| `v3_bio_14_01` | LH surge, ovulation, and embryo timing | Compact v6.1.5 | Kept as analysis-only update. |
+| `v3_bio_15_01` | Xylem, phloem, and transpiration | Compact v6.1.5 | Kept as analysis-only update. |
+| `v3_bio_16_01` | Natural selection and population-level change | Compact v6.1.5 | Kept as analysis-only update. |
+
+The successor contains **142 unique analysis-only updates**: the compact payload’s 16 updates, including all eight reconciled conflicts, plus **126** non-conflicting W04 analysis updates. Every update is restricted to `correct_analysis`, `distractor_analyses`, and `short_lesson`; no update contains `stem`, `options`, `correct_index`, source metadata, access pool, or stable-ID edits. Frozen gzip, SQLite, and verified JSON bytes remain unmodified.[1] [5]
+
+### Visible stems, raw labels, and generic-analysis disposition
+
+The first-pass `ScienceText.kt` change was not sufficient because the V6.1.4 build overlay overwrites branch-local source. The second pass places the change in the actual V6.1.4 overlay and adds the renderer/model path used by both active test and Review. Internal labels are mapped to Persian learner-facing terms, but the prior global stock-boilerplate deletion is **not** carried into the build-effective source: deleting arbitrary sentences can suppress item-specific reasoning and is unsupported. This is a deliberate safety correction.
+
+| Category | Exact IDs / count | Final disposition |
+|---|---:|---|
+| Canonical paired statements rendered from immutable fields | **6**: `v3_bio_10_11`, `v3_bio_11_07`, `v3_bio_12_07`, `v3_bio_14_10`, `v3_bio_15_15`, `v3_bio_16_10` | The model reads the original `stimulus.left_label`, `left`, `right_label`, and `right`; test and Review render those values below the original stem. No replacement stem is invented. |
+| Other paired-statement records with canonical fields already present | **5**: `v3_bio_02_12`, `v3_bio_05_12`, `v3_bio_06_07`, `v3_bio_07_15`, `v3_bio_08_07` | Supported automatically by the same renderer path; no payload mutation. |
+| Non-paired visible-text repairs without canonical `left`/`right` values | **5**: `v3_bio_11_24`, `v3_bio_13_15`, `v3_bio_14_20`, `v3_bio_15_24`, `v3_bio_16_16` | **Safely demoted** from fresh `TRAIN`, distinct-alternative, rescue-safe-count, and SIM selection. No text/options are guessed or overwritten. |
+| Raw taxonomy tokens | **10 machine-detected classes; 18 aliases mapped** | Localized at rendering time, preserving the original analysis sentence. |
+| Unsupported global generic-analysis rewrite | **1 prior UI strategy** | Rejected; not included in the build-effective overlay. Scientific item analyses remain visible rather than being erased by a broad pattern. |
+
+The frozen artifact establishes the six rendered pairs verbatim. For example, `v3_bio_10_11` contains the original glomerular-filtration and aldosterone claims; `v3_bio_15_15` contains the original double-fertilization and mature-xylem claims; and `v3_bio_16_10` contains the original genetic-drift and acquired-trait claims. The renderer uses those canonical fields rather than adding self-authored A/B wording.[1]
+
+### Residual Biology review
+
+The three residual vague/generic candidates were re-read against their frozen stem, four options, correct index, and the W04 scientific reasoning. All three are retained as **analysis-only** updates because the proposed reasoning directly addresses the actual option and does not alter question identity.
+
+| ID | Frozen correct index | Second-pass result |
+|---|---:|---|
+| `v3_bio_12_08` | 3rd option (`2` zero-based) | Retained. The correct chain is final-hormone inhibition of upstream signals and therefore negative feedback in many endocrine axes; the analysis distinguishes intracellular receptors, negative feedback, and hypothalamic GnRH from anterior-pituitary FSH/LH. |
+| `v3_bio_15_11` | 3rd option (`2` zero-based) | Retained. The incompatible statement is that all mature xylem conducting elements are alive; mature tracheids and vessel elements are dead. |
+| `v3_bio_16_13` | 4th option (`3` zero-based) | Retained. Evolution is not a linear ladder toward perfection; selection changes heritable-trait frequencies in populations across generations, and genetic drift is relatively stronger in small populations. |
+
+### Geology and remaining blockers
+
+`real_1401_in_geo_153` remains **unresolved**. Its malformed displayed options are not reconstructed, re-keyed, or otherwise guessed. It stays outside this successor’s changes and requires an authoritative official-source reconstruction before any versioned bank repair.
+
+The five safely demoted Biology visible-stem records are not equivalent to deletion: their immutable rows, stable IDs, historical attempts, and review references remain intact. The guard only stops them from being selected for new training, distinct alternatives, safe-count calculations, and simulations until authoritative presentation content is available.
+
+### Second-pass implementation and tests
+
+The build-effective V6.1.4 overlay now includes `biology_v621_second_pass_successor.json`, `PairedStimulus` parsing, one shared stem card used in both Test and Review, raw-taxonomy localization without generic text deletion, the safe selection exclusion list, and focused JVM-test source files.
+
+| Validation | Result | Observed evidence |
+|---|---|---|
+| Successor update uniqueness and field contract | **PASS** | `BIOLOGY_SECOND_PASS_SUCCESSOR_OK 142 6`; 142 unique updates, exactly three analysis fields per update. |
+| Immutable-bank contract | **PASS** | `SECOND_PASS_IMMUTABLE_BANK_OK 142 6 5`; verified JSON SHA matched, six canonical pairs were non-empty, five unresolved visible-stem rows were excluded from the successor. |
+| Conflict ownership | **PASS** | All eight specified collision IDs resolve to `biology-v6.1.5-analysis-safety`; no duplicate successor ID remains. |
+| Canonical renderer wiring | **PASS (static)** | `pairedStimulus` is parsed in `Models.kt`; `QuestionStemCard(question, compact)` is used in both Test and Review. |
+| Safe demotion wiring | **PASS (static)** | All five unresolved visible-stem IDs are excluded in training candidates, alternatives, rescue-safe counts, and simulations. |
+| Repacked build-effective overlay SHA-256 | **PASS** | `ed96733118d455b6bf1b3280eddea6096183c816cba7aeb86d92f46ece87d64c`. |
+| Kotlin/JVM/Gradle, lint, Android API 35 instrumentation, signed APK | **NOT RUN** | Required Foreman/integrator gates on the fully integrated tree; no build pass is claimed here. |
+
+> **Integration requirement.** The new overlay supersedes the prior branch-local renderer-only fix. Integrate the rebuilt overlay as one unit, run its static validator, then run Kotlin/JVM/lint, package inspection, migration/progress, Review/Question Map, API 35, and signed-release gates. Do not combine the predecessor Biology payloads directly or allow a last-applied patch to determine any of the eight conflicting IDs.
+
+### Second-pass references
+
+[5]: https://github.com/rynmrde/Konkor/blob/55c19556fe8429548d1d7ae60939a61510bfa49e/reports/parallel/INDEPENDENT_BIO_GEO_REVIEW.md "Independent Biology/Geology cross-review"
+[6]: https://github.com/rynmrde/Konkor/tree/parallel/bank-biology "Compact Biology analysis candidate"
+[7]: https://github.com/rynmrde/Konkor/tree/parallel/bio-b "Complementary Biology candidate"
