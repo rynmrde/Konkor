@@ -1,4 +1,4 @@
-name: Radiology1405 V6.1.5 Final-Hours Integrated Release
+name: Radiology1405 V6.1.5 Urgent Rescue Release
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
       V61_BANK_JSON_SHA256: 54f349cbcd731b89d440d2f9486c2126efef564b57f223082610a344913b263d
       V61_BANK_SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
       V61_DB_SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
-      V615_OVERLAY_SHA256: 19828ce1abb39dfca35131cbd4a1ee427f49334baddfd23dffef0914612d9c72
+      V615_OVERLAY_SHA256: 24a86e4e07959446ef3ae6801c0b391d39047ba076c5bb273c5acb7d834155d9
       RELEASE_TAG: radiology1405-apk-v6.1.5-20260819
       RELEASE_VERSION_NAME: 6.1.5
       RELEASE_VERSION_CODE: '166'
@@ -71,7 +71,8 @@ jobs:
           tar -xJf radiology_v615_final_patch/overlay.tar.xz -C "$PROJECT"
           bash "$PROJECT/tools/generate_audio.sh" "$PROJECT/app/src/main/res/raw"
           test -f "$PROJECT/tests/bank_final_gate.py"
-          test -f "$PROJECT/tests/verify_final_hours_v615.py"
+          test -f "$PROJECT/tests/verify_live_rescue_v615.py"
+          test -f "$PROJECT/app/src/main/java/com/radiology1405/prep/engine/LiveRescuePlanner.kt"
           test -f "$PROJECT/app/src/main/java/com/radiology1405/prep/data/QuestionMapSessionProjection.kt"
           python - <<'PY'
           import json, os, pathlib
@@ -112,15 +113,17 @@ jobs:
           print('PASS V6.1.5 legacy compatibility assertions updated atomically')
           PY
 
-      - name: Frozen bank, Final-Hours and compatibility gates
+      - name: Frozen bank, Live Rescue and compatibility gates
         run: |
           set -euo pipefail
           cd "$PROJECT"
           python tests/bank_final_gate.py | tee "$GITHUB_WORKSPACE/_out/bank-final-gate.txt"
-          python tests/verify_final_hours_v615.py | tee "$GITHUB_WORKSPACE/_out/final-hours-static.txt"
+          python tests/verify_live_rescue_v615.py | tee "$GITHUB_WORKSPACE/_out/live-rescue-static.txt"
           python tests/validate_v6_1.py | tee "$GITHUB_WORKSPACE/_out/static-validation.txt"
           ! grep -R 'fallbackToDestructiveMigration' app/src/main/java
           ! grep -q 'android.permission.INTERNET' app/src/main/AndroidManifest.xml
+          ! grep -R -E 'DaySelector|day_chip_|plan_day_|selectedPlanDate|todayPlanDate|allPlans|planForDate|fun selectDay\(|fun selectToday\(' app/src/main/java app/src/androidTest/java
+          ! grep -R -E 'FinalHoursPlanner|FinalHoursInput|FinalHoursDecision|Final-Hours' app/src/main/java app/src/test/java tests
           echo "$V61_BANK_SHA256  app/src/main/assets/radiology1405_bank_v6_1.db.gz" | sha256sum -c -
           cp build/release-gates/BANK_FINAL_GATE.json "$GITHUB_WORKSPACE/_out/BANK_FINAL_GATE.json"
 
@@ -254,10 +257,10 @@ jobs:
 
           The immutable V6.1 bank payload is unchanged. The accepted full-source candidate renders question-specific `correctAnalysis` and structured stimulus data in Test and Review; CI runs the established V6.1 compatibility validation together with the V6.1.5 bank and UI gates. This release makes no unverified claim that authored training content is official exam material.
           EOF
-          cat > _out/FINAL-HOURS-PLAN.md <<'EOF'
-          # V6.1.5 Final-Hours Plan
+          cat > _out/LIVE-RESCUE-PLAN.md <<'EOF'
+          # V6.1.5 Live Rescue Plan
 
-          The accepted Final-Hours engine computes remaining study opportunity from actual time, exam datetime, and persisted progress. It uses adaptive marginal-value prioritization, protected SIM1 review/repair, conditional SIM2, and separate unique-training, repeat, simulation, and attempt accounting. Fixed sleep, meal, hygiene, and logistics reserve quotas are intentionally removed; all other V6.1 features remain in scope for regression testing.
+          Calendar/day selection and the named Final-Hours feature are intentionally removed. The app exposes one current rescue plan, driven by persisted Room progress, due reviews, marginal ROI and protected SIM gates. The exact Tehran exam cutoff remains a safety boundary. No fixed sleep, meal, hygiene or logistics reserve is subtracted.
           EOF
           cat > _out/TEST-SUMMARY.md <<'EOF'
           # V6.1.5 Test Summary
@@ -265,14 +268,14 @@ jobs:
           The following gates completed successfully in this authoritative GitHub Actions run before release publication.
 
           - PASS — immutable-bank schema/ID/options/key/source/quarantine/holdout/duplicate/session contracts
-          - PASS — Final-Hours static behavior gate and established V6.1 compatibility checks
+          - PASS — Live Rescue static behavior gate and established V6.1 compatibility checks
           - PASS — Kotlin compile, JVM tests, Android lint, and debug APK build
           - PASS — debug and signed APK frozen-bank inspection
           - PASS — release signing, signature verification, package and version verification
           - PASS — Android API 35 instrumentation, persistence, Review/Question Map UI tests, install, and launch smoke test
           EOF
 
-      - name: Publish new V6.1.5 Final-Hours release
+      - name: Publish new V6.1.5 Live Rescue release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -281,7 +284,7 @@ jobs:
             echo "Refusing to overwrite existing release $RELEASE_TAG" >&2
             exit 1
           fi
-          gh release create "$RELEASE_TAG" --repo "${{ github.repository }}" --target "$GITHUB_SHA" --title 'Radiology1405 APK · V6.1.5 Final-Hours' --notes-file _out/CHANGELOG.md
+          gh release create "$RELEASE_TAG" --repo "${{ github.repository }}" --target "$GITHUB_SHA" --title 'Radiology1405 APK · V6.1.5 Urgent Rescue' --notes-file _out/CHANGELOG.md
           gh release upload "$RELEASE_TAG" \
             _out/Radiology1405-V6.1.5.apk \
             _out/Radiology1405-V6.1.5.apk.sha256 \
@@ -294,6 +297,6 @@ jobs:
             _out/BANK-AUDIT.md \
             _out/DUPLICATE-AUDIT.md \
             _out/ANALYSIS-QA.md \
-            _out/FINAL-HOURS-PLAN.md \
+            _out/LIVE-RESCUE-PLAN.md \
             _out/MIGRATION-REPORT.md \
             --repo "${{ github.repository }}"
