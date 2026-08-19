@@ -3,7 +3,7 @@
 > **Worker:** W03 Chemistry Bank + Solution Quality  
 > **Branch:** `parallel/bank-chemistry`  
 > **Pinned baseline:** `main` at `72dc76e56b7ae625ad1904c76910eeaec5f90f58`  
-> **Worker commit:** `PENDING_UPLOAD_COMMIT`  
+> **Worker candidate bundle commit (remote-reassembled and verified):** `b68754b96c1ab495a8ce86fc6e4d89b6d46c7c87`  
 > **Release status:** No main change, release creation, tag, merge, or force-push was performed.
 
 ## Scope and Evidence
@@ -62,6 +62,7 @@ The candidate is delivered as a second immutable asset, `radiology1405_bank_v6_2
 | Retired→replacement mapping | PASS | five valid pairs; old obsolete, new active TRAIN |
 | Unchanged IDs retain their answer key | PASS | zero key changes |
 | Overlay static integration: V6.1 retained, V6.2 hash/loader, separate progress DB, no destructive migration | PASS | six checks |
+| Remote branch overlay reconstruction | PASS | eight uploaded segments reassembled to SHA-256 `1e47e59d162b25407eeafd08cb2d251a385c84e4a60b56fb16186ac5004f9502`; archive contains required asset and loader |
 
 The disposable frozen-project copy did not include a `gradlew` wrapper and no system Gradle executable was present. Therefore Kotlin compilation, JVM tests, lint, APK asset inspection, Android installation, and runtime persistence verification were **not run in this worker environment**. This is a release-authority gate, not a pass claim.
 

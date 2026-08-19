@@ -1,0 +1,30 @@
+{
+  "commit": "b68754b96c1ab495a8ce86fc6e4d89b6d46c7c87",
+  "parts": [
+    614400,
+    614400,
+    614400,
+    614400,
+    614400,
+    614400,
+    614400,
+    17252
+  ],
+  "sha256": "1e47e59d162b25407eeafd08cb2d251a385c84e4a60b56fb16186ac5004f9502",
+  "members": [
+    ".",
+    "./README.md",
+    "./app",
+    "./app/src",
+    "./app/src/main",
+    "./app/src/main/assets",
+    "./app/src/main/assets/radiology1405_bank_v6_2.db.gz",
+    "./app/src/main/java",
+    "./app/src/main/java/com",
+    "./app/src/main/java/com/radiology1405",
+    "./app/src/main/java/com/radiology1405/prep",
+    "./app/src/main/java/com/radiology1405/prep/data",
+    "./app/src/main/java/com/radiology1405/prep/data/BankStore.kt",
+    "./reports"
+  ]
+}
