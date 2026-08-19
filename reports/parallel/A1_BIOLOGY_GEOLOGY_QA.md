@@ -64,6 +64,7 @@ The branch adds a presentation normalizer in `ScienceText.kt`. It maps every raw
 | `d03627ff1496901bf1290825606ec11b1c28d31b` | Remove stock review boilerplate while preserving scientific reasoning. |
 | `d515ceaf492627962fac709a3d3230caa7cb2170` | Regression test for boilerplate removal / reasoning preservation. |
 | `a4392e55ec0ba5c13af6016a0749ba02f2413b39` | Add `unit_error`, the remaining machine-detected raw key, to the renderer map. |
+| `07b9b4e16f2e61906bd02e2f002f9ea075c94aff` | Extend the regression test to cover `unit_error`. |
 
 The new test file is `app/src/test/java/com/radiology1405/prep/ui/ScienceTextTest.kt`. It asserts that raw internal labels are absent from learner-facing text, Persian labels are shown, stock filler is removed, and the actual scientific reason is retained.
 
@@ -77,6 +78,7 @@ The new test file is `app/src/test/java/com/radiology1405/prep/ui/ScienceTextTes
 | Duplicate and near-duplicate scan | PASS as detection | Findings recorded above; no unsafe auto-merge or ID mutation. |
 | Raw-enum and boilerplate scan | PASS as detection | 525 and 549 findings respectively; presentation path patched. |
 | Committed branch content check | PASS | Renderer and test were retrieved from `parallel/a1-biology-geology` after commit. |
+| Deterministic raw-label / filler safeguard check | PASS | All 10 machine-detected raw enum tokens are mapped; stock-filler removal and reasoning-preservation test assertions are present. |
 | Kotlin / Gradle execution | NOT RUN | This worker did not claim a build pass; the Foreman must run the required compile/JVM/lint/instrumentation gates on the integrated tree. |
 
 ## Integration actions required
