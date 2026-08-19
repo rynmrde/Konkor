@@ -8,6 +8,7 @@
 | Account label | Normal/Standard Manus 1.6 |
 | Primary branch | `parallel/a2-review-question-map` |
 | Primary remote commit | `ad25e780b115d2bc144d6d3218c8104f0fb5bae5` |
+| Second-pass overlay publication commit | `335333159d4fc5a2ec9d988d9a26e753d9e32a0d` on `parallel/a2-review-question-map` |
 | Primary baseline | `origin/main` `72dc76e56b7ae625ad1904c76910eeaec5f90f58` |
 | Second-pass integration baseline | `radiology1405_android_project_v6.1.4.zip`, release `radiology1405-apk-v6.1.4-20260817` |
 | Full-source baseline SHA-256 | `b242c94b3af76b5bb76043699d281555d72092b8416b1be77be3b8d31ec4ab8e` |
@@ -77,4 +78,4 @@ The correction does **not** claim completed device-level release QA. An Android 
 
 ### Integrator artifact
 
-The finalized second-pass full-source overlay is `overlay.tar.xz` with SHA-256 to be recorded after the final report commit. It contains only the V6.1.4 files required for the correction, its tests, and this report. It must be applied on top of the stated V6.1.4 rescue overlay; it is not a replacement for the immutable bank, a main-branch merge, or a Release.
+The finalized second-pass full-source overlay is `overlays/v614/A2_REVIEW_QUESTION_MAP_SECOND_PASS.tar.xz`, first published at commit `335333159d4fc5a2ec9d988d9a26e753d9e32a0d`, with SHA-256 `a6cb639111058858b374f9b744157f91a51f4d240c9decba6828bb55a7d73e6d`. It contains only the V6.1.4 files required for the correction, its tests, and this report. It must be applied on top of the stated V6.1.4 rescue overlay; it is not a replacement for the immutable bank, a main-branch merge, or a Release.
