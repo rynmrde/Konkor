@@ -1,0 +1,2534 @@
+{
+  "base_db_sha256": "d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c",
+  "candidate_db_sha256": "4795f614ebbc710fe5df3aa0416329fd9034163eea1791cf52ce815c73f32ec5",
+  "candidate_gzip_sha256": "21dc64b6ba53940daba36116057eed0f84d60980d083c2de71531977a4ca61f9",
+  "identity": {
+    "assigned_ids": [
+      "v3_bio_01_01",
+      "v3_bio_01_02",
+      "v3_bio_01_03",
+      "v3_bio_01_04",
+      "v3_bio_01_05",
+      "v3_bio_01_06",
+      "v3_bio_01_07",
+      "v3_bio_01_08",
+      "v3_bio_01_09",
+      "v3_bio_01_10",
+      "v3_bio_01_11",
+      "v3_bio_01_12",
+      "v3_bio_01_13",
+      "v3_bio_01_14",
+      "v3_bio_01_15",
+      "v3_bio_01_16",
+      "v3_bio_01_17",
+      "v3_bio_02_01",
+      "v3_bio_02_02",
+      "v3_bio_02_03",
+      "v3_bio_02_04",
+      "v3_bio_02_05",
+      "v3_bio_02_06",
+      "v3_bio_02_07",
+      "v3_bio_02_08",
+      "v3_bio_02_09",
+      "v3_bio_02_10",
+      "v3_bio_02_11",
+      "v3_bio_02_12",
+      "v3_bio_02_13",
+      "v3_bio_02_14",
+      "v3_bio_02_15",
+      "v3_bio_02_16",
+      "v3_bio_02_17",
+      "v3_bio_02_18",
+      "v3_bio_02_19",
+      "v3_bio_03_01",
+      "v3_bio_03_02",
+      "v3_bio_03_03",
+      "v3_bio_03_04",
+      "v3_bio_03_05",
+      "v3_bio_03_06",
+      "v3_bio_03_07",
+      "v3_bio_03_08",
+      "v3_bio_03_09",
+      "v3_bio_03_10",
+      "v3_bio_03_11",
+      "v3_bio_03_12",
+      "v3_bio_03_13",
+      "v3_bio_03_14",
+      "v3_bio_03_15",
+      "v3_bio_03_16",
+      "v3_bio_03_17",
+      "v3_bio_03_18",
+      "v3_bio_03_19",
+      "v3_bio_03_24",
+      "v3_bio_04_01",
+      "v3_bio_04_02",
+      "v3_bio_04_03",
+      "v3_bio_04_04",
+      "v3_bio_04_05",
+      "v3_bio_04_06",
+      "v3_bio_04_07",
+      "v3_bio_04_08",
+      "v3_bio_04_09",
+      "v3_bio_04_10",
+      "v3_bio_04_11",
+      "v3_bio_04_12",
+      "v3_bio_04_13",
+      "v3_bio_04_14",
+      "v3_bio_04_15",
+      "v3_bio_04_16",
+      "v3_bio_04_17",
+      "v3_bio_05_01",
+      "v3_bio_05_02",
+      "v3_bio_05_03",
+      "v3_bio_05_04",
+      "v3_bio_05_05",
+      "v3_bio_05_06",
+      "v3_bio_05_07",
+      "v3_bio_05_08",
+      "v3_bio_05_09",
+      "v3_bio_05_10",
+      "v3_bio_05_11",
+      "v3_bio_05_12",
+      "v3_bio_05_13",
+      "v3_bio_05_14",
+      "v3_bio_05_15",
+      "v3_bio_05_16",
+      "v3_bio_05_17",
+      "v3_bio_05_18",
+      "v3_bio_05_19",
+      "v3_bio_06_01",
+      "v3_bio_06_02",
+      "v3_bio_06_03",
+      "v3_bio_06_04",
+      "v3_bio_06_05",
+      "v3_bio_06_06",
+      "v3_bio_06_07",
+      "v3_bio_06_08",
+      "v3_bio_06_09",
+      "v3_bio_06_10",
+      "v3_bio_06_11",
+      "v3_bio_06_12",
+      "v3_bio_06_13",
+      "v3_bio_06_14",
+      "v3_bio_06_15",
+      "v3_bio_06_18",
+      "v3_bio_06_19",
+      "v3_bio_06_20",
+      "v3_bio_06_21",
+      "v3_bio_07_01",
+      "v3_bio_07_02",
+      "v3_bio_07_03",
+      "v3_bio_07_04",
+      "v3_bio_07_05",
+      "v3_bio_07_06",
+      "v3_bio_07_07",
+      "v3_bio_07_08",
+      "v3_bio_07_09",
+      "v3_bio_07_10",
+      "v3_bio_07_11",
+      "v3_bio_07_12",
+      "v3_bio_07_13",
+      "v3_bio_07_14",
+      "v3_bio_07_15",
+      "v3_bio_07_19",
+      "v3_bio_07_20",
+      "v3_bio_08_01",
+      "v3_bio_08_02",
+      "v3_bio_08_03",
+      "v3_bio_08_04",
+      "v3_bio_08_05",
+      "v3_bio_08_06",
+      "v3_bio_08_07",
+      "v3_bio_08_08",
+      "v3_bio_08_09",
+      "v3_bio_08_10",
+      "v3_bio_08_11",
+      "v3_bio_08_12",
+      "v3_bio_08_13",
+      "v3_bio_08_14",
+      "v3_bio_08_15",
+      "v3_bio_08_16",
+      "v3_bio_08_18"
+    ],
+    "count": 145,
+    "stable_ids_preserved": true
+  },
+  "database_integrity": "ok",
+  "summary": {
+    "items_reviewed": 145,
+    "items_with_content_changes": 145,
+    "stem_or_options_changed": 85,
+    "analysis_changed": 145,
+    "key_changes": 0,
+    "manual_completion_repairs": [
+      "v3_bio_02_12",
+      "v3_bio_08_07"
+    ]
+  },
+  "items": [
+    {
+      "id": "v3_bio_01_01",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزینهٔ کلید (گزینهٔ ۲) صحیح و مطابق بخش «بیان ژن» کتاب درسی است. توضیحاتِ خام و کلی پیشین حذف و به‌جای آن تحلیل‌های بیولوژیک دقیق برای هر گزینه نوشته شد.",
+      "textbook_alignment": "هم‌راستا با بخش «بیان ژن: رونویسی، ترجمه و تنظیم» از کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_01_02",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزینهٔ کلید (گزینهٔ ۳) صحیح و مطابق کتاب است. توضیحاتِ کلی و قالبی قبلی با تحلیل‌های روشن و مستدل جایگزین شد.",
+      "textbook_alignment": "هم‌راستا با بخش «بیان ژن: رونویسی، ترجمه و تنظیم» از کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_01_03",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزینهٔ کلید (گزینهٔ ۴) صحیح و منطبق با نگارش کتاب درسی است. توضیحات قالبی حذف و توضیحات علمی دقیق برای هر گزاره افزوده شد.",
+      "textbook_alignment": "هم‌راستا با بخش «بیان ژن: رونویسی، ترجمه و تنظیم» از کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_01_04",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزینهٔ کلید (گزینهٔ ۱) صحیح و مطابق کتاب است. توضیحات عمومی و تکراری حذف و به‌جای آن تحلیل‌های خاص و مستدل برای هر گزینه ارائه شد.",
+      "textbook_alignment": "هم‌راستا با بخش «بیان ژن: رونویسی، ترجمه و تنظیم» از کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_01_05",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزینهٔ کلید (گزینهٔ ۲) صحیح و منطبق با کتاب درسی است. توضیحاتِ قالبی اولیه جای خود را به تحلیلِ دقیق و مبتنی بر کتاب دادند؛ ساختار سؤال و گزینه‌ها بدون تغییر نگه داشته شد.",
+      "textbook_alignment": "هم‌راستا با بخش «بیان ژن: رونویسی، ترجمه و تنظیم» از کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_01_06",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سوال و کلید صحیح مناسب با کتاب است؛ توضیحات بازنویسی شدند تا به‌جای متن قالبی، دلایل بیولوژیکی واضح برای هر گزینه ارائه شود. هیچ تغییری در کلید لازم نبود.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «بیان ژن: رونویسی، ترجمه و تنظیم»"
+    },
+    {
+      "id": "v3_bio_01_07",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "ساختار سؤال (ارزیابی زنجیرهٔ استنتاج) مناسب است. گزینه‌ها محتوا و خطاهای شناخته‌شده را نمایش می‌دهند. توضیحات بازنویسی شد تا هر گزینه با دلایل زیست‌شناختی روشن نقد شود.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «بیان ژن: رونویسی، ترجمه و تنظیم»"
+    },
+    {
+      "id": "v3_bio_01_08",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزینهٔ صحیح و سایر گزینش‌ها با کتاب تطابق دارند؛ توضیحات هر گزینه بازنویسی شد تا مستقیماً دلایل زیست‌شناختی را بیان کند و متن‌های قالبی حذف شود.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «بیان ژن: رونویسی، ترجمه و تنظیم»"
+    },
+    {
+      "id": "v3_bio_01_09",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سؤال و کلید صحیح هستند. توضیحات علمی برای هر گزینه به‌طور مشخص و متناسب با کتاب بازنویسی شد تا قالبی‌گویی حذف شود.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «بیان ژن: رونویسی، ترجمه و تنظیم»"
+    },
+    {
+      "id": "v3_bio_01_10",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "پرسش محاسباتی ساده و کلید صحیح است. توضیحات هر گزینه به‌صورت عددی و مفهومی اصلاح شد تا دانش‌آموز دلیل انتخاب را درک کند.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «بیان ژن: رونویسی، ترجمه و تنظیم»"
+    },
+    {
+      "id": "v3_bio_01_11",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "triviality",
+        "weak_distractor"
+      ],
+      "audit_note": "سؤال محاسباتی ساده و درست است؛ توضیحات قبلی از الگوی تکراری و غیرمختص بیولوژی استفاده می‌کرد که بازنویسی شد. سه گزینهٔ محرّک (۸۹، ۹۰، ۳۰) تا حدی قابل حذف سریع‌اند؛ اما گزینهٔ صحیح (۲۹) حفظ شد. متن سؤال برای حذف ضمائر مبهم و روشن شدن شرط «شامل رمزهٔ پایانی» بازنویسی شد.",
+      "textbook_alignment": "مطابقت با فصل «بیان ژن: رونویسی، ترجمه و تنظیم» از کتاب زیست‌شناسی ۳؛ در کتاب تأکید شده هر رمزه ۳ نوکلئوتید دارد و رمزهٔ پایان آمینواسید وارد نمی‌کند."
+    },
+    {
+      "id": "v3_bio_01_12",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "weak_distractor"
+      ],
+      "audit_note": "سؤال از نظر علمی صحیح و مطابق کتاب است. توضیحات گزینه‌ها بازنویسی شدند تا از الگوهای تکراری و مبهم جلوگیری شود و دلیل رد هر گزینه صریحاً بیان گردد.",
+      "textbook_alignment": "مطابقت با مفاد فصل «بیان ژن: رونویسی، ترجمه و تنظیم» در زیست‌شناسی ۳—هر رمزه سه نوکلئوتید است و رمزهٔ پایان آمینواسید رمزگذاری نمی‌کند."
+    },
+    {
+      "id": "v3_bio_01_13",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "weak_distractor"
+      ],
+      "audit_note": "سؤال صحیح و هماهنگ با کتاب درسی است. توضیحات گزینه‌ها برای حذف زبان قالبی بازنویسی شد و دلایل رد هر گزینه به طور مختصر و شفاف بیان گشت.",
+      "textbook_alignment": "مطابقت با زیست‌شناسی ۳، بخش بیان ژن؛ در کتاب روشن شده که هر رمزه سه نوکلئوتید دارد و رمزه‌های پایان داخل زنجیرهٔ آمینواسیدی نمی‌افزایند."
+    },
+    {
+      "id": "v3_bio_01_14",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "صورت سؤال منفی و گزینهٔ دام به‌خوبی طراحی شده‌اند اما توضیحات قبلی شامل زبان تکراری و کلی بود؛ بازنویسی صورت گرفت تا دلایل علمی و تمایز یوکاریوت-پروکاریوت روشن شوند. گزینهٔ سوم اصلاح شد تا تمرکز بر جایگاه واقعی پیرایش (هسته/اسپلیسوزوم) باشد.",
+      "textbook_alignment": "مطابقت با بخش «بیان ژن: رونویسی، ترجمه و تنظیم» در زیست‌شناسی ۳؛ کتاب پیرایش pre‑mRNA در یوکاریوت‌ها را پیش از ترجمه و در هسته توصیف می‌کند."
+    },
+    {
+      "id": "v3_bio_01_15",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزاره‌ها از کتاب کاملاً برگرفته شده‌اند؛ توضیحات بازنویسی شدند تا از زبان کلی و تکراری جلوگیری شود و مکانیزم عملکرد رمزه‌های پایان و جهت رشد زنجیرهٔ پلی‌پپتیدی روشن گردد.",
+      "textbook_alignment": "مطابقت با مفاد فصل «بیان ژن: رونویسی، ترجمه و تنظیم» در زیست‌شناسی ۳؛ کتاب تصریح می‌کند که رمزه‌های پایان آمینواسید رمزگذاری نمی‌کنند و رهاسازی ترجمه را القا می‌کنند."
+    },
+    {
+      "id": "v3_bio_01_16",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "سؤال و گزینه‌ها حفظ شده‌اند اما عبارتِ «هم‌زمان» در گزینهٔ 0 ممکن است موجب ابهام شود؛ توضیحات هر گزینه بازنویسی و قالب‌زدایی شده تا از زبانِ الگو/رمز/پادکدون دقیقاً استفاده شود و از متن‌های کلی و تکراری اجتناب شود. کلید دست‌نخورده باقی مانده است (گزینهٔ 0 نادرست).",
+      "textbook_alignment": "زیست‌شناسی ۳ (1404)، بخش: بیان ژن: رونویسی، ترجمه و تنظیم"
+    },
+    {
+      "id": "v3_bio_01_17",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "کلید (گزینهٔ 1) صحیح تشخیص داده شده؛ توضیحات هر گزینه بازنویسی شد تا از الگوهای تحلیلی کلی پرهیز شود و توصیف مولکولی دقیق ارائه شود. ساختار سؤال دست‌نخورده باقی گذاشته شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (1404)، بخش: بیان ژن: رونویسی، ترجمه و تنظیم"
+    },
+    {
+      "id": "v3_bio_02_01",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "none"
+      ],
+      "audit_note": "گزینه‌ها حفظ شدند اما توضیحات بازنویسی شد تا خطاهای مفهومی مشخص و به‌طور مولکولی توجیه شوند (مثلاً نقش لیگاز و DNAپلیمراز). عبارت «فامتن» با پرانتز توضیحی حذف یا توضیح داده شد تا ابهام برطرف شود. کلید دست‌نخورده باقی است (گزینهٔ 3 درست).",
+      "textbook_alignment": "زیست‌شناسی ۳ (1404)، بخش: DNA، همانندسازی و جهش"
+    },
+    {
+      "id": "v3_bio_02_02",
+      "changed_fields": [
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "کلید (گزینهٔ 0) صحیح. توضیحات هر گزینه بازنویسی و فنی‌تر شده‌اند تا مفاهیم جهت‌سنتز، نقش لیگاز و اثرات حذف/جهش روشن شوند. ساخت سؤال حفظ شد ولی متن گزینه‌ها برای دقت مولکولی کمی بهبود یافت.",
+      "textbook_alignment": "زیست‌شناسی ۳ (1404)، بخش: DNA، همانندسازی و جهش"
+    },
+    {
+      "id": "v3_bio_02_03",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "none"
+      ],
+      "audit_note": "گزینهٔ صحیح (1) با محتوا همخوانی دارد؛ توضیحاتِ قبلی که قالبی و تکراری بودند بازنویسی شدند تا هر گزارهٔ غلط با دلیل مولکولی مشخص رد شود. ساختار سؤال و کلید حفظ شده‌اند.",
+      "textbook_alignment": "زیست‌شناسی ۳ (1404)، بخش: DNA، همانندسازی و جهش"
+    },
+    {
+      "id": "v3_bio_02_04",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینهٔ کلید (۳) صحیح و مطابق با کتاب درسی است. تحلیل‌های اولیه حاوی متن قالبی بودند؛ توضیحات به صورت صریح با مفاهیم بیولوژیکی (قطعات اوکازاکی، جهت ۵′→۳′، نقش لیگاز) جایگزین شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ 1404)، بخش «DNA، همانندسازی و جهش» — توضیح دربارهٔ قطعات اوکازاکی و جهت‌گیری پلیمراز."
+    },
+    {
+      "id": "v3_bio_02_05",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینهٔ کلید (۴) صحیح و منطبق بر مطالب کتاب است. توضیحات اولیه کلی و تکراری بودند؛ تحلیل‌ها با دلایل مولکولی مشخص (frameshift و مضربِ سه) جایگزین شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ 1404)، بخش «DNA، همانندسازی و جهش» — مبحث جهش‌های درج/حذف و اثر چارچوب خواندن."
+    },
+    {
+      "id": "v3_bio_02_06",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینهٔ کلید (۱) صحیح و منطبق بر کتاب. توضیحات قالبی و تکراری حذف و با توضیحات دقیق عملکرد آنزیم‌ها و مدل نیمه‌حفاظتی جایگزین شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ 1404)، بخش «DNA، همانندسازی و جهش» — مدل نیمه‌حفاظتی و نقش DNA پلیمراز/لیگاز."
+    },
+    {
+      "id": "v3_bio_02_07",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "زنجیرهٔ کلید (گزینهٔ دوم) صحیح و روشن است. توضیحاتِ پیشین حاوی متن‌های تکراری بودند؛ اکنون برای هر گزاره توضیح مولکولی مشخص ارائه شد تا سردرگمی حذف شود.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ 1404)، بخش «DNA، همانندسازی و جهش» — اتصال نوکلئوتید به ۳′-OH و جهت‌گیری ۵′→۳′ پلیمراز."
+    },
+    {
+      "id": "v3_bio_02_08",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "پرسش به‌درستی طراحی شده و گزینهٔ استثنا (۳) مطابق با مفاهیم کتاب نادرست است. توضیحات قالبی اولیه حذف و با تبیین‌های دقیق‌تر و مستقیم جایگزین شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ 1404)، بخش «DNA، همانندسازی و جهش» — نکات مربوط به اوکازاکی، frameshift و مدل نیمه‌حفاظتی."
+    },
+    {
+      "id": "v3_bio_02_09",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "none"
+      ],
+      "audit_note": "کلید (گزینهٔ ۴، index=3) صحیح است. تحلیل‌های اولیه شامل متن‌های کلی و تکراری بودند؛ توضیحات جایگزین اکنون عملکرد دقیق لیگاز و DNAپلیمراز را شرح می‌دهند. برای شفافیت پیشنهاد می‌شود عبارت گزینهٔ چهارم به «لیگاز قطعات باز لایهٔ پس از برداشتن پرایمر را به هم متصل می‌کند» بازنویسی شود، اما تغییر گزینه در این بازبینی انجام نشد.",
+      "textbook_alignment": "زیست‌شناسی ۳ — بخش «DNA، همانندسازی و جهش» (چگونگی همانندسازی نیمه‌حفاظتی، جهت فعالیت DNAپلیمراز و نقش لیگاز)"
+    },
+    {
+      "id": "v3_bio_02_10",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "ambiguity"
+      ],
+      "audit_note": "کلید (گزینهٔ ۱، index=0) صحیح است. متنِ سؤال با عبارت «شرط لازم» کمی گنگ است و ممکن است برای برخی داوطلبان نامفهوم باشد؛ پیشنهاد: اصلاح عبارت به «تمامی گزینه‌های زیر صحیح‌اند، به‌جز:» تا وضوح افزایش یابد. تحلیل‌های قبلی تکراری و کلی بودند؛ در این بازبینی هر گزینه با دلایل زیست‌شناختی دقیق توضیح داده شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ — بخش «DNA، همانندسازی و جهش» (اثر حذف/افزودن نوکلئوتیدها، همانندسازی نیمه‌حفاظتی، جهت فعالیت DNAپلیمراز، چندمعنایی کد ژنتیکی)"
+    },
+    {
+      "id": "v3_bio_02_11",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "none"
+      ],
+      "audit_note": "کلید (گزینهٔ ۲، index=1) صحیح است. توضیحات اولیه بسیار کلی و تکراری بودند؛ در این بازبینی هر گزینه با استناد به نقش مولکولیِ عوامل همانندسازی و انواع جهش توضیح داده شد. متن سؤال و گزینه‌ها با کتاب درسی منطبق‌اند.",
+      "textbook_alignment": "زیست‌شناسی ۳ — بخش «DNA، همانندسازی و جهش» (جهش‌های جانشینی، همانندسازی و قطعات اوکازاکی)"
+    },
+    {
+      "id": "v3_bio_02_12",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "ambiguity",
+        "factual"
+      ],
+      "audit_note": "صورتِ ناقصِ دارای A و B بدون متن، به یک پرسش دوگزاره‌ای خودبسنده در همان ریزمبحث بازنویسی شد. کلید اصلی، گزینهٔ سوم، حفظ شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (112216)، بخش DNA، همانندسازی و جهش؛ شیمیِ پیوندیِ گروه ۳′-OH و امکان جهش خاموش در رمز ژنتیکی."
+    },
+    {
+      "id": "v3_bio_02_13",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "none"
+      ],
+      "audit_note": "کلید (گزینهٔ ۴، index=3) صحیح است. تحلیل‌های قبلی بسیار کلی بودند؛ در این بازبینی هر گزینه با توضیح دقیق زیست‌مولکولی توضیح داده شد. پیشنهاد صریح: گزینهٔ اول را بهتر است به صورت «لیگاز قطعات اوکازاکی را به هم پیوند می‌دهد» بازنویسی کنید تا از ابهام جلوگیری شود، اما در حال حاضر کلید و گزینه‌ها با کتاب درسی منطبق‌اند.",
+      "textbook_alignment": "زیست‌شناسی ۳ — بخش «DNA، همانندسازی و جهش» (نقش لیگاز، اثر حذف/افزودن، جانشینی و چندمعنایی کد ژنتیکی)"
+    },
+    {
+      "id": "v3_bio_02_14",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "محتوای علمی گزینهٔ صحیح و دلایل رد گزینه‌های نادرست مطابق کتاب درسی حفظ شد. همهٔ توضیحات قالبی و جمله‌بندی‌های کلی بازنویسی شد تا توضیح‌های هر گزینه دقیق، مختصر و به‌طور مستقیم به مفاهیم کتابی ارجاع دهد. کلید (index 0) بدون تغییر باقی ماند.",
+      "textbook_alignment": "زیست‌شناسی ۳، فصل «DNA، همانندسازی و جهش» (ویرایش 1404)"
+    },
+    {
+      "id": "v3_bio_02_15",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزارهٔ صحیح (گزینهٔ 2) و دلایل علمی هر گزینه بازنویسی شد تا خوانا و دقیق مطابق مطالب کتاب درسی باشد؛ عباراتی که شبیه قالب کلی بودند حذف یا اصلاح شدند. کلید (index 1) تأیید و بدون تغییر حفظ شد.",
+      "textbook_alignment": "زیست‌شناسی ۳، فصل «DNA، همانندسازی و جهش» (ویرایش 1404)"
+    },
+    {
+      "id": "v3_bio_02_16",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "سوال چندگزینه‌ای «شمار موارد صحیح» بازنویسی شد تا هر گزاره صریح و بدون ابهام باشد. همهٔ توضیحات گزینه‌ها به زبان علمی و مرجع‌مند به کتاب بازنویسی شد. کلید (index 2 برای «چهار مورد») تأیید شد و تغییری نکرد.",
+      "textbook_alignment": "زیست‌شناسی ۳، فصل «DNA، همانندسازی و جهش» (ویرایش 1404)"
+    },
+    {
+      "id": "v3_bio_02_17",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "عبارات بازبینی و توضیحات هر گزینه بازنویسی شدند تا مفاهیم مولکولی به‌صراحت و مطابق متن کتاب درسی بیان شوند. اشتباه مفهومیِ مربوط به نقش لیگاز و اثر حذف نوکلئوتیدی اصلاح و توضیح داده شد. کلید (index 3) ثابت نگه داشته شد.",
+      "textbook_alignment": "زیست‌شناسی ۳، فصل «DNA، همانندسازی و جهش» (ویرایش 1404)"
+    },
+    {
+      "id": "v3_bio_02_18",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "عبارات و توضیحات گزینه‌ها بازنویسی و شفاف‌سازی شدند تا هر گزاره دقیقاً با مفاهیم کتاب درسی مطابقت داشته باشد. شناسایی عبارت‌های نادرست و دلیل علمی آن‌ها به‌صورت روشن آورده شد. کلید (index 0) تأیید و بدون تغییر نگه داشته شد.",
+      "textbook_alignment": "زیست‌شناسی ۳، فصل «DNA، همانندسازی و جهش» (ویرایش 1404)"
+    },
+    {
+      "id": "v3_bio_02_19",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "ساختار سؤال و گزینه‌ها صحیح و مطابق کتاب هستند؛ تنها نیاز به جایگزینی توضیحات کلی با دلایل زیست‌شناسی مشخص بود که انجام شد. سؤال در دام‌های رایج مبهمتی ندارد و مناسب سطح کنکور است.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «DNA، همانندسازی و جهش» — مفاهیم اوکازاکی، همانندسازی نیمه‌حفاظتی، جهش چارچوبی و مبدأهای همانندسازی در یوکاریوت‌ها."
+    },
+    {
+      "id": "v3_bio_03_01",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینه‌ها و کلید صحیح هستند؛ توضیحات جایگزین با بیان صریح مکانیزم‌های ژنتیکی و قوانین توارث شده‌اند تا از کلی‌گویی اولیه فاصله بگیریم.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «وراثت مندلی، شجره و گروه خونی» — مفاهیم چندآللی/دگره‌های ABO و الگوی وابستگی به X."
+    },
+    {
+      "id": "v3_bio_03_02",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینه‌ها و کلید مطابق کتاب و بدون نیاز به تغییر‌اند؛ توضیحات تبیینی برای هر گزینه با ارجاع به مکانیزم انتقالي کروموزوم‌های جنسی و ساختار دگره‌های گروه خونی جایگزین شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «وراثت مندلی، شجره و گروه خونی» — فصل‌های مربوط به توارث وابسته به X و دستگاه ABO."
+    },
+    {
+      "id": "v3_bio_03_03",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "سؤال و گزینه‌ها مطابق محتوای درس و مناسب هستند. توضیحات پیشین جایگزین شد تا هر گزینه دلایل زیست‌شناختی روشن و مختصر داشته باشد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «وراثت مندلی، شجره و گروه خونی» — مبحث آمیزش آزمایشی (test cross) و الگوهای توارث وابسته به کروموزوم جنسی."
+    },
+    {
+      "id": "v3_bio_03_04",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "سؤال، گزینه‌ها و کلید صحیح مطابق کتاب هستند. توضیحات گزینه‌ها بازنویسی شد تا دلایلِ زیست‌شناختیِ هر پاسخ واضح و مستدل باشد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «وراثت مندلی، شجره و گروه خونی» — الگوهای توارث وابسته به X و دستگاه گروه خونی ABO."
+    },
+    {
+      "id": "v3_bio_03_05",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "سؤالات از نظر محتوایی صحیح‌اند؛ تنها نکته اینکه واژهٔ «ناخالص» در گزینه‌ها مبهم است و بهتر است با «هتروزیگوت» یا «هموزیگوت» جایگزین شود. توضیحات پیشین بیش‌تر قالبی بود؛ در این بازبینی توضیحات هر گزینه با استدلال زیست‌شناختی مشخص شده‌اند.",
+      "textbook_alignment": "زیست‌شناسی ۳ — بخش «وراثت مندلی، شجره و گروه خونی» (چاپ 1404)"
+    },
+    {
+      "id": "v3_bio_03_06",
+      "changed_fields": [
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "گزینه‌ها و کلید با کتاب درسی همخوانی دارند. اصلاح ساده‌ای در واژه‌گزینی اعمال شد (مثلاً جایگزینی «ناخالص» با «هتروزیگوت») و توضیحات کلی قالبی پیشین به استدلال‌های مشخص زیست‌شناختی تبدیل شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ — بخش «وراثت مندلی، شجره و گروه خونی» (چاپ 1404)"
+    },
+    {
+      "id": "v3_bio_03_07",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "صورت سؤال به شکل منفی «ناسازگار است» تنظیم شده که مناسب است. متن گزینه‌ها اصلاحات نگارشی جزئی داشته تا ابهامات حذف شوند. توضیحات قبلی قالبی بودند؛ در این بازبینی هر گزینه با استدلال زیست‌شناختی مشخص بررسی شده است.",
+      "textbook_alignment": "زیست‌شناسی ۳ — بخش «وراثت مندلی، شجره و گروه خونی» (چاپ 1404)"
+    },
+    {
+      "id": "v3_bio_03_08",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "سؤالی مناسب برای بررسی مفاهیم شرط لازم تنظیم شده بود. اصلاحات نگارشی انجام شد و واژهٔ «ناخالص» جایگزین یا حذف شد تا ابهام زدوده شود. توضیحات قبلی قالبی بودند و اکنون هر گزینه دلیل زیست‌شناختی واضحی دارد.",
+      "textbook_alignment": "زیست‌شناسی ۳ — بخش «وراثت مندلی، شجره و گروه خونی» (چاپ 1404)"
+    },
+    {
+      "id": "v3_bio_03_09",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "همه گزینه‌ها از نظر علمی با کتاب مطابقت داشتند جز گزینهٔ چهارم که خلاف الگوی انتقالِ کروموزوم X است. عبارت مربوط به انتقال پدر به فرزندان بازنویسی شد تا ابهامات (مثلاً واژهٔ «فامتن») حذف شوند. توضیحات گزینه‌ها با استدلال زیست‌شناختی روشن پر شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ — بخش «وراثت مندلی، شجره و گروه خونی» (چاپ 1404)"
+    },
+    {
+      "id": "v3_bio_03_10",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "vague_referent"
+      ],
+      "audit_note": "جملات نامشخص و واژهٔ «فامتن» اصلاح شد؛ توضیحات قالبی جای خود را به تحلیل زیست‌شناختی مشخص داد. صورت سؤال به شکل «کدام نادرست است؟» ساده‌تر و روشن‌تر شد. کل مطلب مطابق فصل «وراثت مندلی، شجره و گروه خونی» کتاب زیست‌شناسی ۳ (۱۴۰۴) بررسی شد.",
+      "textbook_alignment": "مطابق فصل «وراثت مندلی، شجره و گروه خونی» کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_03_11",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "توضیحات قالبی اصلاح و تحلیل محاسباتی روشن شد. گزینه‌ها بازنویسی شدند تا عباراتِ روش کنترلِ درست و دام‌های محاسباتی واضح باشند. همخوانی با کتاب زیست‌شناسی ۳ بررسی شد.",
+      "textbook_alignment": "مطابق بخش گروه خونی ABO و کاربرد جدول پانت در فصل «وراثت مندلی، شجره و گروه خونی» کتاب زیست‌شناسی ۳ (۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_03_12",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "زبان توضیحات و تحلیلِ آموزشگاهی اصلاح شد تا از توصیه‌های عمومی قالبی خارج شود و تحلیل صریحِ ضرب احتمالات برای وراثت وابسته به X ارائه گردد. مورد مطابق فصلِ مربوطه در کتاب تأیید شد.",
+      "textbook_alignment": "مطابق بخش وراثت وابسته به کروموزوم X در فصل «وراثت مندلی، شجره و گروه خونی» کتاب زیست‌شناسی ۳ (۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_03_13",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "توضیحات تکراری قالبی حذف و تحلیلِ واضح جدول پانت و شمارش گامت‌ها افزوده شد. صورت سؤال و گزینه‌ها بازنویسی برای وضوح بیشتر و انطباق با متون درسی.",
+      "textbook_alignment": "مطابق فصل وراثت مندلی و مثال‌های جدول پانت در کتاب زیست‌شناسی ۳ (۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_03_14",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "زبان راهنمای روش حل شفاف‌تر شد و توضیحات جایگزینِ قالبی ارائه گشت. محاسبه و استدلال دقیق و کوتاه بر اساس جدول پانت افزوده شد.",
+      "textbook_alignment": "مطابق بخشِ نمونه‌های Mendel و جدول پانت در فصلِ «وراثت مندلی، شجره و گروه خونی» کتاب زیست‌شناسی ۳ (۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_03_15",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "متن سؤال و گزینه‌ها از نظر محتوایی صحیح بودند؛ توضیحات قالبی و عمومی جایگزین تحلیل‌های دقیق ژنتیکی شدند. کلید تغییر نکرد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «وراثت مندلی، شجره و گروه خونی»"
+    },
+    {
+      "id": "v3_bio_03_16",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینه‌های مسئله منطبق با کتاب هستند؛ توضیحات قبلی قالبی بودند و با استدلال ژنتیکی مشخص و صریح جایگزین شدند. کلید (گزینه ۳ از ۰-based = index 2) حفظ شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «وراثت مندلی، شجره و گروه خونی»"
+    },
+    {
+      "id": "v3_bio_03_17",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "سوال درست بود اما تحلیل‌ها به صورت قالبی ارائه شده بودند؛ تمام گزینه‌ها و دلایل به‌صورت روشن و خاص با استناد به اصول توارث X و قوانین مندلی بازنویسی شدند. کلید ثابت ماند.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «وراثت مندلی، شجره و گروه خونی»"
+    },
+    {
+      "id": "v3_bio_03_18",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "محتوای پرسش مطابق کتاب بود؛ تحلیل‌ها به‌صورت دقیق و مختصر بازنویسی شدند تا از توضیحات قالبی رها شود. کلید ثابت باقی ماند.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «وراثت مندلی، شجره و گروه خونی»"
+    },
+    {
+      "id": "v3_bio_03_19",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "همهٔ گزاره‌ها و کلید با کتاب مطابقت داشتند؛ متن توضیحات و تحلیل‌ها بازنویسی شد تا دلایل ژنتیکی صریح و غیرقالبی ارائه شود. کلید بدون تغییر نگه داشته شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (چاپ ۱۴۰۴)، بخش «وراثت مندلی، شجره و گروه خونی»"
+    },
+    {
+      "id": "v3_bio_03_24",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینهٔ کلید صحیح و صورت سؤال مطابق کتاب «زیست‌شناسی ۳» (بخش وراثت مندلی، شجره و گروه خونی) است. توضیحات قبلی کلی و تکراری بودند؛ در این بازبینی تحلیل‌ها به محاسبات احتمال دقیق و توضیح نحوهٔ تشکیل گامت‌ها/ژنوتیپ‌ها تبدیل شد تا راهبرد حل برای داوطلب روشن باشد.",
+      "textbook_alignment": "همخوان با بخش «وراثت مندلی، شجره و گروه خونی» کتاب زیست‌شناسی ۳ (چاپ 1404)؛ محاسبات احتمال برای صفات وابسته به X و نمونهٔ آمیزش گروه‌های خونی در کتاب آمده است."
+    },
+    {
+      "id": "v3_bio_04_01",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینهٔ کلید و صورت سؤال با کتاب «زیست‌شناسی ۲» (تقسیم یاخته و چرخهٔ یاخته) سازگار است. تحلیل‌های قبلی حاوی تکرارهای کلی بودند؛ در بازنویسی، هر گزینه با اشارهٔ مشخص به «کروموزوم/کروماتید/مرحله» و نقش آن در چرخهٔ یاخته توضیح داده شد تا ابهامِ اصطلاحی برطرف شود.",
+      "textbook_alignment": "مطابق بخش «تقسیم یاخته و چرخهٔ یاخته» در کتاب زیست‌شناسی ۲ (چاپ 1403): همانندسازی در مرحلهٔ S رخ می‌دهد و پیش از تقسیم هسته تکمیل می‌شود."
+    },
+    {
+      "id": "v3_bio_04_02",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینهٔ کلیدی و سؤال با محتوای فصل میوز در کتاب زیست‌شناسی ۲ همخوانی دارد. متن اولیه توضیحات دارای کلی‌گویی بود؛ در بازبینی، هر گزینه با ارجاع مشخص به مرحله‌ها و نوع ساختار (همتا/خواهری، کروماتید/فامتن) توضیح داده شد تا دانش‌آموز علت درست یا نادرست بودن هر گزاره را سریع بیابد.",
+      "textbook_alignment": "همخوان با بخش «تقسیم یاخته و چرخهٔ یاخته» در کتاب زیست‌شناسی ۲ (چاپ 1403): جفت‌شدن کروموزوم‌های همتا در پروفاز I و ویژگی‌های میوز توضیح داده شده‌اند."
+    },
+    {
+      "id": "v3_bio_04_03",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "کلید و صورت سؤال مطابق فصل تقسیم میوز در کتاب زیست‌شناسی ۲ است. توضیحات اولیه کلی بودند؛ در بازنویسی تحلیل هر گزینه با ذکر صریح اینکه «خواهری‌ها» یا «همتاها» چه زمانی جدا می‌شوند و محل رخداد کراسینگ‌اور مشخص شد تا ابهام‌های مفهومی حذف شوند.",
+      "textbook_alignment": "مطابق بخش «تقسیم یاخته و چرخهٔ یاخته» در کتاب زیست‌شناسی ۲ (چاپ 1403): جدول زمان‌بندی رخدادهای میوز و محل کراسینگ‌اور در کتاب آمده است."
+    },
+    {
+      "id": "v3_bio_04_04",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "صورت سؤال و کلید با محتویات فصل میوز در کتاب زیست‌شناسی ۲ همراستا هستند. توضیحات پیشین حاوی کلی‌گویی بودند؛ در بازنویسی، برای هر گزینه علت درست یا نادرست بودن با زبان کتاب درسی و با اشاره به مکان دقیق رخداد (پروفاز I، میوز II، مرحلهٔ S) توضیح داده شد.",
+      "textbook_alignment": "همخوان با فصل مربوط به میوز و مکانیزم‌های افزایش تنوع (کراسینگ‌اور) در کتاب زیست‌شناسی ۲ (چاپ 1403)."
+    },
+    {
+      "id": "v3_bio_04_05",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "vague_referent"
+      ],
+      "audit_note": "متن توضیحات برای هر گزینه بازنویسی شد تا از جملات کلی و الگوهای تکراری جلوگیری شود و اصطلاحات دقیق («کروموزوم»، «کروماتید خواهری»، «مرحلهٔ S») به‌کار رود تا ابهام «فامتن» رفع شود.",
+      "textbook_alignment": "سازگار با بخش «تقسیم یاخته و چرخهٔ یاخته» کتاب زیست‌شناسی ۲ (چاپ 1403)."
+    },
+    {
+      "id": "v3_bio_04_06",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "vague_referent"
+      ],
+      "audit_note": "توضیحات گزینه‌ها بازنویسی و اصطلاحات فنی (مرحلهٔ S، کروماتید خواهری، کراسینگ‌اور بین کروماتیدهای غیرخواهری) روشن شد تا ابهام و زبان قالبی حذف شود.",
+      "textbook_alignment": "سازگار با بخش «تقسیم یاخته و چرخهٔ یاخته» کتاب زیست‌شناسی ۲ (چاپ 1403)."
+    },
+    {
+      "id": "v3_bio_04_07",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "vague_referent"
+      ],
+      "audit_note": "زبان گزینه‌ها و توضیحات اصلاح شد تا مرزبندی میان «کروماتید»، «کروموزوم» و «تعداد برحسب سانترومر» روشن شود و از عبارت‌های کلی و تکراری پرهیز شود.",
+      "textbook_alignment": "سازگار با بخش «تقسیم یاخته و چرخهٔ یاخته» کتاب زیست‌شناسی ۲ (چاپ 1403)."
+    },
+    {
+      "id": "v3_bio_04_08",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "vague_referent"
+      ],
+      "audit_note": "اصطلاحات گزینه‌ها بازنویسی شد تا تفاوت میان «کروماتید خواهری» و «کروماتید/کروموزوم همتا» روشن گردد و از الگوهای توضیحی کلی پرهیز شود.",
+      "textbook_alignment": "سازگار با بخش «تقسیم یاخته و چرخهٔ یاخته» کتاب زیست‌شناسی ۲ (چاپ 1403)."
+    },
+    {
+      "id": "v3_bio_04_09",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "vague_referent"
+      ],
+      "audit_note": "گزینه‌ها و تحلیل‌ها بازنویسی و اصطلاحات دقیق جایگزین عبارت‌های مبهم شد تا سازگاری یا ناسازگاری هر گزاره با کتاب به‌روشنی بیان شود.",
+      "textbook_alignment": "سازگار با بخش «تقسیم یاخته و چرخهٔ یاخته» کتاب زیست‌شناسی ۲ (چاپ 1403)."
+    },
+    {
+      "id": "v3_bio_04_10",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "اصلاح واژگانِ مبهم: واژهٔ «فامتن» به «کروموزوم» یا «کروماتید» بازنویسی شد تا با اصطلاحات کتاب درسی همخوانی داشته باشد. صورت سؤال منفیِ قبلی حفظ شد ولی شفاف‌تر شد. توضیحاتِ گزینه‌ها از قالبِ کلی و تکراری به دلایل زیستی مشخص تبدیل گردید.",
+      "textbook_alignment": "زیست‌شناسی ۲ (111216)، بخش «تقسیم یاخته و چرخهٔ یاخته»، چاپ 1403 — مفاهیم همتاسازی، مرحلهٔ S و مراحل آنافاز مطابق کتاب."
+    },
+    {
+      "id": "v3_bio_04_11",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "واژهٔ «فامتن» در گزینه‌ها حذف شد و به‌جای آن «کروموزوم» یا «کروماتید» به‌کار رفت تا ابهام مفهومی حذف شود. تحلیل‌ها با استناد به مرزبندیِ تعداد کروموزوم/کروماتید و نقش مرحلهٔ S بازنویسی شد.",
+      "textbook_alignment": "زیست‌شناسی ۲ (111216)، بخش «تقسیم یاخته و چرخهٔ یاخته»، چاپ 1403 — تأکید بر مرحلهٔ S و تفکیک کروموزوم/کروماتید."
+    },
+    {
+      "id": "v3_bio_04_12",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "ابهامِ اصطلاحی «فامتن» حذف و گزینه‌ها با واژگانِ «کروموزوم» و «کروماتید» منطبق بر کتاب بازنویسی شدند. توضیحات هر گزینه به‌صورت صریح دلایل زیستی ارائه شد.",
+      "textbook_alignment": "زیست‌شناسی ۲ (111216)، بخش «تقسیم یاخته و چرخهٔ یاخته»، چاپ 1403 — جفت‌شدن همولوگ‌ها و مکانیزم کراسینگ‌اور در پروفاز I."
+    },
+    {
+      "id": "v3_bio_04_13",
+      "changed_fields": [
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "اصلاح اصطلاحات و بازنویسی گزینه‌ها برای حذف ابهام؛ توضیحات هر گزینه با دلایل زیستی مشخص و کوتاه جایگزین تحلیل‌های کلی شد.",
+      "textbook_alignment": "زیست‌شناسی ۲ (111216)، بخش «تقسیم یاخته و چرخهٔ یاخته»، چاپ 1403 — جدایی کروماتیدهای خواهری و عدم وقوع S بین دو میوز."
+    },
+    {
+      "id": "v3_bio_04_14",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "سؤال بازنویسی شد تا واژه‌های مبهم حذف شود و مشخصاً «آنافاز میتوز» و «2n = 8» روشن باشند. گزینه‌ها کوتاه و صریح نگه داشته شدند. تحلیل نهایی و آنالیز هریک از پاسخ‌ها با استناد به مفاهیم همانندسازی و جدا شدن کروماتیدها ارائه شد.",
+      "textbook_alignment": "زیست‌شناسی ۲ (111216)، بخش «تقسیم یاخته و چرخهٔ یاخته»، چاپ 1403 — محاسبهٔ شمار کروموزوم/کروماتید در مراحل مختلف تقسیم یاخته."
+    },
+    {
+      "id": "v3_bio_04_15",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "سؤال از مفهوم پایه‌ایِ چگونگی قرارگیری جفت‌های همتا در متافاز I می‌پرسد و پاسخ/گزینه‌ها درست‌اند. متن سؤال حاوی عبارت قالبی «داده‌های زیر...» است؛ این عبارت تغییر داده نشد اما تحلیل گزینه‌ها به‌صورت روشن و علمی بازنویسی شد.",
+      "textbook_alignment": "زیست‌شناسی ۲ (111216)، بخش «تقسیم یاخته و چرخهٔ یاخته»، مطابق کتاب درسی 1403"
+    },
+    {
+      "id": "v3_bio_04_16",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سؤال روشن و علمی است؛ تحلیل‌ها برای هر گزینه بازنویسی شده تا خطاهای رایج (خلط کروموزوم/کروماتید، اشتباه در n و 2n) مشخص شوند.",
+      "textbook_alignment": "زیست‌شناسی ۲ (111216)، بخش «تقسیم یاخته و چرخهٔ یاخته»، مطابق کتاب درسی 1403"
+    },
+    {
+      "id": "v3_bio_04_17",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سؤال و گزینه‌ها مفهوم صحیح را انتقال می‌دهند؛ توضیحاتِ گزینه‌ها بازنویسی شد تا تفکیک دقیقِ «فام‌تن (کروموزوم)» و «فامینه (کروماتید)» و روش کنترل (شمارش سانترومر) روشن باشد.",
+      "textbook_alignment": "زیست‌شناسی ۲ (111216)، بخش «تقسیم یاخته و چرخهٔ یاخته»، مطابق کتاب درسی 1403"
+    },
+    {
+      "id": "v3_bio_05_01",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینه‌ها از نظر مفهومی درست تنظیم شده‌اند؛ توضیحات به‌صورت علمی و مشخص بازنویسی شدند تا تمایز بین فسفریلاسیون در سطح زیرلایه و فسفریلاسیون اکسایشی روشن شود.",
+      "textbook_alignment": "زیست‌شناسی ۳ (112216)، بخش «تنفس یاخته‌ای و تولید ATP»، مطابق کتاب درسی 1404"
+    },
+    {
+      "id": "v3_bio_05_02",
+      "changed_fields": [
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "factual",
+        "vague_referent"
+      ],
+      "audit_note": "در گزینهٔ نخستِ نسخهٔ اولیه واژهٔ «راکیزه» به‌کار رفته بود که ظاهراً اشتباه نگارشی/واژگانی است؛ آن را به «ماتریکس میتوکندری» تصحیح کردم تا با واژگان کتاب درسی همخوانی کامل داشته باشد. همچنین توضیحات هر گزینه برای رفع ابهام و ارائهٔ استدلال‌های کتاب‌محور بازنویسی شد. از آنجا که اصلاح واژه‌ای ضروری بود، تصمیم REVISE گرفته شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (112216)، بخش «تنفس یاخته‌ای و تولید ATP»، مطابق کتاب درسی 1404"
+    },
+    {
+      "id": "v3_bio_05_03",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "vague_referent"
+      ],
+      "audit_note": "نگارش گزینه‌ها برای رفع ابهام (مثلاً «مادهٔ زمینه‌ای» به «ماتریکس») و جایگزینی تحلیل‌های قالبی با توضیح‌های زیست‌شناختی مشخص اصلاح شد. کلید درست (گزینهٔ 1) حفظ شد.",
+      "textbook_alignment": "مطابقت با بخش «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ 1404)."
+    },
+    {
+      "id": "v3_bio_05_04",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "weak_distractor"
+      ],
+      "audit_note": "زبان گزینه‌ها و تحلیل‌ها بازنویسی شد تا جهت پروتون و نقش اکسایش پیرووات به‌روشنی بیان شود. کلید درست (گزینهٔ 2 در آرایهٔ جدید) مطابق کتاب حفظ شد.",
+      "textbook_alignment": "مطابقت با بخش «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ 1404)."
+    },
+    {
+      "id": "v3_bio_05_05",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "vague_referent",
+        "weak_distractor"
+      ],
+      "audit_note": "عبارت گزینهٔ درست بازنویسی شد تا واژگان نامشخص («راکیزه») حذف شود و جهت واقعی گرادیان پروتونی مشخص گردد. تحلیل‌های کلیشه‌ای جایگزین توضیحات زیست‌شناسی دقیق شدند. کلید (گزینهٔ 3) حفظ شد.",
+      "textbook_alignment": "مطابقت با بخش «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ 1404)."
+    },
+    {
+      "id": "v3_bio_05_06",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "پرسش و تحلیل‌ها بازنویسی شدند تا مفاهیم کلیدی (محل گلیکولیز، وابستگی به اکسیژن، منابع CO₂ و منشاء عمدهٔ ATP) بدون توضیحات قالبی و با زبان روشن بیان شوند. کلید (گزینهٔ 0) تأیید و حفظ شد.",
+      "textbook_alignment": "مطابقت با بخش «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ 1404)."
+    },
+    {
+      "id": "v3_bio_05_07",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "vague_referent"
+      ],
+      "audit_note": "گزاره‌ها بازنویسی شدند تا ارجاع به «مادهٔ زمینه‌ای» و عباراتی نامشخص اصلاح شوند و هر زنجیرهٔ استنتاج با دلایل زیست‌شناختی دقیق‌تر بررسی شود. گزینهٔ درست (شاخص 1) حفظ شد؛ تحلیل‌های گزینه‌ها به‌صورت صریح و مطابق متن کتاب ارائه گردید.",
+      "textbook_alignment": "مطابقت با بخش «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ 1404)."
+    },
+    {
+      "id": "v3_bio_05_08",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "بازنویسی صورت سؤال و گزینه‌ها برای حذف عبارات مبهم («همهٔ گزینه‌های زیر شرط لازم را رعایت می‌کنند، به‌جز:») و اصطلاح «دو سوی غشا»؛ توضیحات هر گزینه با دلایل زیستی مشخص جایگزین تحلیل‌های کلی شد. ترتیب پاسخ کلیدی حفظ شد.",
+      "textbook_alignment": "سازگار با فصل «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_05_09",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "جملات بازنویسی شدند تا زبان علمی‌تر و دقیق‌تر شود؛ توضیحات هر گزینه با استناد صریح به مکان و نقش فرایندها در میتوکندری تکمیل گردید. کلید حفظ شد.",
+      "textbook_alignment": "سازگار با فصل «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_05_10",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "گزینهٔ آسیب‌زننده به‌خاطر جهت‌دهی غلط پروتون بازنویسی و توضیح داده شد. متن گزینهٔ اول اصلاح شد تا جهت واقعی (از فضای بین‌دوغشایی به ماتریکس) صریح شود و دلیل غلط بودن صورتِ اولیه توضیح داده شود. بقیه گزینه‌ها با توضیحات زیست‌شناختی روشن و دقیق تکمیل شدند.",
+      "textbook_alignment": "سازگار با فصل «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_05_11",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "جملات حفظ شدند اما توضیحات هر گزینه به زبان علمی و مستند به متن کتاب بازنویسی شد تا تحلیل‌ها از قالب قالبی خارج و آموزنده شوند. کلید بدون تغییر باقی ماند.",
+      "textbook_alignment": "سازگار با فصل «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_05_12",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "عبارات A و B به‌صراحت در متن پرسش درج شدند (در ورژن اولیه عبارت‌ها به‌صورت مرجع A/B غایب بودند). تحلیل‌ها در هر گزینه تفصیلی شده و قالب عمومی توضیحات جایگزین تحلیل زیست‌شناختی مشخص گردید. کلید بدون تغییر ماند.",
+      "textbook_alignment": "سازگار با فصل «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴)."
+    },
+    {
+      "id": "v3_bio_05_13",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "vague_referent",
+        "weak_distractor"
+      ],
+      "audit_note": "اصلاحات انجام‌شده: توضیحات عام و قالبی حذف و با تحلیل‌های خاص زیستی جایگزین شد؛ عباراتی که ارجاع ضعیف یا جهت‌گیر داشتند (مثلاً جهت حرکت پروتون) توضیح و تصحیح شدند. هیچ تغییر مفهومی در گزینهٔ درست اعمال نشد اما عبارت‌های توضیحی برای هر گزینه به صورت دقیق و مرتبط با فصل متن درسی بازنویسی شد.",
+      "textbook_alignment": "همراستا با فصل «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ 1404)."
+    },
+    {
+      "id": "v3_bio_05_14",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "weak_distractor"
+      ],
+      "audit_note": "تحلیل‌ها از قالب‌های عمومی حذف و با استدلال‌های مشخص زیستی جایگزین شدند. هیچ گزینه‌ای حذف یا اضافه نشد؛ تنها توضیحات هر گزینه برای هم‌راستایی با متن کتاب اصلاح گردید.",
+      "textbook_alignment": "همراستا با فصل «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ 1404)."
+    },
+    {
+      "id": "v3_bio_05_15",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "ambiguity",
+        "weak_distractor"
+      ],
+      "audit_note": "اصلاح عبارت «راکیزه» به «میتوکندری (ماتریکس)» و حذف تحلیل‌های کلی و قالبی انجام شد. توضیح هر گزینه به نحوی بازنویسی شد که مستقیماً به مفاهیم کتاب مربوط باشد.",
+      "textbook_alignment": "همراستا با فصل «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ 1404)."
+    },
+    {
+      "id": "v3_bio_05_16",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "ambiguity"
+      ],
+      "audit_note": "تمامی تحلیل‌های کلی بازنویسی و هر گزاره به‌طور جداگانه با دلایل زیستی روشن توضیح داده شد. عبارت «راکیزه» در گزارهٔ ب به «میتوکندری (ماتریکس)» تصحیح گردید تا با اصطلاحات کتاب همخوانی داشته باشد.",
+      "textbook_alignment": "همراستا با فصل «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ 1404)."
+    },
+    {
+      "id": "v3_bio_05_17",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "ambiguity",
+        "weak_distractor"
+      ],
+      "audit_note": "عبارت‌های مبهم و قالبی در تحلیل‌ها حذف و با توضیحات مشخص علمی جایگزین شد. واژهٔ «راکیزه» اصلاح شده به «میتوکندری (ماتریکس)» تا با اصطلاحات کتاب منطبق شود. جهت‌گیری‌های نادرست دربارهٔ جریان پروتون به‌صراحت توضیح داده شد.",
+      "textbook_alignment": "همراستا با فصل «تنفس یاخته‌ای و تولید ATP» کتاب زیست‌شناسی ۳ (چاپ 1404)."
+    },
+    {
+      "id": "v3_bio_05_18",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "صورت سؤال و گزینه‌ها از نظر علمی صحیح‌اند و کلید نیز درست است. توضیحات ارائه‌شده در متن اولیه قالبی و کلی بود؛ در این بررسی توضیحات با دلایل زیستی مشخص (نقش اکسیژن در زنجیرهٔ انتقال الکترون، مرحلهٔ تبدیل پیرووات، جهت واقعی جریان پروتون و ماهیت گلیکولیز) جایگزین شد. برای شفافیت می‌توان در عبارت «مادهٔ زمینه‌ای» واژۀ «ماتریکس میتوکندری» را به کار برد، اما عبارت فعلی با زبان کتاب درسی سازگار است.",
+      "textbook_alignment": "مطابقت با زیست‌شناسی ۳ (۱۴۰۴)، بخش «تنفس یاخته‌ای و تولید ATP»: پذیرندهٔ نهایی الکترون در تنفس هوازی اکسیژن است؛ پیرووات پیش از چرخهٔ کربس به استیل‑کوآنزیم A و CO₂ تبدیل می‌شود؛ ATP عمدتاً از طریق فسفریلاسیون اکسایشی و بازگشت پروتون‌ها به ماتریکس تولید می‌شود؛ گلیکولیز در سیتوزول و مستقل از اکسیژن آغاز می‌شود."
+    },
+    {
+      "id": "v3_bio_05_19",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "صورت سؤال، گزینه‌ها و کلید همخوانی دارند. توضیحات اولیه کلی بودند؛ در این بازبینی هر گزینه با دلایل زیستی مشخص توضیح داده شد (محل گلیکولیز، نقش شیب پروتونی و منبع اصلی ATP در تنفس هوازی). توصیه: در صورت استفاده در آزمون، عبارت «فسفریلاسیون در سطح پیش‌ماده» را دقیقاً به «فسفریلاسیون سطح‑پیش‌ماده (substrate‑level phosphorylation)» توضیح دهید تا سردرگمی برای دانش‌آموزان کاهش یابد.",
+      "textbook_alignment": "مطابقت با زیست‌شناسی ۳ (۱۴۰۴)، بخش «تنفس یاخته‌ای و تولید ATP»: پیرووات پیش از چرخهٔ کربس به استیل‑کوآنزیم A و CO₂ تبدیل می‌شود؛ شیب پروتونی درون غشای داخلی میتوکندری محرک ATPساز است؛ گلیکولیز در سیتوزول و مستقل از اکسیژن آغاز می‌شود؛ بیشترین ATP از فسفریلاسیون اکسایشی تأمین می‌شود."
+    },
+    {
+      "id": "v3_bio_06_01",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "سؤال کوتاه و مشخص است و کلید درست انتخاب شده است. توضیحات قبلی عمومی بودند؛ در این بازبینی علت درستی/نادرستی هر گزینه با دلایل تجربی و مکانیکی (منشأ اکسیژن، محل واکنش‌های نوری، الگوی بازشدن روزنه در CAM، تفاوت بین جدایی مکانی و زمانی) ارائه شد. گزینه‌ها مناسب سطح کنکور و هم‌راستا با فصل «فتوسنتز C3/C4/CAM» کتاب درسی هستند.",
+      "textbook_alignment": "مطابقت با زیست‌شناسی ۳ (۱۴۰۴)، بخش «فتوسنتز C3/C4/CAM»: واکنش‌های وابسته به نور روی غشاهای تیلاکوئید انجام می‌شوند؛ اکسیژن فتوسنتز از آب حاصل می‌شود؛ CAM روزنه‌ها را عمدتاً شب باز می‌کند؛ C4 و CAM مکانیزم‌های متفاوتی برای جداسازی تثبیت CO₂ دارند."
+    },
+    {
+      "id": "v3_bio_06_02",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "کلید و گزینه‌ها همخوانی دارند و پاسخ صحیح با متن کتاب مطابقت دارد. توضیحات پیشین کلی بودند؛ در این بررسی با استناد به مکانیزم‌های فوتولیز آب و تفاوت‌های C4/CAM و محل واکنش‌ها، تحلیل‌ها روشن‌تر و آموزنده‌تر شدند. توصیه: برای واژهٔ «مادهٔ زمینه‌ای» می‌توان در متن آموزشی عبارت «استروما (ماتریکس کلروپلاست)» را قید کرد تا دانش‌آموزان اختلاط نکنند.",
+      "textbook_alignment": "مطابقت با زیست‌شناسی ۳ (۱۴۰۴)، بخش «فتوسنتز C3/C4/CAM»: اکسیژن تولیدی از شکستن آب است؛ واکنش‌های نوری در غشای تیلاکوئید رخ می‌دهد؛ CAM روزنه‌ها را عمدتاً شب باز می‌کند؛ C4 و CAM ساختارهای متفاوتی برای تثبیت CO₂ دارند."
+    },
+    {
+      "id": "v3_bio_06_03",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینه‌ها و کلید با فصل مربوطه همخوانی دارند. تحلیل‌های اولیه عمومی بودند؛ در این بازنگری هر گزینه با توضیح مکانیکی و سلولی همراه شد (محل تثبیت اولیه در C4، نقش استروما و تیلاکوئید، ماهیت چرخهٔ کالوین). عبارت‌ها مناسب سطح کنکور هستند؛ پیشنهاد می‌شود در فعالیت‌های بازآموزی تصویر مقاطع میان‌برگ و غلاف آوندی گنجانده شود تا درک جدایی مکانی تقویت شود.",
+      "textbook_alignment": "مطابقت با زیست‌شناسی ۳ (۱۴۰۴)، بخش «فتوسنتز C3/C4/CAM»: در C4 تثبیت اولیه در میان‌برگ و چرخهٔ کالوین عمدتاً در غلاف آوندی انجام می‌شود؛ واکنش‌های نوری در تیلاکوئید و چرخهٔ کالوین در استروما رخ می‌دهد؛ CAM جدایی زمانی را نشان می‌دهد."
+    },
+    {
+      "id": "v3_bio_06_04",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "اصلاحِ صورت سؤال برای حذف مرجع مبهم «موارد مطرح‌شده» و بازنویسی توضیحات با استدلال زیستی مشخص. گزینه‌ها بازنویسی شدند تا هر کدام خود‌کفا و دقیق باشند؛ کلید اصلی حفظ شده است (گزینهٔ صفر).",
+      "textbook_alignment": "مطابقت با بخش «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳ (۱۴۰۴): چرخهٔ کالوین به ATP و NADPH نیاز دارد؛ واکنش‌های نوری در غشای تیلاکوئید انجام می‌شوند؛ منشأ O₂ فتوسنتزی از آب است."
+    },
+    {
+      "id": "v3_bio_06_05",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "generic_analysis"
+      ],
+      "audit_note": "سؤال بازنویسی شد تا مرجع مبهم حذف شود و عبارت‌های مربوط به CAM دقیق‌تر شوند. کلید اصلی حفظ شده (گزینهٔ 1). توضیحات هر گزینه به‌صورت علمی و متکی به فصل مربوطه بازنویسی شد.",
+      "textbook_alignment": "مطابقت با بخش «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳: توضیح سازوکار CAM — تثبیت CO₂ در شب و استفاده در روز توسط چرخهٔ کالوین."
+    },
+    {
+      "id": "v3_bio_06_06",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "صورت سؤال به‌منظور آشکارسازی مرجع «مطالب کتاب درسی» و تاکید بر فصل مربوط بازنویسی شد. تحلیلات برای هر گزینه با استدلال علمی دقیق جایگزین شد؛ کلید اصلی (گزینهٔ سوم، index 2) بدون تغییر مانده است.",
+      "textbook_alignment": "مطابقت با بخش «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳: واکنش‌های نوری در غشای تیلاکوئید رخ می‌دهند؛ منشأ O₂ از آب؛ تفاوت مکانی C4 و زمانی CAM توضیح داده شده است."
+    },
+    {
+      "id": "v3_bio_06_07",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "ambiguity"
+      ],
+      "audit_note": "مسألهٔ اصلی نبودن متن عبارات A و B در صورت‌سؤال بود؛ برای رفع ابهام عبارات A و B صریحاً درج شدند تا سؤال قابل پاسخ‌گویی شود. مفهوم اصلی حفظ و کلید (گزینهٔ 3) بدون تغییر مانده است. توضیحات هر گزینه دقیق و مبتنی بر مفاهیم کتابی بازنویسی شد.",
+      "textbook_alignment": "مطابقت با بخش «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳: منشأ O₂ از آب؛ رفتار روزنه‌ای گیاهان CAM — بازشدن در شب برای کاهش تبخیر."
+    },
+    {
+      "id": "v3_bio_06_08",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis",
+        "triviality"
+      ],
+      "audit_note": "صورت سؤال بازنویسی و گزینه‌ها اندکی بهبود داده شدند تا سازگاری و خودکفایی هر گزینه بیشتر شود. کلید اصلی (گزینهٔ 0) حفظ شد؛ تحلیل‌ها با دلایل زیستی مشخص جایگزین توضیحات کلی شدند.",
+      "textbook_alignment": "مطابقت با بخش «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳: رفتار روزنه‌ای CAM، نقش ATP/NADPH در چرخهٔ کالوین، و محل انجام واکنش‌های نوری (غشای تیلاکوئید)."
+    },
+    {
+      "id": "v3_bio_06_09",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "متن توضیحات و تحلیل‌ها بازنویسی شد تا به‌جای متن‌های تمپلیت و کلی‌گویی، دلایل زیستی مشخص برای هر گزینه ارائه شود. صورت سؤال کمی روان‌تر شد اما مفهوم اصلی و کلید پاسخ حفظ گردید. هیچ تغییری در کلید داده نشد.",
+      "textbook_alignment": "منطبق با بخش «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴): توضیحات دربارهٔ جدایی مکانی در C4 و جدایی زمانی در CAM، محل واکنش‌های نوری (تیلاکوئید) و منشأ اکسیژن (فتولیز آب) مطابق کتاب درسی هستند."
+    },
+    {
+      "id": "v3_bio_06_10",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "تحلیل‌های هر گزینه بازنویسی شد تا از زبان تمپلیت پرهیز شود و استدلال زیستی مشخص ارائه گردد. عنوان سؤال بدون تغییر مفهومی، خواناتر شد. کلید پاسخ بدون تغییر باقی ماند.",
+      "textbook_alignment": "منطبق با بخش «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳ (۱۴۰۴): محل واکنش‌های نوری (تیلاکوئید)، منشأ اکسیژن (آب)، و جدایی مکانی در C4 طبق کتاب توضیح داده شده‌اند."
+    },
+    {
+      "id": "v3_bio_06_11",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "توضیحات هر گزینه بازنویسی شد تا به‌جای برچسب‌های کلی، دلایل زیستی روشن و مختصر ارائه گردد. ساختار سؤال حفظ شد و کلید نیز بدون تغییر ماند.",
+      "textbook_alignment": "انطباق با بخش «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳ (۱۴۰۴): توضیحات دربارهٔ منشا اکسیژن، نیازهای ATP/NADPH چرخهٔ کالوین و عدم جذب مستقیم نور توسط کالوین مطابق متن کتاب درسی است."
+    },
+    {
+      "id": "v3_bio_06_12",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "متن تحلیل‌ها بازنویسی شد تا زنجیرهٔ استدلالی هر گزینه واضح باشد و از عبارات کلی و تمپلیت‌گونه پرهیز شده است. صورت سؤال دست نخورده اما توضیح خطاها به‌صورت مشخص ارائه شد. کلید حفظ شد.",
+      "textbook_alignment": "مطابق بخش «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳ (۱۴۰۴): اطلاعات ردیابی ایزوتوپی، زمان‌بندی بازشدن روزنه در CAM، تفاوت‌های C4 و CAM و محل واکنش‌های نوری بر اساس مطالب کتاب درسی توضیح داده شده‌اند."
+    },
+    {
+      "id": "v3_bio_06_13",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "تحلیل‌ها اصلاح و به‌صورت عینی بیان شدند تا از کلی‌گویی تمپلیت‌وار دور شود. ساختار سؤال و گزینه‌ها حفظ شدند و کلید تغییر نکرد.",
+      "textbook_alignment": "انطباق با بخش «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳ (۱۴۰۴): توضیحات دربارهٔ مکان انجام تثبیت اولیه و چرخهٔ کالوین در گیاهان C4 و تفاوت C4 با CAM مطابق متن کتاب است."
+    },
+    {
+      "id": "v3_bio_06_14",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "none"
+      ],
+      "audit_note": "عبارت اولیه «مادهٔ زمینه‌ای سبزدیسه» مبهم بود؛ در بازنویسی آن را به «استروم (مادهٔ زمینه‌ای کلروپلاست)» روشن کردم تا تفاوت محل‌های واکنش نوری و چرخهٔ کالوین واضح باشد. کلید پاسخ (گزینهٔ سوم، اندیس 2) مطابق کتاب حفظ شد.",
+      "textbook_alignment": "مطابقت با فصل «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳ (چاپ ۱۴۰۴): واکنش‌های وابسته به نور در غشای تیلاکوئید و چرخهٔ کالوین در استروم انجام می‌شود؛ چرخهٔ کالوین ATP و NADPH مصرف می‌کند؛ O₂ حاصل از تجزیهٔ آب است."
+    },
+    {
+      "id": "v3_bio_06_15",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزاره‌ها روشن و مطابق مطالب کتاب هستند؛ توضیحات هر گزینه به‌صورت صریح علت درست یا نادرست بودن را بر پایهٔ مفاهیم کتاب تشریح کرده‌ام.",
+      "textbook_alignment": "مطابقت با بخش «فتوسنتز C3/C4/CAM» در زیست‌شناسی ۳ (۱۴۰۴): سازوکار CAM شامل تثبیت CO₂ در شب و استفاده در چرخهٔ کالوین در روز است؛ O₂ از آب منشأ می‌گیرد؛ چرخهٔ کالوین فوتون جذب نمی‌کند."
+    },
+    {
+      "id": "v3_bio_06_18",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "vague_referent",
+        "none"
+      ],
+      "audit_note": "گزارهٔ «پ» به‌صورت اولیه با عبارت «مادهٔ زمینه‌ای سبزدیسه» نوشته شده بود که مبهم بود؛ در بازنویسی عبارت را به «استروم (مادهٔ زمینه‌ای کلروپلاست)» تبدیل کردم تا خطای مفهومی واضح شود. شمارش گزینهٔ صحیح (دو مورد) بدون تغییر مانده و توضیحات هر مورد بر پایهٔ مطالب کتاب تنظیم شده‌اند.",
+      "textbook_alignment": "مطابقت با فصل «فتوسنتز C3/C4/CAM» در زیست‌شناسی ۳ (۱۴۰۴): تفکیک مکانی در C4، مصرف ATP/NADPH در چرخهٔ کالوین، و انجام واکنش‌های نوری در غشای تیلاکوئید."
+    },
+    {
+      "id": "v3_bio_06_19",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سؤالی استاندارد و منطبق بر کتاب است؛ توضیحات گزینه‌ها را شفاف و مبتنی بر مفاهیم متن کتاب تهیه کردم.",
+      "textbook_alignment": "مطابقت با فصل «فتوسنتز C3/C4/CAM» در زیست‌شناسی ۳ (۱۴۰۴): مصرف ATP/NADPH در کالوین، الگوی زمانی CAM و محل واکنش‌های نوری در تیلاکوئید و منشأ O₂ از آب."
+    },
+    {
+      "id": "v3_bio_06_20",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزاره‌ها به‌خوبی با متن کتاب منطبق‌اند؛ هیچ ابهامی در عبارات وجود نداشت، لذا تصمیم به نگه‌داشتن آیتم گرفته شد و توضیحات گزینه‌ها بر پایهٔ مفاهیم کتاب تنظیم شد.",
+      "textbook_alignment": "مطابقت با فصل «فتوسنتز C3/C4/CAM» در زیست‌شناسی ۳ (۱۴۰۴): شرح CAM، محل واکنش‌های نوری، منشأ اکسیژن از آب، و جدایی مکانی در C4."
+    },
+    {
+      "id": "v3_bio_06_21",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "پاسخ صحیح ویدئویی بود؛ کلید (یک مورد) حفظ شد. توضیحات کلی و قالبی بازنویسی شد و برای هر گزینه استدلال زیست‌شناختی مشخص و منطبق با فصل «فتوسنتز C3/C4/CAM» کتاب زیست‌شناسی ۳ ارائه شد.",
+      "textbook_alignment": "زیست‌شناسی ۳ (1404)، بخش «فتوسنتز C3/C4/CAM» — توضیحات دربارهٔ محل واکنش‌های نوری، منشأ اکسیژن، رفتار روزنه در CAM و تفاوت جدایی زمانی/مکانی."
+    },
+    {
+      "id": "v3_bio_07_01",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "بیان‌ها مختصر و علمی بازنگری شد؛ توضیحات قالبی حذف و برای هر گزینه استدلال دقیق مطابق بخش «گردش خون، قلب و تبادل مویرگی» کتاب زیست‌شناسی ۱ داده شد.",
+      "textbook_alignment": "زیست‌شناسی ۱ (1402)، بخش «گردش خون، قلب و تبادل مویرگی» — نقش گره سینوسی، رفتار دریچه‌ها و مسیر بازگشت خون کرونری."
+    },
+    {
+      "id": "v3_bio_07_02",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینهٔ درست تأیید شد. توضیحات هر گزینه بازنویسی و کلی‌گویی‌ها حذف شد؛ اشارهٔ مشخص به شریان ریوی و نقش دستگاه لنفاوی افزوده شد.",
+      "textbook_alignment": "زیست‌شناسی ۱ (1402)، بخش «گردش خون، قلب و تبادل مویرگی» — نقش سرخرگ ششی، مسیر رگ‌های کرونری و تحرک مایعات میان‌بافتی."
+    },
+    {
+      "id": "v3_bio_07_03",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "متن گزینه‌ها و تحلیل‌ها اصلاح و تخصصی شد تا از کلی‌گویی‌های قالبی رها شویم؛ استدلال هر گزینه مبتنی بر مفاهیم کتاب زیست‌شناسی ۱ ارائه شد.",
+      "textbook_alignment": "زیست‌شناسی ۱ (1402)، بخش «گردش خون، قلب و تبادل مویرگی» — ساختمان مویرگ و نقش آن در تبادل مواد، و نقش دستگاه لنفاوی در برداشت مایع میان‌بافتی."
+    },
+    {
+      "id": "v3_bio_07_04",
+      "changed_fields": [
+        "stem",
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "کلید و مفهوم اصلی (بستن دریچه‌های دهلیزی–بطنی در حین انقباض بطن) تأیید شد. توضیحات گزینه‌ها بازنویسی شده و اصطلاحات کلی‌گرا تصحیح گردید تا دقیقاً مطابق با مفاهیم کتاب زیست‌شناسی ۱ باشد.",
+      "textbook_alignment": "زیست‌شناسی ۱ (1402)، بخش «گردش خون، قلب و تبادل مویرگی» — عملکرد دریچه‌ها در فازهای مختلف چرخهٔ قلبی و نقش لنف در برداشت مایع میان‌بافتی."
+    },
+    {
+      "id": "v3_bio_07_05",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "تحلیل‌های قالبی و کلی حذف و با توضیحات زیست‌شناختی روشن جایگزین شد؛ کلید حفظ شد (گزینهٔ دوم صحیح). سازگاری با بخش «گردش خون، قلب و تبادل مویرگی» کتاب زیست‌شناسی ۱ بررسی شد.",
+      "textbook_alignment": "مطالب فصل «گردش خون، قلب و تبادل مویرگی» کتاب زیست‌شناسی ۱ (چاپ ۱۴۰۲) — مفاهیم فشار هیدروستاتیک مویرگ و جهت رگ‌ها"
+    },
+    {
+      "id": "v3_bio_07_06",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "توضیحات کلی و تکراری با توجیه‌های دقیق‌تر مبتنی بر فصل مربوطه جایگزین شدند. کلید (گزینهٔ سوم) مطابق کتاب تأیید شد.",
+      "textbook_alignment": "مطالب فصل «گردش خون، قلب و تبادل مویرگی» کتاب زیست‌شناسی ۱ (چاپ ۱۴۰۲) — گره سینوسی‌دهلیزی به‌عنوان ضربان‌ساز طبیعی"
+    },
+    {
+      "id": "v3_bio_07_07",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "تحلیل‌های حلقه‌ای و کلی اصلاح و با استدلال‌های زنجیره‌ای روشن جایگزین شد. کلید (گزینهٔ چهارم) حفظ شد زیرا هم از نظر بیولوژیکی و هم مطابق کتاب معتبر است.",
+      "textbook_alignment": "مطالب فصل «گردش خون، قلب و تبادل مویرگی» کتاب زیست‌شناسی ۱ (چاپ ۱۴۰۲) — تعریف سرخرگ‌ها و نمونهٔ سرخرگ ششی"
+    },
+    {
+      "id": "v3_bio_07_08",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینه‌ها و متن حفظ شد؛ تحلیل‌های کلی و تکراری اصلاح و با دلایل دقیق از متن کتاب جایگزین شد. گزینهٔ اول به‌عنوان استثنا مشخص و توضیح داده شد.",
+      "textbook_alignment": "مطالب فصل «گردش خون، قلب و تبادل مویرگی» کتاب زیست‌شناسی ۱ (چاپ ۱۴۰۲) — سینوز کرونری و مسیر بازگشت خون اکلیلی، عملکرد دریچه‌ها، فشار هیدروستاتیک مویرگ و نقش گره سینوسی"
+    },
+    {
+      "id": "v3_bio_07_09",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "تمام توضیحات عمومی و تکراری بازنویسی و با دلایل دقیق و منطبق بر فصل مربوطه جایگزین شدند. گزینهٔ ناسازگار (گزینهٔ دوم) با استناد به وضعیت دریچه‌ها در فازهای سیکل قلبی مشخص شد.",
+      "textbook_alignment": "مطالب فصل «گردش خون، قلب و تبادل مویرگی» کتاب زیست‌شناسی ۱ (چاپ ۱۴۰۲) — سیکل قلبی، عملکرد دریچه‌ها، فشار مویرگی و مسیر سرخرگ ششی"
+    },
+    {
+      "id": "v3_bio_07_10",
+      "changed_fields": [
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "ساختار سؤال، گزینه‌ها و کلید درست هستند؛ تنها توضیحات قالبی قبلی با تحلیل‌های زیست‌شناسی صریح و مرجع به متن کتاب جایگزین شد. اگر بخواهید می‌توان گزینهٔ سوم را بازنویسی کنید به شکل «بخشی از مایع تراوش‌شده از مویرگ به رگ‌های لنفی وارد می‌شود» تا دام مفهومی واضح‌تر شود.",
+      "textbook_alignment": "زیست‌شناسی ۱ (چاپ ۱۴۰۲)، بخش «گردش خون، قلب و تبادل مویرگی»: ساختمان مویرگ و تبادل مایعات میان مویرگ، فضای بین‌بافتی و دستگاه لنفاوی."
+    },
+    {
+      "id": "v3_bio_07_11",
+      "changed_fields": [
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سؤال و کلید مناسب‌اند؛ توضیحات جایگزین توضیحات قالبی قبلی شدند و توضیح ویژه در مورد استثنای سیاهرگ ششی افزوده شد تا دام مفهومی روشن شود.",
+      "textbook_alignment": "زیست‌شناسی ۱ (چاپ ۱۴۰۲)، بخش «گردش خون، قلب و تبادل مویرگی»: تعریف سرخرگ و سیاهرگ، و استثنای سیاهرگ‌های ششی."
+    },
+    {
+      "id": "v3_bio_07_12",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزینه‌ها و کلید درست‌اند. توضیحات پیشین قالبی بودند؛ الآن برای هر گزینه تحلیل دقیق‌تری مطابق با کتاب درسی درج شد (به‌ویژه دربارهٔ سینوس کرونری و عملکرد دریچه‌ها).",
+      "textbook_alignment": "زیست‌شناسی ۱ (چاپ ۱۴۰۲)، بخش «گردش خون، قلب و تبادل مویرگی»: تعریف سرخرگ ششی، سینوس کرونری و عملکرد دریچه‌های قلبی."
+    },
+    {
+      "id": "v3_bio_07_13",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سؤال و کلید مناسب‌اند. توضیحات قبلی بازنویسی و با استدلال زیست‌شناختی صریح جایگزین شد تا دام‌های مفهومی (مثلاً در مورد لنف و استثنای سیاهرگ ششی) روشن‌تر باشند.",
+      "textbook_alignment": "زیست‌شناسی ۱ (چاپ ۱۴۰۲)، بخش «گردش خون، قلب و تبادل مویرگی»: ساختمان مویرگ‌ها و نقش آنها در تبادل مواد."
+    },
+    {
+      "id": "v3_bio_07_14",
+      "changed_fields": [
+        "options",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "کلید و گزینه‌ها صحیح‌اند. توضیحات استاندارد و تکراری جایگزین شد با تحلیل‌های مشخصِ فیزیولوژیک مطابق مطالب کتاب. در صورت تمایل می‌توان گزینه‌های حاوی «همهٔ» را بازنویسی کرد تا کلی‌سازیِ «همه» واضح‌تر باشد.",
+      "textbook_alignment": "زیست‌شناسی ۱ (چاپ ۱۴۰۲)، بخش «گردش خون، قلب و تبادل مویرگی»: عملکرد دریچه‌های قلبی و تبادل مایع مویرگی/نقش لنف."
+    },
+    {
+      "id": "v3_bio_07_15",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "MEDIUM",
+      "issue_tags": [
+        "vague_referent",
+        "ambiguity",
+        "factual"
+      ],
+      "audit_note": "سؤال اولیه فاقد متن عبارات A و B بود و توضیحاتِ موجود با هم تناقض داشتند. عبارت‌های A و B به‌صراحت افزوده و توضیحات مبنی بر «A درست و B نادرست» بازنویسی شد تا با کتاب درسی سازگار باشد. کلیدِ پاسخ حفظ شد (گزینهٔ 4: A درست و B نادرست).",
+      "textbook_alignment": "مطابق فصل «گردش خون، قلب و تبادل مویرگی» از زیست‌شناسی ۱؛ مفاهیم تبادل مویرگی (نقش فشار هیدروستاتیک و فشار اسمزی) و تعیین نام رگ‌ها بر اساس جهت حرکت خون نسبت به قلب."
+    },
+    {
+      "id": "v3_bio_07_19",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سؤال واضح و هماهنگ با کتاب درسی بود؛ نیازی به اصلاح محتوایی یا کلید نبوده است. توضیحات گزینه‌ها به صورت صریح و بر پایهٔ چرخهٔ قلب و تبادل مویرگی بازنویسی شد.",
+      "textbook_alignment": "مطابق بخش «گردش خون، قلب و تبادل مویرگی» از زیست‌شناسی ۱؛ مباحث: عملکرد دریچه‌ها در سیستول/دیاستول، فشار هیدروستاتیک در مویرگ‌ها و نقش گره سینوسی–دهلیزی."
+    },
+    {
+      "id": "v3_bio_07_20",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سؤال روشن و منطبق بر مطالب کتاب درسی است؛ کلید و گزینه‌ها صحیح‌اند. توضیحات گزینه‌ها به زبان زیست‌شناسی خردمندانه و دقیق بازنویسی شد.",
+      "textbook_alignment": "مطابق بخش «گردش خون، قلب و تبادل مویرگی» از زیست‌شناسی ۱؛ مفاهیم: فشار هیدروستاتیک، ساختار مویرگ، و تعریف سرخرگ/سیاهرگ نسبت به جهت جریان."
+    },
+    {
+      "id": "v3_bio_08_01",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سؤال و کلید با کتاب درسی منطبق بودند؛ تنها تحلیل‌ها بازنویسی و هر گزینه بر پایهٔ فرآیندهای هضم، امولسیون و جذب توضیح داده شد.",
+      "textbook_alignment": "مطابق بخش «گوارش و جذب» از زیست‌شناسی ۱؛ مباحث: فعال‌سازی پپتیدازها در معده، نقش صفرا در امولسیون، تفاوت رودهٔ باریک و بزرگ، و مسیرهای جذب چربی (رگ لنفی مقابل رگ‌های خونی)."
+    },
+    {
+      "id": "v3_bio_08_02",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سؤال و کلید با کتاب درسی منطبق بودند. تحلیل‌ها جهت صراحتِ علمی و حذف زبان عمومی بازنویسی شد تا هر گزینه بر پایهٔ نقش صفرا، مسیرهای جذب چربی و محل آغاز هضم پروتئین توضیح داده شود.",
+      "textbook_alignment": "مطابق بخش «گوارش و جذب» از زیست‌شناسی ۱؛ مفاهیم: نقش صفرا در امولسیون چربی، تفاوت ساختاری و عملکردی رودهٔ باریک و بزرگ، مسیرهای جذب چربی و آغاز هضم پروتئین."
+    },
+    {
+      "id": "v3_bio_08_03",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "سوال از نظر محتوایی صحیح است و کلید نیز درست است؛ بازنویسی لازم بود تا توضیحاتِ پیش‌فرض و قالبی حذف و با تحلیل صریح و مستند مطابق کتاب جایگزین شوند. گزینه‌ها و پاسخ ثابت ماندند؛ فقط توضیحات هر گزینه اصلاح شد تا توضیح زیست‌شناسی دقیق ارائه شود.",
+      "textbook_alignment": "زیست‌شناسی ۱ — بخش «گوارش و جذب»"
+    },
+    {
+      "id": "v3_bio_08_04",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینهٔ کلیدی و محتوای مورد نظر مطابق کتاب است؛ توضیحاتِ هر گزینه به‌جای متن قالبی با استدلال زیست‌شناسی مشخص و مطابق فصل «گوارش و جذب» بازنویسی شد.",
+      "textbook_alignment": "زیست‌شناسی ۱ — بخش «گوارش و جذب»"
+    },
+    {
+      "id": "v3_bio_08_05",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "محتوا و کلید صحیح‌اند؛ نیاز به اصلاح متن‌های توضیحی و حذف عباراتی که تکراری یا قالبی بودند وجود داشت تا تحلیل‌ها دقیق و مستند شود.",
+      "textbook_alignment": "زیست‌شناسی ۱ — بخش «گوارش و جذب»"
+    },
+    {
+      "id": "v3_bio_08_06",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینهٔ کلیدی و محتوای علمی با کتاب هم‌خوانی دارد؛ توضیحات هر گزینه بازنویسی و شفاف شدند تا از جملات قالبی و تکراری اجتناب شود.",
+      "textbook_alignment": "زیست‌شناسی ۱ — بخش «گوارش و جذب»"
+    },
+    {
+      "id": "v3_bio_08_07",
+      "changed_fields": [
+        "stem",
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "REVISE",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "ambiguity",
+        "vague_referent"
+      ],
+      "audit_note": "صورتِ ناقصِ دارای A و B بدون متن، به یک پرسش دوگزاره‌ای خودبسنده در همان ریزمبحث بازنویسی شد. کلید اصلی، گزینهٔ سوم، حفظ شد.",
+      "textbook_alignment": "زیست‌شناسی ۱ (110216)، بخش گوارش و جذب؛ نقش صفرا در امولسیون چربی و نقش پرزهای رودهٔ باریک در افزایش سطح جذب."
+    },
+    {
+      "id": "v3_bio_08_08",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "سؤال و گزینه‌ها از نظر علمی صحیح‌اند؛ تنها متن توضیحات اصلی نویسنده حاوی زبان قالبی و تکراری بود که با استدلال زیستی مشخص و برگرفته از بخش «گوارش و جذب» کتاب زیست‌شناسی ۱ جایگزین شد. می‌توان برای شفافیت جملهٔ پرسش را به صورت مثبت («کدام گزاره ناسازگار است؟») بازنویسی کرد ولی از لحاظ محتوا ضرورت تغییر ندارد.",
+      "textbook_alignment": "زیست‌شناسی ۱ (110216)، بخش «گوارش و جذب»؛ مطابق توضیحات کتاب دربارهٔ جذب کربوهیدرات‌ها در مویرگ پرزها، ورود چربی‌ها به لنف پرز، عملکرد پپسین در معده و نبود پرز در رودهٔ بزرگ."
+    },
+    {
+      "id": "v3_bio_08_09",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزینه‌های علمی همگی با کتاب منطبق‌اند جز گزینهٔ اوّل به‌خاطر کلمات مطلق («همهٔ») که با توضیحات کتاب ناسازگار است. تحلیل‌ها بازنویسی و به‌صورت صریح و مستند به مفاهیم کتاب ارائه شدند.",
+      "textbook_alignment": "زیست‌شناسی ۱ (110216)، بخش «گوارش و جذب»؛ منطبق بر توضیح مسیر جذب لیپیدها (ورود به لنف پرز)، نقش صفرا و عملکرد پپسین."
+    },
+    {
+      "id": "v3_bio_08_10",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "گزاره‌ها از نظر علمی مناسب‌اند؛ توضیحات قالبی اصلاح و با استدلال صریحی مبتنی بر فصل «گوارش و جذب» بازنویسی شدند. پیشنهاد نگارشی: برای افزایش روانی سؤال می‌توان صورت سؤال را به «کدام‌یک نادرست است؟» تغییر داد، اما محتوایی لازم نبود.",
+      "textbook_alignment": "زیست‌شناسی ۱ (110216)، بخش «گوارش و جذب»؛ مطابق توضیحات کتاب دربارهٔ نقش آمیلاز بزاقی، پپسین، عملکرد صفرا و محل اصلی جذب مواد مغذی."
+    },
+    {
+      "id": "v3_bio_08_11",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "محتوای علمی گزینه‌ها صحیح است؛ توضیحات جانبی قالبی حذف و با دلایل زیستی روشن‌شده‌اند. پیشنهاد نگارشی: گزینهٔ سوم را به شکل مثبت/منفی مشخص‌تر بیان کنید تا کلمۀ «نخستین» باعث ابهام نشود، اما از لحاظ علمی ضرورت اصلاح ندارد.",
+      "textbook_alignment": "زیست‌شناسی ۱ (110216)، بخش «گوارش و جذب»؛ مطابق فصل دربارهٔ آغاز هضم نشاسته در دهان، نقش صفرا و مسیر جذب کربوهیدرات‌ها به کبد."
+    },
+    {
+      "id": "v3_bio_08_12",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "generic_analysis"
+      ],
+      "audit_note": "زنجیره‌ها به‌خوبی مفاهیم کتاب را هدف گرفته‌اند؛ آنچه نیاز به تصحیح داشت، حذف توضیحات قالبی و ارائهٔ دلایل روشن برای هر گزینه بود. توصیه: در سؤالات زنجیره‌ای دقت کنید که پیش‌فرض‌ها دقیقاً مطابق کتاب باشند (مثلاً مشخص بودن «رودهٔ باریک» در گزینهٔ اول).",
+      "textbook_alignment": "زیست‌شناسی ۱ (110216)، بخش «گوارش و جذب»؛ خصوصاً توضیحات مربوط به نقش صفرا در امولسیون چربی‌ها و نبود آنزیم گوارشی در صفرا مطابق کتاب درسی."
+    },
+    {
+      "id": "v3_bio_08_13",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزاره‌ها و گزینه‌ها منطبق با کتاب درسی‌اند؛ توضیحات بازنویسی شدند تا دلیل بیولوژیکی هر گزینه صریح و خودبسنده باشد.",
+      "textbook_alignment": "مطابقت با بخش «گوارش و جذب» کتاب «زیست‌شناسی ۱» (چاپ ۱۴۰۲)."
+    },
+    {
+      "id": "v3_bio_08_14",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزینهٔ صحیح و تحلیل‌ها مطابق کتاب است؛ توضیحات گزینه‌ها بازنویسی و دلیل علمی هر گزاره روشن شده است.",
+      "textbook_alignment": "مطابقت با بخش «گوارش و جذب» کتاب «زیست‌شناسی ۱» (چاپ ۱۴۰۲)."
+    },
+    {
+      "id": "v3_bio_08_15",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزینهٔ منتخب و دلایل علمی آن با متن کتاب درسی منطبق‌اند؛ توضیحات گزینه‌ها برای وضوح بیشتر بازنویسی شدند.",
+      "textbook_alignment": "مطابقت با بخش «گوارش و جذب» کتاب «زیست‌شناسی ۱» (چاپ ۱۴۰۲)."
+    },
+    {
+      "id": "v3_bio_08_16",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "گزینهٔ صحیح مطابق متن کتاب است؛ توضیحات دیگر گزینه‌ها بازنویسی شد تا ابهامات مفهومی حذف شوند.",
+      "textbook_alignment": "مطابقت با بخش «گوارش و جذب» کتاب «زیست‌شناسی ۱» (چاپ ۱۴۰۲)."
+    },
+    {
+      "id": "v3_bio_08_18",
+      "changed_fields": [
+        "correct_analysis",
+        "distractor_analyses"
+      ],
+      "key_preserved": true,
+      "decision": "KEEP",
+      "confidence": "HIGH",
+      "issue_tags": [
+        "none"
+      ],
+      "audit_note": "سؤال چندگزینه‌ای شمارشی است و کلید فعلی صحیح است. تمامی توضیحات بازنویسی شدند تا دلایل درستی/نادرستی هر عبارت روشن و مستند به کتاب باشند.",
+      "textbook_alignment": "مطابقت با بخش «گوارش و جذب» کتاب «زیست‌شناسی ۱» (چاپ ۱۴۰۲)."
+    }
+  ],
+  "migration_implication": "A material-bank successor version is required. IDs and the Room progress database remain unchanged; integration must introduce a compatible, non-destructive bank selection/migration path rather than reset learner progress."
+}

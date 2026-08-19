@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "baseline_integrity": "ok",
+  "candidate_integrity": "ok",
+  "total_ids": 1216,
+  "assigned_ids": 145,
+  "changed_ids": 145,
+  "unassigned_ids_byte_equivalent": true,
+  "key_changes": 0,
+  "raw_enum_leaks_in_assigned": 0,
+  "nonmeaningful_analysis_in_assigned": 0,
+  "w03_w04_overlap": 0,
+  "failures": {}
+}
