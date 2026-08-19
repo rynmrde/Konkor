@@ -6,7 +6,7 @@ Frozen V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9
 Frozen verified JSON SHA256: 54f349cbcd731b89d440d2f9486c2126efef564b57f223082610a344913b263d
 Frozen source gzip bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
 Frozen expanded DB SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
-V6.1.5 overlay SHA256: e2b9f7752823a94c63295b1ce1baea328275520d16880dc4123d4042dcf4f156
+V6.1.5 overlay SHA256: 59a8ff9e5aa62bbe164fa8dffb6fc5056795eeb5ee82b511cc55fbff9281599d
 App: com.rynmrde.konkor · versionCode 166 · versionName 6.1.5
 
 Scope
@@ -16,7 +16,9 @@ Scope
 - Replaces live selection dependence on fixed calendar-day attempt quotas with adaptive ROI, small diagnostics, distinct retests and protected sleep/logistics.
 - SIM1 requires enough evidence-backed coverage; SIM2 requires reviewed SIM1, repaired SIM1 weaknesses, sufficient timing evidence without adverse fatigue, time budget and superior marginal value versus targeted repair.
 - Uses a 40–75 question non-holdout mixed diagnostic only when SIM2 is not justified and no targeted repair remains.
-- Keeps SIM holdout overlap checks and existing bank restrictions in StudyRepository.
+- Adds an explicit ExtraTimeCWitness and EXTRA_TIME_C recommendation only when live marginal ROI, time remaining after sleep/logistics protection, repaired/mastery state, pace evidence and SIM ordering justify it; no historical C threshold is restored.
+- Removes stale dated rescue day/stage/SIM2/C-unlock logic from the live planner and presentation path.
+- Keeps SIM holdout overlap checks and forbids all prior-attempt and within-block duplicate IDs in StudyRepository; exhausted distinct TRAIN content fails safely instead of repeating.
 - Adds Room schema v4 migration from v3, preserving all rows while adding simulation reviewedEpochMs.
 
 Required foreman integration
@@ -29,6 +31,6 @@ Required foreman integration
 Observed local validation
 - PASS: immutable frozen V6.1 project ZIP checksum.
 - PASS: V6.1.5 Final-Hours static gate.
-- PASS: focused FinalHoursPlannerTest including Tehran, midnight, phases, budgets, ROI, SIM1/SIM2, fallback, active session and Room-shaped fixtures.
-- PASS: full JVM suite, 29 Gradle task graph nodes; build successful.
+- PASS: focused FinalHoursPlannerTest/RescuePlannerTest, 18 deterministic fixtures including Tehran, midnight/countdown, sleep, zero-progress, active session, ROI, dynamic A/B/C, SIM1/SIM2, fallback, unique-vs-repeat and four extra-C interactions.
+- PASS: second-pass full JVM suite, 29 Gradle task graph nodes; build successful in 21 seconds.
 - NOT RUN: lint, APK builds/signing, API 35 instrumentation, install/launch, UI and migration instrumentation. These remain foreman gates.
