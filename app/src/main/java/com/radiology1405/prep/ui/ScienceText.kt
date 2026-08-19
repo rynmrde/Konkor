@@ -27,6 +27,7 @@ private val learnerFacingLabels = linkedMapOf(
     "calculation_trap" to "خطای محاسبه",
     "calculation_error" to "خطای محاسبه",
     "unit_mistake" to "خطای واحد",
+    "unit_error" to "خطای واحد",
     "direction_error" to "خطای جهت",
     "false_absolute" to "مطلق‌انگاری نادرست",
     "keyword_trap" to "پاسخ‌دادن بر پایهٔ کلیدواژه",
