@@ -67,6 +67,10 @@ The new artifact is `radiology_v615_a3_second_pass_patch/overlay.tar.xz`. It con
 | API 35 runtime instrumentation and migration execution | **NOT RUN** | Local VM lacks `/dev/kvm`; source compilation passed, but device execution remains required. |
 | Lint, debug/release APK, signing, install/launch | **NOT RUN in this second pass** | Foreman gates. |
 
+## Remote publication read-back
+
+The assigned branch was preflighted at the original baseline and then updated atomically through the connected repository service. The publication commit is [`78f1a5a9c2ae1f3eb2ad4763626cf7b025c15442`](https://github.com/rynmrde/Konkor/commit/78f1a5a9c2ae1f3eb2ad4763626cf7b025c15442), with local source handoff commit `aa623ca816a1635a2e4da903900bf9a6704f37a7`. A subsequent remote branch-list read returned `78f1a5a9c2ae1f3eb2ad4763626cf7b025c15442` as the exact `parallel/a3-persistence-qa` head. The remote report was returned at blob `c9d0a4fd288689abdff9b200ea78ef7d7653d3f8` (10,633 bytes), and the remote staged `overlay.tar.xz` was downloaded and independently verified as SHA-256 `d012e645ea10eb3302442c9ad8e83312b05dc915332b7a1ae42f0a41b7cc7e84`.
+
 ## Residual release gates
 
 The foreman must execute Android API 35 instrumentation on a KVM-capable runner, including the explicit migration chain, malformed active-session isolation, malformed backup rollback, valid backup/restore during Review, and atomic SIM witness/session state after process recreation. The foreman must also verify a visible Review Map sequence—answer, flag, submit, direct jump, background/process recreation, reopen Review—and confirm correct/wrong/blank states. Signed release build, `apksigner` verification, package/version verification, signed APK bank verification, lint, debug APK inspection, install/launch, package identity, and all Final-Hours timezone/midnight/SIM gates remain mandatory before a release.
