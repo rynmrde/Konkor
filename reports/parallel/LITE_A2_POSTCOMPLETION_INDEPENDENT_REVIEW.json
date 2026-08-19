@@ -1,0 +1,54 @@
+{
+  "overall": "PASS",
+  "review": {
+    "role": "Lite/helper independent reviewer",
+    "source_helper_commit": "b717f4c96209954e0e6f596ed015a85c2e6dfc6d",
+    "corrected_final_hours_commit": "ee706e9836bd499decae0a1d79ea643884ab4d1c",
+    "new_helper_branch": "parallel/help-a2-postcompletion-independent-review",
+    "main_touched": false,
+    "standard_branches_touched": false,
+    "release_published": false
+  },
+  "source": {
+    "bank_drive_file_id": "1r8IvfWT7R_ihzfLC6QyoGQNQiDFrvhZZ",
+    "bank_name": "radiology1405_bank_v6_1.db.gz",
+    "sha256": "b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14",
+    "records": 1216,
+    "unique_ids": 1216
+  },
+  "gates": {
+    "four_options": "PASS",
+    "correct_key_range": "PASS",
+    "option_analysis_coverage": "PASS",
+    "canonical_stimulus_left_right_and_ids": "PASS",
+    "evidence_family_followup_scenario_suppression": "PASS",
+    "physics_pair_30_04_30_08": "PASS",
+    "physics_pair_30_06_30_10": "PASS",
+    "normal_blocks_2000": "PASS",
+    "normal_block_duplicate_id_count": 0,
+    "normal_block_historical_repeat_count": 0,
+    "normal_block_equivalent_family_collision_count": 0,
+    "normal_block_sim_leak_count": 0,
+    "adaptive_short_blocks_without_repeat": 169,
+    "sim1_size": 117,
+    "sim2_size": 117,
+    "sim1_sim2_intersection": 0,
+    "sim_holdout_leak": "PASS",
+    "exact_repeat_train_fallback_absent": "PASS",
+    "unique_mastery_exact_repeat_delta_zero": "PASS",
+    "exact_repeat_unique_coverage_increment": 0,
+    "later_spaced_repeat_allowed_as_review": "PASS",
+    "corrected_final_hours_source_contract": "PASS"
+  },
+  "validator_outputs": {
+    "independent_contract_checker": "PASS",
+    "helper_validator": "PASS",
+    "canonical_paired_stimulus_ids": 21,
+    "physics_followup_pair_regressions": 2
+  },
+  "unresolved": [],
+  "notes": [
+    "The 169 short blocks were adaptive shortages and did not use exact-repeat fallback or permit duplicate/equivalent-family/SIM leakage.",
+    "This helper-only report does not authorize integration or release publication."
+  ]
+}
