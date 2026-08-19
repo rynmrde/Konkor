@@ -19,9 +19,9 @@ jobs:
       V61_PROJECT_FILE_ID: 14RbsAhiS1Cj3Y_JgPfR0pf1rmeXgxJUc
       V61_PROJECT_SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
       V61_BANK_JSON_SHA256: 54f349cbcd731b89d440d2f9486c2126efef564b57f223082610a344913b263d
-      V61_BANK_SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
-      V61_DB_SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
-      V614_OVERLAY_SHA256: d17bdd905def35a45caa32aa5a0b07b6196ecc78de493a340bf36fac0c0103c3
+      V61_BANK_SHA256: ca4f3c63a88bf091d3ce464254048629f939a0f60b8b088e53ccd7bf206ffe2a
+      V61_DB_SHA256: d6d93c2786b5900100bc348b06e740a47a94f1fb89932372a8a5ac0b68a13a5e
+      V614_OVERLAY_SHA256: 25238d05278b94fcd8021515d7ee7ee53ac278c5e8d91fcab0ca24d20de0d0a5
 
     steps:
       - uses: actions/checkout@v4
@@ -67,6 +67,13 @@ jobs:
           tar -xJf radiology_v614_rescue_patch/overlay.tar.xz -C "$PROJECT"
           test -f "$PROJECT/app/src/main/java/com/radiology1405/prep/engine/RescuePlanner.kt"
           test -f "$PROJECT/tests/verify_rescue_v614.py"
+
+      - name: Rebuild audited Physics second-pass bank
+        run: |
+          set -euo pipefail
+          cd "$PROJECT"
+          python tools/apply_physics_second_pass.py
+          echo "$V61_BANK_SHA256  app/src/main/assets/radiology1405_bank_v6_1.db.gz" | sha256sum -c -
 
       - name: Generate offline audio
         run: |
@@ -187,9 +194,9 @@ jobs:
           cd "$GITHUB_WORKSPACE"
           sha256sum _out/radiology1405_android_project_v6.1.4.zip > _out/radiology1405_android_project_v6.1.4.zip.sha256
           {
-            echo "Frozen Verified JSON  $V61_BANK_JSON_SHA256"
-            echo "Packaged gzip        $V61_BANK_SHA256"
-            echo "Expanded SQLite      $V61_DB_SHA256"
+            echo "Historical verified JSON baseline  $V61_BANK_JSON_SHA256"
+            echo "Physics second-pass packaged gzip   $V61_BANK_SHA256"
+            echo "Physics second-pass expanded SQLite $V61_DB_SHA256"
           } > _out/BANK-SHA256.txt
           {
             echo "# V6.1.4 Three-Day Rescue"
@@ -217,6 +224,8 @@ jobs:
 
 
       - name: Publish V6.1.4 Three-Day Rescue release
+        # Deliberately disabled on this worker branch: the foreman must assign a new version/tag after integration.
+        if: ${{ false }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
