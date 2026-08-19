@@ -1,0 +1,269 @@
+name: Radiology1405 V6.1.5 Final-Hours Integrated Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [parallel/release-v615-integration]
+    paths:
+      - 'radiology_v615_final_patch/**'
+      - '.github/workflows/radiology-v615-final.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-test-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    env:
+      V61_PROJECT_FILE_ID: 14RbsAhiS1Cj3Y_JgPfR0pf1rmeXgxJUc
+      V61_PROJECT_SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5fb1be2e882d046
+      V61_BANK_JSON_SHA256: 54f349cbcd731b89d440d2f9486c2126efef564b57f223082610a344913b263d
+      V61_BANK_SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
+      V61_DB_SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
+      V615_OVERLAY_SHA256: 49f5bcbfe66d779c314b036dbda34e452674bdc94bfa6e9267f5a6e280bf7594
+      RELEASE_TAG: radiology1405-apk-v6.1.5-20260819
+      RELEASE_VERSION_NAME: 6.1.5
+      RELEASE_VERSION_CODE: '166'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.13'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK and media tooling
+        run: |
+          set -euo pipefail
+          yes | sdkmanager --licenses >/dev/null 2>&1 || true
+          sdkmanager 'platforms;android-36' 'build-tools;35.0.0' 'platform-tools'
+          test -x "$ANDROID_HOME/build-tools/35.0.0/apksigner"
+          test -x "$ANDROID_HOME/build-tools/35.0.0/aapt"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python -m pip install --quiet gdown
+
+      - name: Fetch exact frozen V6.1 project
+        run: |
+          set -euo pipefail
+          mkdir -p _src _out
+          gdown "$V61_PROJECT_FILE_ID" -O _src/v61-project.zip
+          echo "$V61_PROJECT_SHA256  _src/v61-project.zip" | sha256sum -c -
+          unzip -q _src/v61-project.zip -d _src/unpacked
+          PROJECT="$(find "$GITHUB_WORKSPACE/_src/unpacked" -type f -name settings.gradle.kts -printf '%h\n' | head -n1)"
+          test -n "$PROJECT"
+          test -f "$PROJECT/app/src/main/assets/radiology1405_bank_v6_1.db.gz"
+          echo "PROJECT=$PROJECT" >> "$GITHUB_ENV"
+
+      - name: Verify and apply V6.1.5 final overlay
+        run: |
+          set -euo pipefail
+          echo "$V615_OVERLAY_SHA256  radiology_v615_final_patch/overlay.tar.xz" | sha256sum -c -
+          ! tar -tJf radiology_v615_final_patch/overlay.tar.xz | grep -E '(^/|(^|/)\.\.(/|$)|radiology1405_bank_v6_1\.db\.gz$)'
+          tar -xJf radiology_v615_final_patch/overlay.tar.xz -C "$PROJECT"
+          test -f "$PROJECT/tests/bank_final_gate.py"
+          test -f "$PROJECT/tests/verify_final_hours_v615.py"
+          test -f "$PROJECT/app/src/main/java/com/radiology1405/prep/data/QuestionMapSessionProjection.kt"
+          python - <<'PY'
+          import json, os, pathlib
+          manifest = json.loads((pathlib.Path(os.environ['PROJECT']) / 'release_meta' / 'FINAL_OVERLAY_MANIFEST.json').read_text())
+          assert manifest['base_project_sha256'] == os.environ['V61_PROJECT_SHA256']
+          assert manifest['frozen_bank_gzip_sha256'] == os.environ['V61_BANK_SHA256']
+          assert manifest['version_name'] == os.environ['RELEASE_VERSION_NAME']
+          assert manifest['version_code'] == int(os.environ['RELEASE_VERSION_CODE'])
+          print('PASS V6.1.5 overlay provenance manifest')
+          PY
+
+      - name: Frozen bank, Final-Hours and compatibility gates
+        run: |
+          set -euo pipefail
+          cd "$PROJECT"
+          python tests/bank_final_gate.py | tee "$GITHUB_WORKSPACE/_out/bank-final-gate.txt"
+          python tests/verify_final_hours_v615.py | tee "$GITHUB_WORKSPACE/_out/final-hours-static.txt"
+          python tests/validate_v6_1.py | tee "$GITHUB_WORKSPACE/_out/static-validation.txt"
+          ! grep -R 'fallbackToDestructiveMigration' app/src/main/java
+          ! grep -q 'android.permission.INTERNET' app/src/main/AndroidManifest.xml
+          echo "$V61_BANK_SHA256  app/src/main/assets/radiology1405_bank_v6_1.db.gz" | sha256sum -c -
+          cp build/release-gates/BANK_FINAL_GATE.json "$GITHUB_WORKSPACE/_out/BANK_FINAL_GATE.json"
+
+      - name: Kotlin compile, JVM tests, lint and debug build
+        run: |
+          set -euo pipefail
+          cd "$PROJECT"
+          gradle --no-daemon :app:compileDebugKotlin :app:testDebugUnitTest :app:lintDebug :app:assembleDebug --stacktrace | tee "$GITHUB_WORKSPACE/_out/gradle-debug.txt"
+
+      - name: Inspect debug APK bank packaging
+        run: |
+          set -euo pipefail
+          mkdir -p _out/_debug_inspect
+          DEBUG_APK="$PROJECT/app/build/outputs/apk/debug/app-debug.apk"
+          test -s "$DEBUG_APK"
+          unzip -l "$DEBUG_APK" > _out/_debug_inspect/contents.txt
+          unzip -p "$DEBUG_APK" assets/radiology1405_bank_v6_1.db > _out/_debug_inspect/apk-bank.db
+          echo "$V61_DB_SHA256  _out/_debug_inspect/apk-bank.db" | sha256sum -c -
+          ! grep -q 'assets/radiology1405_bank_v6_1.db.gz' _out/_debug_inspect/contents.txt
+
+      - name: Prepare existing stable release signing key
+        env:
+          RADIOLOGY_KEYSTORE_B64: ${{ secrets.RADIOLOGY_KEYSTORE_B64 }}
+          RADIOLOGY_STORE_PASSWORD_SECRET: ${{ secrets.RADIOLOGY_STORE_PASSWORD }}
+          RADIOLOGY_KEY_ALIAS_SECRET: ${{ secrets.RADIOLOGY_KEY_ALIAS }}
+          RADIOLOGY_KEY_PASSWORD_SECRET: ${{ secrets.RADIOLOGY_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$RADIOLOGY_KEYSTORE_B64"
+          test -n "$RADIOLOGY_STORE_PASSWORD_SECRET"
+          test -n "$RADIOLOGY_KEY_ALIAS_SECRET"
+          test -n "$RADIOLOGY_KEY_PASSWORD_SECRET"
+          printf '%s' "$RADIOLOGY_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/radiology1405.jks"
+          keytool -list -keystore "$RUNNER_TEMP/radiology1405.jks" -storepass "$RADIOLOGY_STORE_PASSWORD_SECRET" -alias "$RADIOLOGY_KEY_ALIAS_SECRET" >/dev/null
+          {
+            echo "RADIOLOGY_KEYSTORE=$RUNNER_TEMP/radiology1405.jks"
+            echo "RADIOLOGY_STORE_PASSWORD=$RADIOLOGY_STORE_PASSWORD_SECRET"
+            echo "RADIOLOGY_KEY_ALIAS=$RADIOLOGY_KEY_ALIAS_SECRET"
+            echo "RADIOLOGY_KEY_PASSWORD=$RADIOLOGY_KEY_PASSWORD_SECRET"
+          } >> "$GITHUB_ENV"
+
+      - name: Build signed V6.1.5 release
+        run: |
+          set -euo pipefail
+          cd "$PROJECT"
+          gradle --no-daemon :app:assembleRelease --stacktrace | tee "$GITHUB_WORKSPACE/_out/gradle-release.txt"
+
+      - name: Inspect signed APK and frozen bank inside APK
+        run: |
+          set -euo pipefail
+          mkdir -p _out/_inspect
+          APK="$PROJECT/app/build/outputs/apk/release/app-release.apk"
+          test -s "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs "$APK" | tee _out/_inspect/signature.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK" | tee _out/_inspect/badging.txt
+          grep -q "package: name='com.rynmrde.konkor' versionCode='166' versionName='6.1.5'" _out/_inspect/badging.txt
+          ! "$ANDROID_HOME/build-tools/35.0.0/aapt" dump permissions "$APK" | grep -q android.permission.INTERNET
+          unzip -p "$APK" assets/radiology1405_bank_v6_1.db > _out/_inspect/apk-bank.db
+          echo "$V61_DB_SHA256  _out/_inspect/apk-bank.db" | sha256sum -c -
+          unzip -l "$APK" > _out/_inspect/contents.txt
+          "$ANDROID_HOME/build-tools/35.0.0/aapt" dump resources "$APK" > _out/_inspect/resources.txt
+          for name in ambient rain brown pulse; do grep -q ":raw/focus_${name}" _out/_inspect/resources.txt; done
+          cp "$APK" _out/Radiology1405-V6.1.5.apk
+          sha256sum _out/Radiology1405-V6.1.5.apk > _out/Radiology1405-V6.1.5.apk.sha256
+
+      - name: Enable KVM when available
+        run: |
+          set -euo pipefail
+          if [ -e /dev/kvm ]; then
+            sudo chmod 666 /dev/kvm
+            ls -l /dev/kvm
+          else
+            echo "KVM unavailable; Android emulator will use software acceleration."
+          fi
+
+      - name: Android 35 persistence, Review, Question Map and UI tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none -camera-front none
+          script: |
+            set -eu
+            gradle -p "$PROJECT" --no-daemon :app:connectedDebugAndroidTest --stacktrace
+            adb uninstall com.rynmrde.konkor >/dev/null 2>&1 || true
+            adb install "$GITHUB_WORKSPACE/_out/Radiology1405-V6.1.5.apk"
+            adb logcat -c
+            adb shell monkey -p com.rynmrde.konkor -c android.intent.category.LAUNCHER 1
+            sleep 15
+            adb shell pidof com.rynmrde.konkor | grep -Eq '[0-9]+'
+            adb shell dumpsys package com.rynmrde.konkor | grep -q 'versionName=6.1.5'
+            ! adb logcat -d -s AndroidRuntime:E | grep -q 'Process: com.rynmrde.konkor'
+
+      - name: Package source, hashes and required release evidence
+        run: |
+          set -euo pipefail
+          cd "$PROJECT"
+          zip -qr "$GITHUB_WORKSPACE/_out/radiology1405_android_project_v6.1.5.zip" . -x 'app/build/*' 'build/*' '.gradle/*' '*.jks' '*.keystore'
+          cd "$GITHUB_WORKSPACE"
+          sha256sum _out/radiology1405_android_project_v6.1.5.zip > _out/radiology1405_android_project_v6.1.5.zip.sha256
+          {
+            echo "Frozen Verified JSON  $V61_BANK_JSON_SHA256"
+            echo "Packaged gzip        $V61_BANK_SHA256"
+            echo "Expanded SQLite      $V61_DB_SHA256"
+          } > _out/BANK-SHA256.txt
+          cp "$PROJECT/CHANGELOG.md" _out/CHANGELOG.md
+          cp "$PROJECT/MIGRATION-REPORT.md" _out/MIGRATION-REPORT.md
+          cat > _out/BANK-AUDIT.md <<EOF
+          # V6.1.5 Bank Audit
+
+          BANK_FINAL_GATE=PASS for the unchanged frozen V6.1 bank. Evidence is in BANK_FINAL_GATE.json.
+
+          | Check | Result |
+          |---|---|
+          | Gzip SHA-256 | $V61_BANK_SHA256 |
+          | Expanded SQLite SHA-256 | $V61_DB_SHA256 |
+          | Stable question IDs | 1,216 unique |
+          | Verified real-exam records | 17 |
+          | Quarantined key-conflict records | 16, isolated from study pools |
+          | SIM1 / SIM2 / FINAL | 117 / 117 / 10, mutually disjoint |
+          EOF
+          cat > _out/DUPLICATE-AUDIT.md <<'EOF'
+          # V6.1.5 Duplicate and Session-Selection Audit
+
+          BANK_FINAL_GATE=PASS found no exact active-bank identity duplicates after canonical structured-stimulus normalization. The accepted source contract applies `practiceSignature` and `excludedPracticeSignatures` to normal TRAIN selection while preserving intentional spaced retrieval across time and fixed simulation pools.
+          EOF
+          cat > _out/ANALYSIS-QA.md <<'EOF'
+          # V6.1.5 Analysis QA
+
+          The immutable V6.1 bank payload is unchanged. The accepted full-source candidate renders question-specific `correctAnalysis` and structured stimulus data in Test and Review; CI runs the established V6.1 compatibility validation together with the V6.1.5 bank and UI gates. This release makes no unverified claim that authored training content is official exam material.
+          EOF
+          cat > _out/FINAL-HOURS-PLAN.md <<'EOF'
+          # V6.1.5 Final-Hours Plan
+
+          The accepted Final-Hours engine computes remaining study opportunity from actual time, exam datetime, and persisted progress. It uses adaptive marginal-value prioritization, protected SIM1 review/repair, conditional SIM2, and separate unique-training, repeat, simulation, and attempt accounting. Fixed sleep, meal, hygiene, and logistics reserve quotas are intentionally removed; all other V6.1 features remain in scope for regression testing.
+          EOF
+          cat > _out/TEST-SUMMARY.md <<'EOF'
+          # V6.1.5 Test Summary
+
+          The following gates completed successfully in this authoritative GitHub Actions run before release publication.
+
+          - PASS — immutable-bank schema/ID/options/key/source/quarantine/holdout/duplicate/session contracts
+          - PASS — Final-Hours static behavior gate and established V6.1 compatibility checks
+          - PASS — Kotlin compile, JVM tests, Android lint, and debug APK build
+          - PASS — debug and signed APK frozen-bank inspection
+          - PASS — release signing, signature verification, package and version verification
+          - PASS — Android API 35 instrumentation, persistence, Review/Question Map UI tests, install, and launch smoke test
+          EOF
+
+      - name: Publish new V6.1.5 Final-Hours release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "$RELEASE_TAG" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "Refusing to overwrite existing release $RELEASE_TAG" >&2
+            exit 1
+          fi
+          gh release create "$RELEASE_TAG" --repo "${{ github.repository }}" --target "$GITHUB_SHA" --title 'Radiology1405 APK · V6.1.5 Final-Hours' --notes-file _out/CHANGELOG.md
+          gh release upload "$RELEASE_TAG" \
+            _out/Radiology1405-V6.1.5.apk \
+            _out/Radiology1405-V6.1.5.apk.sha256 \
+            _out/radiology1405_android_project_v6.1.5.zip \
+            _out/radiology1405_android_project_v6.1.5.zip.sha256 \
+            _out/BANK-SHA256.txt \
+            _out/BANK_FINAL_GATE.json \
+            _out/TEST-SUMMARY.md \
+            _out/CHANGELOG.md \
+            _out/BANK-AUDIT.md \
+            _out/DUPLICATE-AUDIT.md \
+            _out/ANALYSIS-QA.md \
+            _out/FINAL-HOURS-PLAN.md \
+            _out/MIGRATION-REPORT.md \
+            --repo "${{ github.repository }}"
