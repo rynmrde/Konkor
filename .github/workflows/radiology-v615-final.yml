@@ -21,7 +21,7 @@ jobs:
       V61_BANK_JSON_SHA256: 54f349cbcd731b89d440d2f9486c2126efef564b57f223082610a344913b263d
       V61_BANK_SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
       V61_DB_SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
-      V615_OVERLAY_SHA256: 7cce2427907ba4f5ea959f0f75926433d9effdcb9fed3b92bf5ccb0bf69f64c3
+      V615_OVERLAY_SHA256: 074226afb39abe898fe64b252db8d36d528432ab779498a0c11c8e8c2b8ce71f
       RELEASE_TAG: radiology1405-apk-v6.1.5-20260819
       RELEASE_VERSION_NAME: 6.1.5
       RELEASE_VERSION_CODE: '166'
@@ -40,15 +40,13 @@ jobs:
 
       - uses: android-actions/setup-android@v3
 
-      - name: Install Android SDK and media tooling
+      - name: Install Android SDK and fetch tooling
         run: |
           set -euo pipefail
           yes | sdkmanager --licenses >/dev/null 2>&1 || true
           sdkmanager 'platforms;android-36' 'build-tools;35.0.0' 'platform-tools'
           test -x "$ANDROID_HOME/build-tools/35.0.0/apksigner"
           test -x "$ANDROID_HOME/build-tools/35.0.0/aapt"
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg
           python -m pip install --quiet gdown
 
       - name: Fetch exact frozen V6.1 project
@@ -69,7 +67,6 @@ jobs:
           echo "$V615_OVERLAY_SHA256  radiology_v615_final_patch/overlay.tar.xz" | sha256sum -c -
           ! tar -tJf radiology_v615_final_patch/overlay.tar.xz | grep -E '(^/|(^|/)\.\.(/|$)|radiology1405_bank_v6_1\.db\.gz$)'
           tar -xJf radiology_v615_final_patch/overlay.tar.xz -C "$PROJECT"
-          bash "$PROJECT/tools/generate_audio.sh" "$PROJECT/app/src/main/res/raw"
           test -f "$PROJECT/tests/bank_final_gate.py"
           test -f "$PROJECT/tests/verify_live_rescue_v615.py"
           test -f "$PROJECT/app/src/main/java/com/radiology1405/prep/engine/LiveRescuePlanner.kt"
