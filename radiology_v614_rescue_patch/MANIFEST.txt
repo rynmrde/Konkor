@@ -6,7 +6,7 @@ Base V6.1 project ZIP SHA256: 1344aca90474ac96e27e94ba754ebafd42778e2ceaab91f9a5
 Frozen Verified JSON SHA256: 54f349cbcd731b89d440d2f9486c2126efef564b57f223082610a344913b263d
 Frozen source gzip bank SHA256: b5f47e9803638a37798be398ff4a087f336aafa78470e6f5ad94ac3aa5d7fe14
 Frozen expanded DB SHA256: d63219dd6f1621644df495f6b195763924b5c282961cfecf544f7541ab3b673c
-V6.1.4 overlay SHA256: d17bdd905def35a45caa32aa5a0b07b6196ecc78de493a340bf36fac0c0103c3
+V6.1.4 overlay SHA256: ed96733118d455b6bf1b3280eddea6096183c816cba7aeb86d92f46ece87d64c
 Workflow SHA256: 1908927cc2e320b65f4e2ab28f2e0b97cd8242dbc42c220af810be66a3a00fa0
 App: com.rynmrde.konkor · versionCode 165 · versionName 6.1.4
 
@@ -16,3 +16,5 @@ Raw learning coverage: 112.9 to 29.9 expected questions, a 73.5% reduction; no q
 Schedule: day 1 A wave/retrieval; day 2 A wave + SIM1 + repair; day 3 SIM2 + spaced repair. SIM1/SIM2 remain disjoint fixed 117-question pools.
 Compatibility: frozen bank/schema/filename/hashes/IDs remain unchanged; Room schema stays 3 without destructive migration; compatible active sessions and all progress persist.
 Validation: deterministic bank/triage regression gate, unit tests, Kotlin compile, lint, debug/release builds, signed APK inspection, Android 35 persistence/answer/review/reopen/resume/SIM/UI tests.
+
+Second-pass overlay: deterministic Biology successor (142 analysis-only updates; eight conflict IDs resolved explicitly), canonical paired-statement renderer, Persian internal-label localization without global analysis deletion, and safe selection exclusion for five unresolved non-paired visible-stem records. Frozen bank bytes and Room schema remain unchanged.
