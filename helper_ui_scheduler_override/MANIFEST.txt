@@ -1,0 +1,3 @@
+Base: corrected Final-Hours ee706e9836bd499decae0a1d79ea643884ab4d1c
+Scope: scheduler-only override; protected sleep/logistics minutes=0; no pre-exam REST decision.
+Do not apply the V6.1.4 UI overlay wholesale; see report for compilation failure and source-merge requirements.
