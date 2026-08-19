@@ -37,9 +37,26 @@ private val learnerFacingLabels = linkedMapOf(
     "careless_error" to "بی‌دقتی",
 )
 
-/** Converts internal taxonomy keys into learner-facing Persian before any UI text is rendered. */
-fun learnerFacingScientificText(value: String): String = learnerFacingLabels.entries.fold(value) { rendered, (internal, label) ->
-    rendered.replace(internal, label, ignoreCase = true)
+private val reviewBoilerplate = listOf(
+    Regex("منشأ دام این گزینه [^.]* است\\.\\s*"),
+    Regex("منشأ دام: [^.]*\\.\\s*"),
+    Regex("این گزینه با همهٔ شرط‌ها سازگار است\\.\\s*"),
+    Regex("این گزینه با همه شرط ها سازگار است\\.\\s*"),
+    Regex("این گزاره با کتاب سازگار است؛\\s*"),
+    Regex("این گزاره دام مفهومی دارد؛\\s*"),
+    Regex("از کلیدواژه جواب نده؛ شرط هر گزینه را بسنج\\.\\s*"),
+    Regex("روش کنترل:\\s*"),
+    Regex("نکتهٔ تثبیتی:\\s*"),
+)
+
+/** Replaces internal labels and removes only stock review filler; question-specific reasoning is preserved. */
+fun learnerFacingScientificText(value: String): String {
+    val localized = learnerFacingLabels.entries.fold(value) { rendered, (internal, label) ->
+        rendered.replace(internal, label, ignoreCase = true)
+    }
+    return reviewBoilerplate.fold(localized) { rendered, filler -> filler.replace(rendered, "") }
+        .replace(Regex("\\s{2,}"), " ")
+        .trim()
 }
 
 /** Unicode bidi isolation keeps formula direction intact inside a Persian paragraph. */
