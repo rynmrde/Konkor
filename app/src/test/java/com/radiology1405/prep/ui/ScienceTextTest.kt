@@ -8,12 +8,13 @@ class ScienceTextTest {
     @Test
     fun learnerFacingScientificText_translatesInternalTaxonomyKeys() {
         val rendered = learnerFacingScientificText(
-            "wrong_condition و partial_truth و calculation_trap و time_management"
+            "wrong_condition و partial_truth و calculation_trap و unit_error و time_management"
         )
 
         assertFalse(rendered.contains("wrong_condition"))
         assertFalse(rendered.contains("partial_truth"))
         assertFalse(rendered.contains("calculation_trap"))
+        assertFalse(rendered.contains("unit_error"))
         assertFalse(rendered.contains("time_management"))
         assertTrue(rendered.contains("نادیده‌گرفتن شرط"))
         assertTrue(rendered.contains("درستِ ناقص"))
