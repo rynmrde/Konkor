@@ -27,10 +27,10 @@ class BankStore(private val context: Context) : AutoCloseable {
         const val EXPECTED_PROVISIONAL_STEMS = 71
         const val EXPECTED_QUARANTINED = 16
         private const val BIOLOGY_V615_PATCH_ASSET = "biology_v615_patch.json"
-        private const val PATCHED_DB_SHA256 = "4672be5706823b86e6187f9f3ddfbb929ce81af240f900b748de90848f087112"
-        private const val PATCHED_VERIFIED_REAL = 2
-        private const val PATCHED_PROVISIONAL_STEMS = 86
-        private const val BIOLOGY_V615_PATCH_SHA256 = "2e8b610ff4b488122c37d79d4bea9f61d401340925974da4763da5d6cc4ade55"
+        private const val PATCHED_DB_SHA256 = "00f881e78e26326532b8b771134970052ddb296fc0e556ab30a980c95656ef14"
+        private const val PATCHED_VERIFIED_REAL = 17
+        private const val PATCHED_PROVISIONAL_STEMS = 71
+        private const val BIOLOGY_V615_PATCH_SHA256 = "3943af9a9d83872c846c7458fae330184be44b7b1aead7502f1c2620c99ebb5d"
     }
 
     private val dbDelegate = lazy(LazyThreadSafetyMode.SYNCHRONIZED) { openVerified() }
